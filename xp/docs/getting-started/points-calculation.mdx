@@ -1,0 +1,43 @@
+---
+sidebar_position: 2
+description: The basics about the system to award points.
+---
+
+# How are points calculated?
+
+## Event-based
+
+The plugin observes the actions performed by learners and attribute them points. By default, XP comes with a few pre-defined rules to determine how many points a learner should earn.
+
+In Moodle, such actions are referred to as _Events_. Events contain information about the action that was just performed: where it happened, what it was, who did it, etc... It also contains the _educational level_ of the action, either _participating_, _teaching_ or _other_.
+
+As a starting point, XP attributes points to learners for the actions of educational level _participating_, when they _create_, _edit_ or _read_ course contents. For example, they would receive _45_ points when creating a new forum discussion, and receive _9_ points when reading course resources.
+
+These default rules are simple but educators can do a lot more. They can create much more granular rules, such as giving more or less points for a specific activity. Or giving more value to submitting one assignment over the other, etc...
+
+### Actions that are ignored
+
+Only the users with the capability _block/xp:earnxp_ can earn points. By default, this capability is given to the student role. Also, actions triggered by guests, non-logged in users or administrators are ignored.
+
+The following events are always ignored:
+
+- Events from another _context_ than course or module
+- Events having another educational level than _participating_
+- Events flagged as _anonymous_, e.g. in an anonymous Feedback
+
+The default rules of XP ignore some events that are redundant, and would cause points to be awarded twice for the same action.
+
+Repeated actions within a short time interval are also ignored to prevent cheating when the cheat guard is enabled.
+
+### See also
+
+- Properties of events at [Moodle documentation](https://docs.moodle.org/dev/Event_2#Properties)
+- List of all events at [Moodle documentation](https://docs.moodle.org/en/Events_list_report)
+
+## Grade-based rewards
+
+Points can be awarded [based on the grades](/how-to/grade-based-rewards/index.mdx) given to learners. This requires XP+.
+
+## Drops
+
+With [drops](/how-to/use-drops/index.mdx), points can be awarded anywhere. This requires XP+.

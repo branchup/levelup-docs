@@ -1,0 +1,137 @@
+# Use shortcodes
+
+:::info
+
+To use shortcodes with Level Up XP, the plugin [Shortcodes](https://moodle.org/plugins/filter_shortcodes) must be installed and enabled.
+
+:::
+
+## Introduction
+
+Shortcodes are short words delimited by square brackets such as `[xpbadge]` which can be added to text editors in Moodle. When displayed, they are transformed into alternate content. The term shortcode was popularised by Wordpress.
+
+Here are the shortcodes built-in _Level Up XP_:
+
+- xpbadge: To display the level badge
+- xpiflevel: To display, or hide, some context according to the students' level
+- xpladder: To display the leaderboard
+- xpteamladder^: To display the team leaderboard
+- xplevelname: To display the level name
+- xpprogressbar: To display the progress bar
+
+^ Requires _Level Up XP+_
+
+### xpbadge
+
+Displays the badge matching the level of current user.
+
+`[xpbadge]`
+
+### xpiflevel
+
+Displays the content within its brackets according to the user's level. When a level is stricly specified, the content will be displayed regardless of the other rules. The greater and less than rules must all match for the content to be displayed, watch out as that may sometimes result in the content to never be displayed! Note that teachers, or otherwise users with editing capabilities, will always see everything.
+
+```
+[xpiflevel 1 3 5]
+    Displayed if the user's level is exactly 1, 3 or 5.
+[/xpiflevel]
+
+[xpiflevel >3]
+    Displayed if the user's level is greater than 3.
+[/xpiflevel]
+
+[xpiflevel >=3]
+    Displayed if the user's level is greater or equal to 3.
+[/xpiflevel]
+
+[xpiflevel >=10 <20 30]
+    Displayed if the user's level is greater or equal to 10 AND is strictly less than 20
+    OR is exactly equal to 30.
+[/xpiflevel]
+
+[xpiflevel <=10 >=20]
+    Never displayed because the user's level can never be less or equal to 10 AND more or equal to 20.
+[/xpiflevel]
+```
+
+Note that these shortcodes CANNOT be nested within one another.
+
+### xpladder
+
+By default, a portion of the ladder surrounding the current user will be displayed.
+
+```
+[xpladder]
+```
+
+To display the top 10 students instead of the neighbours of the current user, set the parameter `top`. You can optionally set the number of users to display like so `top=20`.
+
+```
+[xpladder top]
+[xpladder top=15]
+```
+
+A link to the full ladder will automatically be displayed below the table, if you do not want to display such link, add the argument `hidelink`.
+
+```
+[xpladder hidelink]
+```
+
+By default, the table does not include the progress column which displays the progress bar. If such column has been selected in the additional colums in the ladder's settings, you can use the argument `withprogress` to display it.
+
+```
+[xpladder withprogress]
+```
+
+Note that when a course is using groups, the ladder will best guess which group to display the ladder of.
+
+### xpteamladder
+
+_Requires Level Up XP+_
+
+By default, a portion of the team ladder surrounding the current user will be displayed.
+
+```
+[xpteamladder]
+```
+
+To display the top 5 teams instead of the teams neighbouring those of the current user, set the parameter `top`. You can optionally set the number of teams to display by giving `top` a value, like so: `top=20`.
+
+```
+[xpteamladder top]
+[xpteamladder top=15]
+```
+
+A link to the full ladder will automatically be displayed below the table if there are more results to be displayed, if you do not want to display such link, add the argument `hidelink`.
+
+```
+[xpteamladder hidelink]
+```
+
+By default, the table does not include the progress column which displays the progress bar. If such column has been selected in the additional colums in the ladder\'s settings, you can use the argument `withprogress` to display it.
+
+```
+[xpteamladder withprogress]
+```
+
+Note that when the current user belongs to multiple teams, the plugin will use the one with the best rank as reference.
+
+### xplevelname
+
+By default the tag displays the name of the current user's level.
+Alternatively, you can use the `level` argument to display the name of a specific level.
+
+```
+[xplevelname]
+[xplevelname level=5]
+```
+
+If the `level` argument is provided and the level does not exist, nothing will be displayed.
+
+### xpprogressbar
+
+Displays the current user's progress bar towards the next level.
+
+```
+[xpprogressbar]
+```

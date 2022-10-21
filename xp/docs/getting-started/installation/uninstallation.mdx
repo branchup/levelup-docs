@@ -1,0 +1,43 @@
+---
+sidebar_position: 9
+---
+
+# Uninstalling the plugins
+
+:::caution
+
+Uninstalling the plugins will delete all of their associated data. Please make sure that you have made the appropriate backups prior to proceeding.
+
+:::
+
+## XP+ {#xpplus}
+
+- Navigate to _Site administration > Plugins > Plugins overview_
+- Locate "Level Up XP+" (or `local_xp`) in the list of plugins
+- Click its _Uninstall_ link and follow the process
+
+If prompted to, remove all the server files located at `local/xp` to prevent the plugin from re-installing itself.
+
+## XP (free) {#xp}
+
+:::info
+
+In order to uninstall XP, you may need to uninstall other dependent plugins, such as:
+
+- [Level Up XP+](#xpplus) (`local_xp`) if you own it.
+- Level Up XP Enrolment (`enrol_xp`)
+- Level Up XP Availability (`availability_xp`)
+
+:::
+
+- Navigate to _Site administration > Plugins > Plugins overview_
+- Locate "Level Up XP" (or `block_xp`) in the list of plugins
+- Click its _Uninstall_ link and follow the process
+
+:::caution
+
+If the uninstall option is not visible, other plugins depending on _Level Up XP_ may be installed, please uninstall them first. You may also run [into this issue](/troubleshooting/block-cannot-be-deleted/index.mdx).
+
+:::
+
+If prompted to, remove all the server files located at `blocks/xp` to prevent the plugin from re-installing itself.

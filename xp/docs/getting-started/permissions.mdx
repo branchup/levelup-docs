@@ -1,0 +1,107 @@
+---
+description: A breakdown of the permissions declared by the plugin.
+sidebar_position: 4
+---
+
+# Permissions
+
+By default, the permissions grant teachers and managers the rights to add the block and configure it, and grant students the ability to earn points and view the block and their level.
+
+## block/xp:earnxp {#earnxp}
+
+:::note
+
+Given to the **Student** role by default.
+
+:::
+
+Probably one of the most powerful capability, this controls whether a user can earn points for the actions they perform in the given context. Typically, non-students should not be given this permission in order to avoid for them to earn points and appear in the leaderboard.
+
+Using this capability you may restrict entire sections of your course, or site from contributing to a user's experience points. For example, you may set this permission as _Prohibited_ for the _Student_ role for an entire category, subsequently any event occurring in a course or activity within this category will be ignored. You may do the same for a single course or even a single activity.
+
+## block/xp:view {#view}
+
+:::note
+
+Given to the **all users** role by default.
+
+:::
+
+This permission determines whether the block will be visible to a user. When prohibited, a user will not see the block, and won't be able to access any of its pages.
+
+## block/xp:manage {#manage}
+
+:::note
+
+Given to the **Teacher**, **Manager** roles by default.
+
+:::
+
+Users with this permission can manage all aspects a plugin's instance. They will be allowed to change any setting, the levels, the rules, the visuals, etc. This permission also allows to edit, import, and reset learners' points.
+
+:::note
+
+This permission was introduced in XP v3.6.1.
+
+This permission also determined whether a user could access to the logs, and the report.
+Newer versions use [block/xp:viewlogs](#viewlogs) and [block/xp:viewreport](#viewreport).
+
+:::
+
+## block/xp:viewlogs {#viewlogs}
+
+:::note
+
+Given to the **Teacher**, **Manager** roles by default.
+
+:::
+
+This permission is required for users to get access to the logs.
+
+:::note
+
+This permission was introduced in XP v3.10.0.
+
+:::
+
+## block/xp:viewreport {#viewreport}
+
+:::note
+
+Given to the **Teacher**, **Manager** roles by default.
+
+:::
+
+This permission is required for users to get access to the report.
+
+:::note
+
+This permission was introduced in XP v3.12.0.
+
+:::
+
+## block/xp:addinstance {#addinstance}
+
+:::note
+
+Given to the **Teacher**, **Manager** roles by default.
+
+:::
+
+This permission controls whether the user can add the block, and set some of its appearance settings. We strongly recommend that any user with this permission is also granted the permission [block/xp:manage](#manage).
+
+:::note
+
+This permission use to manage all aspects of the plugin's instance, such as changing the settings, viewing the reports, etc. in more recent versions those permissions are used: [block/xp:manage](#manage), [block/xp:viewlogs](#viewlogs) and [block/xp:viewreport](#viewreport).
+
+:::
+
+## block/xp:myaddinstance {#myaddinstance}
+
+:::note
+
+Given to **nobody** by default.
+
+:::
+
+Moodle requires for this permission to be defined, it controls whether a user can add the block to their dashboard. By default it is not given to anyone, instead we advise for administrators to customise the default dashboard of their users.

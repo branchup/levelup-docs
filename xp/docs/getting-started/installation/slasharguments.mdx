@@ -1,0 +1,54 @@
+---
+sidebar_position: 8
+---
+
+# Slash arguments
+
+:::info
+
+This is a technical page for server administrators and hosting providers.
+
+:::
+
+XP uses Moodle's [slash arguments](https://docs.moodle.org/en/Using_slash_arguments) to determine which view to display to the user. If the web server is not properly configured, the following error may appear: _Coding error: Controller for route not found_.
+
+See below for [Nginx](#nginx) and [IIS](#iis).
+
+## Nginx
+
+Please ensure that Nginx was set-up according to the [Moodle documentation on Nginx](https://docs.moodle.org/en/Nginx#Nginx). The plugin has been confirmed to work in this configuration.
+
+If you still do not have success with this, you might have the following rewrite rule in your site definition:
+
+```
+rewrite ^/(.*.php)(/)(.*)$ /$1?file=/$3 last;
+```
+
+The latter rule assumes that the path should be passed to the `file` argument, and thus creates a conflict with the way XP handles the routes. If Nginx is configured according to the Moodle documentation, that _rewrite_ should not be needed, and thus you may try to remove it and see if it works.
+
+Alternatively, and note that this is discouraged, you can add the follow _rewrite_ rule **before** the previous rewrite rule. Your Nginx site definition should therefore read this:
+
+```
+rewrite ^/(blocks/xp/.*.php)(/)(.*)$ /$1?_r=/$3 last;
+rewrite ^/(.*.php)(/)(.*)$ /$1?file=/$3 last;
+```
+
+If at this point you're not having any success, consider disabling the Moodle admin setting `slasharguments`.
+
+## IIS
+
+Please ensure that IIS was set-up according to the [Moodle documentation on IIS](https://docs.moodle.org/en/Internet_Information_Services).
+
+You will need to add a second rewrite rule for XP itself, please configure as follows:
+
+- Requested URL: Matches the pattern
+- Using: Regular expressions
+- Pattern: `^(blocks\/xp\/[^\?]+?\.php)(\/.+)$`
+- Action: Rewrite
+- Rewrite URL: `{R:1}?_r={R:2} `
+- Append query string: Checked
+- Stop processing of subsequent rule: Checked
+
+Make sure that this rule takes precedence over the other rule required by Moodle.
+
+If at this point you're not having any success, consider disabling the Moodle admin setting `slasharguments`.

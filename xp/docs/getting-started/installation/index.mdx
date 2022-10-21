@@ -1,0 +1,82 @@
+---
+slug: /install
+sidebar_position: 0
+title: Installing XP
+---
+
+# Installing Level Up XP
+
+:::info
+
+This document relates to the free version of XP, for the add-on XP+, please [read this page](./plus.mdx).
+
+:::
+
+:::tip
+
+Also install the [recommended plugins](./recommended-plugins.mdx) to benefit from all features!
+
+:::
+
+## Guided
+
+:::caution
+
+This method is not always available. It depends on Moodle's adminstrator and hosting provider.
+
+:::
+
+1. Login to your Moodle site and navigate to _Site administration > Plugins > Install plugins_.
+2. Click on the button reading _Install plugins from the Moodle plugins directory_. This will redirect you to moodle.org.
+3. In the search field, type `level up` and hit "Search".
+4. Click on _Level Up XP_, it should be the first result.
+5. Click the button _Install now_ and select your Moodle site.
+6. Follow the installation steps.
+
+For more information on installing plugins, please visit the [official Moodle documentation](https://docs.moodle.org/en/Installing_plugins).
+
+## Zip upload
+
+:::caution
+
+This method is not always available. It depends on Moodle's adminstrator and hosting provider.
+
+:::
+
+1. Download the zip file of the latest version of the plugin from [moodle.org](https://moodle.org/plugins/pluginversions.php?plugin=block_xp).
+2. Login to your Moodle site and navigate to _Site administration > Plugins > Install plugins_.
+3. Upload the zip file in the form, and follow the steps.
+
+For more information on installing plugins, please visit the [official Moodle documentation](https://docs.moodle.org/en/Installing_plugins).
+
+## Manual installation
+
+_Level Up XP_ is a Moodle plugin of type `block`, it needs to be extracted in the `blocks/` directory.
+
+1. Download the zip file of the latest version of the plugin from [moodle.org](https://moodle.org/plugins/pluginversions.php?plugin=block_xp).
+2. Extract the content of the zip file in the folder `blocks` of your Moodle installation.
+3. If you have extracted the content at the right place, the following file should be present: `blocks/xp/version.php`.
+4. Visit the admin notifications page to trigger the installation.
+   - Navigate to _Site administration > Notifications_.
+   - Or directly visit _your.moodle.example.com_**/admin/index.php**.
+5. Follow the Moodle installation process.
+
+For more information on installing plugins, please visit the [official Moodle documentation](https://docs.moodle.org/en/Installing_plugins).
+
+## Using git
+
+You may choose to install the plugin using git. However, please note that the `master` should not be used. The `master` branch is reserved for development, can contain unstable code, and is certainly not recommended in production.
+
+We recommend to checkout the latest tag.
+
+```
+cd blocks/xp
+git tag -l | sort -Vr | head -1
+git checkout <tag here>
+```
+
+## Additional resources
+
+- [Latest releases](https://moodle.org/plugins/pluginversions.php?plugin=block_xp)
+- [Git repository](https://github.com/FMCorz/moodle-block_xp)
+- [Moodle documentation: Installing plugins](https://docs.moodle.org/en/Installing_plugins)

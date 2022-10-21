@@ -1,0 +1,75 @@
+---
+slug: importing-points-from-csv
+title: Import points
+---
+
+# Importing points
+
+import RequiresXpPlus from '@site/src/components/RequiresXpPlus';
+
+<RequiresXpPlus />
+
+Points can be imported using a CSV file.
+
+There may be quite a few instances where importing points can be useful. You may be organising activities offline, where points are collected on a spreadsheet. You may be importing points from a previous learning program, permitting learners to resume with the points they had previously, etc.
+
+## File format
+
+The CSV must contain at the very least the columns **user** and **points**. A third column _message_ can also be present, but is not required.
+
+### The 'user' column
+
+The `user` column is required and contains the reference to the target user. The values can be one of these:
+
+- the user ID, as found in the database.
+- the user's email address.
+- the username, as used for logins.
+
+### The 'points' column
+
+The `points` column is required and contains the number of points to give the user. Although, depending on the type of import (see _Import settings_) these points can also be used as their new total. The points cannot be negative.
+
+### The 'message' column
+
+When choosing to _Increase_ the points in the _Import settings_, the option to send a notification to the users can be selected. The message found in the `message` column would be included in the notification if the latter is sent.
+
+## Import settings
+
+The import feature is found at the bottom of the _Report_ page, look for a button reading **Import points**.
+
+Aside from the obvious settings relating to the uploaded file, there are two important settings.
+
+### Points import action
+
+This setting determines the action to take with the points found in the CSV file.
+
+Setting this setting to **Increase** will take the points from the CSV and increase the points of the student by that much. If a student currently has 10 points, and the CSV `points` column contains 15, their new total would be 25. The 15 points were considered to be awarded.
+
+However, when the setting is set to **Set as total**, the points from the CSV will become the new total of the user. Even if this means that the user would _lose_ points in the process. If a student currently has 10 points, and the CSV `points` column contains 15, their new total will be 15. The 15 points were considered to be their total.
+
+### Send award notification
+
+When selected, students will receive a notification that they were awarded points. This notification will contain the number of points, your name, as well as the course name if any. If the `message` column was provided, the message would be added to the notification.
+
+> You were awarded 10 points by Laura Jorgensen. They left the following message:
+>
+> Your participation in today's workshop was phenomenal. Thank you!
+
+Note that this setting is only available when the _Points import action_ is set to _Increase_.
+
+## Sample file
+
+Here is an example of a CSV file:
+
+```
+user,points,message
+4,10,Message for user with ID 4
+username1,20,
+usermail@example.com,30,"Congratulations, you’ve done great work!"
+```
+
+You can also [download a copy here](points-import.csv).
+
+## Troubleshooting
+
+- The column names are case-sensitive, and must not contain any additional characters such as trailing spaces.

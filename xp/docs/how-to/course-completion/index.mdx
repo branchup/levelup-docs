@@ -1,0 +1,23 @@
+# Reward course completion
+
+import RequiresXpPlus from '@site/src/components/RequiresXpPlus';
+
+<RequiresXpPlus />
+
+Course completion with _Level Up XP_ allows you to reward your students for completing a course. This is particularly useful when the plugin is used For the whole site, where points are gathered for actions taken in any course. In order for _Course completion rewards_ to work, _Completion_ must be enabled in Moodle, [more help on this here](/docs/article/enable-completion-in-moodle).
+
+Navigate to the block's **rules page**.
+
+![Screenshot](nav-rules.png)
+
+We will create a new rule telling the plugin that whenever a student complete’s a course, they should receive `250` points. Click on the first **+ Add a rule** option. This will add an empty condition set on top of all the other ones, like this:
+
+![Screenshot](ruleset-any.png)
+
+After changing the points to be earned to `250`, click on **+ Add a condition** and select **Course completion**. And that’s it, now your students will be rewarded for completing their courses.
+
+![Screenshot](course-completion-rule.png)
+
+### Important note
+
+Points are not awarded instantly, they require [Moodle cron](https://docs.moodle.org/en/Cron) to run. Please keep this in mind when testing this feature.

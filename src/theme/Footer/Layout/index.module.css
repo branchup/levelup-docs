@@ -1,0 +1,19 @@
+.bottom {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.bottom > div {
+  flex: 1;
+}
+
+.licence {
+  font-size: 0.85rem;
+}
+
+.copyright {
+  text-align: right;
+}

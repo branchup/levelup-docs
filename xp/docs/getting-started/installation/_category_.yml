@@ -1,0 +1,6 @@
+label: 'Installation'
+position: 0
+# link:
+#   type: generated-index
+customProps:
+  description: 'How to install XP and XP+'

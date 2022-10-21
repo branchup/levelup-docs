@@ -1,0 +1,76 @@
+---
+slug: /upgrade
+sidebar_position: 2
+---
+
+# Upgrading to latest versions
+
+Upgrading XP and XP+ to their latest version can be done following these steps.
+
+## Upgrading XP {#xp}
+
+:::caution
+
+If you purchased XP+, please [read this note first](#note-xpplus-users).
+
+:::
+
+Generally, Moodle will notify system administrators that a new version is available for them to install. When that is the case, you may be able to upgrade the plugin directly [from the Moodle web interface](https://docs.moodle.org/en/Installing_plugins#Plugin_updating_from_within_Moodle) as an administrator.
+
+If you are unable to update directly from the Moodle interface, please upgrade manually.
+
+### Manual upgrade
+
+1. Identify and download the latest zip compatible with your Moodle version from the [plugin's page on moodle.org](https://moodle.org/plugins/pluginversions.php?plugin=block_xp).
+2. Replace the folder `blocks/xp` with the content of the zip file.
+3. When done correctly, you should find a file named `version.php` in the folder `blocks/xp`.
+   - Opening the above file should reveal the version downloaded earlier.
+4. If you also need to upgrade XP+, please **[skip to the section below](#xpplus)**.
+5. Visit the admin notifications page to trigger the installation.
+   - Navigate to _Site administration > Notifications_.
+   - Or directly visit _your.moodle.example.com_**/admin/index.php**.
+6. Follow the Moodle upgrade process.
+
+The upgrade process is quite similar to the installation process, please visit the [official Moodle documentation](https://docs.moodle.org/en/Installing_plugins) for more information.
+
+## Upgrading XP+ {#xpplus}
+
+To obtain the latest version of _Level Up XP+_, please navigate to your download link which was shared by email at the time of purchase. If you no longer have your download link, you can recover it from the [recover page](https://levelup.plus/recover). Note that latest version available to you may not be the latest version if your licence has expired.
+
+New versions of _Level Up XP+_ often **require the latest version of _Level Up XP_** to be installed, if you haven't upgraded it yet, please follow the steps in the above section to install it.
+
+### Zip upload (easy)
+
+:::caution
+
+This method is not always available. It depends on Moodle's adminstrator and hosting provider.
+
+:::
+
+1. Ensure that the latest version of _Level Up XP_ is installed, or ready to be installed.
+2. Download the zip file `local_xp.zip` from your download link.
+3. Login to your Moodle site and navigate to _Site administration > Plugins > Install plugins_.
+4. Upload the zip file in the form, and follow the steps.
+
+The upgrade process is quite similar to the installation process, please visit the [official Moodle documentation](https://docs.moodle.org/en/Installing_plugins) for more information.
+
+### Manual upgrade
+
+XP+ is a Moodle plugin of type `local`, it needs to be extracted in the `local/` directory.
+
+1. Ensure that the latest version of XP is installed, or ready to be installed.
+2. Download the zip file `local_xp.zip` from your download link.
+3. Replace the content of the Moodle folder `local/xp` with the content of the zip file.
+4. If you have extracted the content at the right place, the following file should be present: `local/xp/version.php`.
+5. Visit the admin notifications page to trigger the installation.
+   - Navigate to _Site administration > Notifications_.
+   - Or directly visit _your.moodle.example.com_ **/admin/index.php**.
+6. Follow the Moodle upgrade process.
+
+The upgrade process is quite similar to the installation process, please visit the [official Moodle documentation](https://docs.moodle.org/en/Installing_plugins) for more information.
+
+## Note for XP+ users {#note-xpplus-users}
+
+If XP+ is installed on your Moodle site, please always try and upgrade to the latest version of XP+ first. Installing a newer version of XP with an older version of XP+ can cause the plugins to go [out of sync](/troubleshooting/plugins-out-of-sync/index.mdx) which can cause unexpected bugs and issues.
+
+Upgrading XP+ first will determine which version of XP is required.

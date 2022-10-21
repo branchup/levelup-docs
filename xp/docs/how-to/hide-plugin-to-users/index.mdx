@@ -1,0 +1,83 @@
+---
+slug: forbid-use-of-level-up
+---
+
+# Hide to a group of users
+
+At times, you may want to restrict a group of users from earning points, viewing the levels or completely interacting with _Level Up XP_, for example when running a control group. This can be done using the _capabilities_ and _roles_ that Moodle offers.
+
+## Creating the role
+
+The first step is to create the role that restricts the permissions of our future users. Note that this requires administrator or site manager access.
+
+1. Navigate to _Site administration > Users > Permissions > Define roles_
+2. Click the button to _Add a new role_
+3. In the next screen leave _User role or archetype_ as "No role", and continue
+4. Set the following details for this role
+   - Short name: levelupxp_forbidden
+   - Custom full name: Forbid Level Up XP interactions
+   - Custom description: Forbids users from earning points, viewing the block, their levels, etc...
+   - Role archetype: none
+   - Context types where this role may be assigned:
+     - System
+     - Category
+     - Course
+   - Allow role assignments:
+     - Manager
+     - Course creator
+     - Teacher
+   - Allow role overrides:
+     - Manager
+   - Allow role switches:
+     - Manager
+     - Course creator
+     - Teacher
+     - Non-editing teacher
+   - Allow role to view:
+     - Manager
+     - Course creator
+     - Teacher
+     - Non-editing teacher
+5. Click the button _Show advanced_ if present
+6. In the filter field, enter _block/xp_
+7. Set the following permissions, and leave the rest unchanged:
+   - _block/xp:addinstance_: Prohibit
+   - _block/xp:myaddinstance_: Prohibit
+   - _block/xp:view_: Prohibit
+   - _block/xp:earnxp_: Prohibit
+8. Finally, click on _Create this role_
+
+## Assigning the role
+
+Now that our role has been defined, we can start assigning it to users. The users given such role will no longer earn points or be able to view the block. Note that if they had previously earned points, it is possible that they still appear in the leaderboard, you will need to reset your courses or manually reset their points.
+
+### Forbidding a single course
+
+_You must be using Level Up XP per course, not for the whole site._
+
+1. Navigate to the course of your choosing
+2. Visit the _Participants_ or _Enrolled students_ page depending on your Moodle version
+3. Assign the role _Forbid Level Up XP interactions_ to all relevant users
+4. That is all.
+
+### Forbidding a whole category
+
+_You must be using Level Up XP per course, not for the whole site._
+
+1. Navigate to the category of your choosing
+2. Visit the _Assign roles_ page
+3. Select the role _Forbid Level Up XP interactions_
+4. Assign the role to the relevant users
+5. That is all.
+
+### Forbidding everywhere
+
+1. Navigate to _Site administration > Users > Permissions > Assign system roles_
+2. Select the role _Forbid Level Up XP interactions_
+3. Assign the role to the relevant users
+4. That is all.
+
+## Additional resources
+
+- [Moodle documentation: Roles and permissions](https://docs.moodle.org/36/en/Roles_and_permissions)
+- [Moodle documentation: Assigning a role](https://docs.moodle.org/36/en/Assign_roles)
