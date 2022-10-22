@@ -141,10 +141,16 @@ const config = {
               },
             ],
           },
-          {},
+          {
+            title: 'Quest',
+            items: [{ html: 'Coming soon...' }],
+          },
           {
             title: 'Other resources',
-            items: [{ label: 'Website', href: 'https://levelup.plus' }],
+            items: [
+              { label: 'Contributing', href: 'https://github.com/branchup/levelup-docs' },
+              { label: 'Website', href: 'https://levelup.plus' },
+            ],
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Branch Up Pty Ltd`,

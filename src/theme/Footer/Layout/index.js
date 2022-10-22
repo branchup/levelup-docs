@@ -16,7 +16,7 @@ export default function FooterLayout({ style, links, logo, copyright }) {
           <div>
             <div className={styles.licence}>
               Content licenced under{' '}
-              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+              <a className="footer__link-item" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
                 Creative Commons Attribution-ShareAlike 4.0 International License
               </a>
               .
