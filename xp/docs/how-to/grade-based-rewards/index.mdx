@@ -31,7 +31,9 @@ We want our students to be rewarded for taking the self-assessment quizzes, and 
 
 Navigate to the block's **rules page**.
 
-![Screenshot](nav-rules.png)
+import XpRulesPageLocation from '@site/src/components/XpRulesPageLocation';
+
+<XpRulesPageLocation />
 
 Start by adding two **Set of conditions**, the first one is set to _ANY of the conditions are true_, and the second one is set to _NONE of the conditions are true_. Then update the **top condition** to _ALL of the conditions are true_, this tells the plugin that both sets of conditions must be true for the grade rewards to apply.
 
@@ -55,7 +57,7 @@ That's it, our students will now be rewarded for taking our self-assessment quiz
 
 :::tip
 
-The above tutorial can be restored in a Moodle course using this [backup file](backup-grades-demo.mbz).
+The above tutorial can be restored in a Moodle course using this [backup file](./backup-grades-demo.mbz).
 
 :::
 

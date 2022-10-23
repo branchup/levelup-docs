@@ -4,11 +4,13 @@ import RequiresXpPlus from '@site/src/components/RequiresXpPlus';
 
 <RequiresXpPlus />
 
-Activity completion with Level Up XP allows you to reward your students for completing their activities and resources. In order for it to work, _Completion_ must be enabled in Moodle.
+Activity completion with Level Up XP allows you to reward learners for completing their activities and resources. In order for it to work, _Completion_ must be enabled in Moodle.
 
 We need to create a new rule to set how many points a student should receive. Head to the block’s **rules page**.
 
-![Screenshot](nav-rules.png)
+import XpRulesPageLocation from '@site/src/components/XpRulesPageLocation';
+
+<XpRulesPageLocation />
 
 We need to to tell the plugin that whenever a student complete’s an activity, they should receive a fairly decent amount of points, say `100`. Click on the first **+ Add a rule** option. This will add an empty condition set on top of all the other ones, like this:
 
