@@ -12,11 +12,33 @@ function HomepageHeader() {
     <header className={clsx('hero', styles.hero)}>
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="/xp/docs">
-            XP Docs
-          </Link>
+        <p className="hero__subtitle">Welcome to the documentation site for Level Up.</p>
+        <div
+          style={{
+            maxWidth: '54rem',
+            margin: '4rem auto 0',
+          }}
+        >
+          <div className={styles.cards}>
+            <div className={styles.card}>
+              <h2>XP</h2>
+              <div className={styles.cardExpander}>
+                <p>The documentation for Level Up XP and XP+.</p>
+              </div>
+              <Link className="button button--secondary button--lg" to="/xp/docs">
+                Browse
+              </Link>
+            </div>
+            <div className={styles.card}>
+              <h2>Quest</h2>
+              <div className={styles.cardExpander}>
+                <p>The documentation for Level Up Quest.</p>
+              </div>
+              <button className="button button--secondary button--lg" aria-disabled disabled>
+                Coming soon...
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </header>
@@ -26,7 +48,7 @@ function HomepageHeader() {
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout title={`${siteConfig.title}`}>
+    <Layout title={`${siteConfig.title}`} wrapperClassName={styles.layout}>
       <HomepageHeader />
     </Layout>
   );

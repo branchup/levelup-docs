@@ -3,8 +3,13 @@
  * and scoped locally.
  */
 
+.layout {
+  display: flex;
+  flex-direction: column;
+}
+
 .hero {
-  height: 100%;
+  flex: 1;
   background-color: #f43737;
   color: white;
   padding: 4rem 0;
@@ -19,9 +24,24 @@
   }
 }
 
-.buttons {
-  gap: 1rem;
+.cards {
   display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1 0;
+  flex-direction: column;
+  display: flex;
+  text-align: center;
   align-items: center;
-  justify-content: center;
+  background: #fff;
+  color: var(--ifm-font-color-base);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+}
+
+.card-expander {
+  flex: 1;
 }
