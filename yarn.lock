@@ -1178,6 +1178,17 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
+"@branchup/docusaurus-plugin-simple-analytics@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@branchup/docusaurus-plugin-simple-analytics/-/docusaurus-plugin-simple-analytics-1.0.1.tgz#e90aa4af256feb8fdfd92ec3b3c6a649388f7a7d"
+  integrity sha512-U/NlxEwfto4iup0iX+2XEBNWFUH2bgRFrPpnlUgPB45axpwCMKcJduEzgnd1DEqLCGNFiymQlTl81rm0bHLROA==
+  dependencies:
+    "@docusaurus/core" "2.1.0"
+    "@docusaurus/types" "2.1.0"
+    "@docusaurus/utils-validation" "2.1.0"
+    tslib "^2.4.0"
+    typescript "^4.8.4"
+
 "@colors/colors@1.5.0":
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@colors/colors/-/colors-1.5.0.tgz#bb504579c1cae923e6576a4f5da43d25f97bdbd9"
@@ -7010,7 +7021,7 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-typescript@^4.7.4:
+typescript@^4.7.4, typescript@^4.8.4:
   version "4.8.4"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.8.4.tgz#c464abca159669597be5f96b8943500b238e60e6"
   integrity sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ==

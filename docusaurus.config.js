@@ -72,6 +72,7 @@ const config = {
     //     sidebarPath: require.resolve('./sidebars.js'),
     //   },
     // ],
+    ['@branchup/docusaurus-plugin-simple-analytics', {}],
   ],
 
   themeConfig:
