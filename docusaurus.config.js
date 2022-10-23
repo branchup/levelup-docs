@@ -4,10 +4,12 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+const URL = 'https://docs.levelup.plus';
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Level Up Documentation',
-  url: 'https://docs.levelup.plus',
+  url: URL,
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -35,19 +37,6 @@ const config = {
       ({
         docs: false,
         blog: false,
-        // pages: false,
-        //       docs: {
-        //         sidebarPath: require.resolve('./sidebars.js'),
-        //         // Please change this to your repo.
-        //         // Remove this to remove the "edit this page" links.
-        //         editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        //       },
-        //       blog: {
-        //         showReadingTime: true,
-        //         // Please change this to your repo.
-        //         // Remove this to remove the "edit this page" links.
-        //         editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        //       },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -118,6 +107,14 @@ const config = {
       colorMode: {
         disableSwitch: true,
       },
+      metadata: [
+        { name: 'og:type', content: 'website' },
+        { name: 'og:image', content: `${URL}/img/og.png` },
+        { name: 'og:image:secure_url', content: `${URL}/img/og.png` },
+        { name: 'twitter:image', content: `${URL}/img/og.png` },
+        { name: 'twitter:site', content: `@BranchUpTech` },
+        { name: 'twitter:creator', content: `@BranchUpTech` },
+      ],
       navbar: {
         title: '',
 
