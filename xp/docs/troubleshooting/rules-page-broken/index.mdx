@@ -1,0 +1,47 @@
+---
+description: Is the rules page not working as intended?
+---
+
+# The rules page is broken
+
+:::info
+
+This page is about the Rules page, not how the rules work.
+
+:::
+
+Are you having problems with the rules page, and experience any of the following symptoms?
+
+- Clicking the buttons does nothing
+- The footer of the page is not visible
+- The styles are not appearing correctly
+- The help icons (question mark) do nothing when clicked
+
+If you are experiencing any of the above, it means that the page could not load properly and that is likely due to an unrecoverable error. In most cases, this is caused by another plugin.
+
+The rules page looks at the events declared by other Moodle plugins in order to present them to you. However, if one of these events contains coding errors, this causes a "Fatal error".
+
+The bad news is that there are no workarounds, the bad code needs to be removed. The good news is that we'll help you identify the source of the problem.
+
+## Identify the source
+
+To find the culprit, we need to get access to the error. Please follow these steps to ensure that the full error can be displayed. Note that this requires administrator's rights. If are not administrator of the system, please ask them to take it from here.
+
+1. Navigate to "Site administration > Development > Debugging"
+2. Set the following settings to these values
+   - Debug messages `debug`: DEVELOPER
+   - Display debug messages `debugdisplay`: Yes
+
+Now that this is done, return to the rules screen, you should see be able to see an error like this at the bottom of the screen:
+
+> Fatal error: Cannot declare class mod_data\event\comment_created, because the name is already in use in /var/www/moodle/mod/example/classes/event/comment_created.php on line 36
+
+The part we are interested in is the path to the file in which the error was found. In the above example, the file is `comment_created.php` contained in a sub folder of `/mod/example/`. From this we can identify that the plugin with the error is the module _Example_.
+
+If the path to the file contains `/blocks/xp/` or `/local/xp/` please let us know as the error would need to be addressed by us.
+
+Otherwise, please get in touch with the development team of the plugin that is referenced in this error and ask them for assistance. Alternatively you can uninstall their plugin, but note that you may lose all the data collected by that plugin by doing so.
+
+## Getting help
+
+If you are unable to resolve this problem, please get in touch with us and quote the error identified above. It is important that you share the error with us as we cannot help without knowing what the error is.
