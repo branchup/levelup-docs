@@ -66,12 +66,11 @@ const config = {
       },
     ],
     [
-      '@docusaurus/plugin-content-docs',
+      '@docusaurus/plugin-content-pages',
       {
         id: 'xp-release-notes',
         path: 'xp/release-notes',
         routeBasePath: 'xp/release-notes',
-        sidebarPath: require.resolve('./sidebars.js'),
         // ... other options
       },
     ],
@@ -100,9 +99,7 @@ const config = {
               label: 'Docs',
             },
             {
-              type: 'doc',
-              docsPluginId: 'xp-release-notes',
-              docId: 'index',
+              to: '/xp/release-notes',
               position: 'left',
               label: 'Releases',
             },
@@ -138,6 +135,10 @@ const config = {
               {
                 label: 'Documentation',
                 to: '/xp/docs/',
+              },
+              {
+                label: 'Release notes',
+                to: '/xp/release-notes/',
               },
             ],
           },
