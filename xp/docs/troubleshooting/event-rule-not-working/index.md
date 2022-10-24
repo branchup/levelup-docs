@@ -1,3 +1,7 @@
+---
+sidebar_position: 0
+---
+
 # My rule is not working
 
 Let's walk through the different reasons why a rule may not be working as expected.
