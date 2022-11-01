@@ -1,15 +1,14 @@
-import React from 'react';
+import { useLocation } from '@docusaurus/router';
 import { useThemeConfig } from '@docusaurus/theme-common';
 import { splitNavbarItems, useNavbarMobileSidebar } from '@docusaurus/theme-common/internal';
-import NavbarItem from '@theme/NavbarItem';
 import NavbarColorModeToggle from '@theme/Navbar/ColorModeToggle';
-import SearchBar from '@theme/SearchBar';
-import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
 import NavbarLogo from '@theme/Navbar/Logo';
+import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
 import NavbarSearch from '@theme/Navbar/Search';
+import NavbarItem from '@theme/NavbarItem';
+import SearchBar from '@theme/SearchBar';
+import React from 'react';
 import styles from './styles.module.css';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { useLocation } from '@docusaurus/router';
 
 function useNavbarItems() {
   // TODO temporary casting until ThemeConfig type is improved
@@ -38,7 +37,6 @@ function NavbarContentLayout({ left, right }) {
   );
 }
 export default function NavbarContent() {
-  useDocusaurusContext;
   const mobileSidebar = useNavbarMobileSidebar();
   const items = useNavbarItems();
   const [leftItems, rightItems] = splitNavbarItems(items);
