@@ -1,9 +1,3 @@
 # Level Up Documentation
 
-### Contributing
-
-```
-$ yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+The repository containing the documentation of Level Up products published on [docs.levelup.plus].
