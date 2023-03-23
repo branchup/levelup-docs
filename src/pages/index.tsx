@@ -34,9 +34,9 @@ function HomepageHeader() {
               <div className={styles.cardExpander}>
                 <p>The documentation for Level Up Quest.</p>
               </div>
-              <button className="button button--secondary button--lg" aria-disabled disabled>
-                Coming soon...
-              </button>
+              <Link className="button button--secondary button--lg" to="/quest/docs">
+                Browse
+              </Link>
             </div>
           </div>
         </div>

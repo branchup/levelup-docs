@@ -51,7 +51,6 @@ const config = {
         path: 'xp/docs',
         routeBasePath: 'xp/docs',
         sidebarPath: require.resolve('./sidebars.js'),
-        // ... other options
       },
     ],
     [
@@ -60,18 +59,25 @@ const config = {
         id: 'xp-release-notes',
         path: 'xp/release-notes',
         routeBasePath: 'xp/release-notes',
-        // ... other options
       },
     ],
-    // [
-    //   '@docusaurus/plugin-content-docs',
-    //   {
-    //     id: 'quest',
-    //     path: 'quest',
-    //     routeBasePath: 'quest',
-    //     sidebarPath: require.resolve('./sidebars.js'),
-    //   },
-    // ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'quest',
+        path: 'quest/docs',
+        routeBasePath: 'quest/docs',
+        sidebarPath: require.resolve('./sidebars.js'),
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-pages',
+      {
+        id: 'quest-release-notes',
+        path: 'quest/release-notes',
+        routeBasePath: 'quest/release-notes',
+      },
+    ],
     ['@branchup/docusaurus-plugin-simple-analytics', { domain: 'sa.branchup.tech' }],
   ],
 
@@ -95,12 +101,18 @@ const config = {
             },
           ],
           quest: [
+            { type: 'html', position: 'left', value: '<strong>Quest</strong>' },
             {
               type: 'doc',
               docsPluginId: 'quest',
-              docId: 'test',
+              docId: 'index',
               position: 'left',
-              label: 'Quest',
+              label: 'Docs',
+            },
+            {
+              to: '/quest/release-notes',
+              position: 'left',
+              label: 'Releases',
             },
           ],
         },
@@ -142,7 +154,16 @@ const config = {
           },
           {
             title: 'Quest',
-            items: [{ html: 'Coming soon...' }],
+            items: [
+              {
+                label: 'Documentation',
+                to: '/quest/docs/',
+              },
+              {
+                label: 'Release notes',
+                to: '/quest/release-notes/',
+              },
+            ],
           },
           {
             title: 'Other resources',
