@@ -1,0 +1,68 @@
+---
+description: A breakdown of the permissions declared by the plugin.
+sidebar_position: 6
+---
+
+# Permissions
+
+By default, the permissions grant teachers and managers the rights to add the block and configure it, and grant everyone the ability view and interact with their assigned quests, achievements and challenges.
+
+## block/gearup:view {#view}
+
+:::note
+
+Given to the **Authenticated user** role by default.
+
+:::
+
+This permission determines whether the block will be visible to a user. When prohibited, a user will not see the block, and won't be able to access any of its pages.
+
+## block/gearup:manage {#manage}
+
+:::note
+
+Given to the **Teacher**, **Manager** roles by default.
+
+:::
+
+Users with this permission can manage everything in the given context. They can create and assign quests, achievements, etc.
+
+## block/gearup:addinstance {#addinstance}
+
+:::note
+
+Given to the **Teacher**, **Manager** roles by default.
+
+:::
+
+This permission controls whether the user can add the block, and set some of its appearance settings. We strongly recommend that any user with this permission is also granted the permission [block/gearup:manage](#manage).
+
+## block/gearup:sendemail {#sendemail}
+
+:::note
+
+Given to the **Manager** roles by default.
+
+:::
+
+Users with this permission will have the ability to automate sending emails to participants, such as when they complete their objectives.
+
+## block/gearup:managelicence {#managelicence}
+
+:::note
+
+Given to **nobody** by default.
+
+:::
+
+This permission determines whether a user can access the pages to manage the licence of the plugin. In most cases, the Moodle administrator will manage the licence, this is why it isn't given to anybody by default.
+
+## block/gearup:myaddinstance {#myaddinstance}
+
+:::note
+
+Given to **nobody** by default.
+
+:::
+
+Moodle requires for this permission to be defined, it controls whether a user can add the block to their dashboard. By default it is not given to anyone, instead we advise for administrators to customise the default dashboard of their users.
