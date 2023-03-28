@@ -1,0 +1,82 @@
+---
+sidebar_position: 2
+title: Quests
+---
+
+import Screenshot from '@site/src/components/Screenshot';
+
+# Quests
+
+Quests are short stories narrated by a character, inviting the learner to complete one or more objectives. Optional rewards can be given to the learner when they complete their quest.
+
+Quests are a great way to guide learners by defining clear and incremental objectives. Their storylines will take learners on a journey through the learning material. Quests also empower learners by giving them ownership of their tasks as some quests can be optional.
+
+<Screenshot img={require('./quest-intro.png')}>Example of a quest given a learner.</Screenshot>
+
+By default, learners are not forced to complete their quests, it is up to the instructor to decide the roles that quests will take. Quests can be used as support material, as motivator, as a guide, or as prerequisite. This freedom gives the opportunity to instructors to use quests in various ways to obtain best results with their audience.
+
+## Storyline
+
+Quests are amazing at creating stories and narratives surrounding the objectives and rewards given to the learner. The narrator will _speak_ different lines depending on the state of the quest. There is the introduction, the instructions and the closing line.
+
+When a quest is optional, the introduction will be the first part of the storyline that the learner will see. When the quest is ongoing, whether because it is compulsory or has been accepted, the narrator will share the _instructions_ of the quest with the learner. And finally, when the learner has completed their objectives, the closing line of the story will be shared.
+
+Instructors can use the storylines as they please, Level Up Quest only enforces when they are displayed to the recruit.
+
+## Types of quests
+
+There are three types of quests: **compulsory**, **optional** and **discoverable**. These types define how recruits will first interact with the quests that are assigned to them. Remember that a learner assigned to a quest is called a _recruit_. The type of quest is defined by the setting _Recruitment behaviour_.
+
+### Compulsory quests
+
+Compulsory quests are the more common ones. They are not compulsory because they must be completed, but rather because recruits are not given the choice to accept or decline the quest. When a learner is recruited for the compulsory quest, the quest instantly becomes one of their active ones, and it will be displayed alongside other ongoing quests in the Level Up Quest block.
+
+This type of quest should be used when we do not want to offer the learner a choice to accept the mission or not.
+
+<Screenshot img={require('./quest-ongoing-pulse.png')}>
+  An ongoing quest with the objective to complete a <em>self assessment</em>.
+</Screenshot>
+
+### Optional quests
+
+Optional quests are, as you would expect, optional. They are offered to a recruit through the Level Up Quest block, leaving it up to them to accept the quest. When they accept the quest, it will be added to their ongoing quests. When they decline the quest, it will remain available for them to accept it later.
+
+Optional quests are a great way to give ownership of the tasks to the learner as they have accepted the quest on their own terms. Although there are a few ways we can incentivise, or even force, learners to take on optional quests. For instance, we can offer them a reward for completing it, we can make the completion of the quest a prerequisite to unlocking an achievement, or completing a challenge, or we can even lock access to some content until the optional quest is completed.
+
+<Screenshot img={require('./quest-optional-block.png')}>An optional quest available from the Level Up Quest block.</Screenshot>
+
+<Screenshot img={require('./quest-optional-dialogue.png')}>Example of a dialogue of an optional quest.</Screenshot>
+
+### Discoverable quests
+
+These quests are optional but instead of being available via the Level Up Quest block, they must be encountered by a recruit for them to have the choice to accept them. This gives the opportunity for an instructor to _hide_ pretty much anywhere, simulating the recruit encountering a character in a particular location of a video game.
+
+Discoverable quests enable instructors to be creative with their storylines and to surprise learners by letting them encounter characters in various places throughout their learning program.
+
+<Screenshot img={require('./quest-discover.png')}>Example of a discoverable quest when encountered by a recruit.</Screenshot>
+
+## Objectives
+
+The objectives of a quest are shown to the learner once the quest has started (compulsory quests start automatically). Objectives are either unique, or need to meet a certain threshold. This applies to all objectives, even in challenges and achievements.
+
+We can, for example, require the learner to complete a certain activity, this would count as a unique objective. Alternatively, we could require them to complete any 3 activities, in which case each activity they complete will increment a counter by 1, and when the counter attains 3, the objective will be completed.
+
+There are many objective types avaialble with Level Up Quest, ranging from completing activties, to monitoring social interactions, or tracking access to the platform.
+
+## Outcomes
+
+What happens when a quest is completed? In other words, what is the _outcome_ of its completion?
+
+Outcomes are the rewards and side effects that take place when a recruit completed their objectives and finishes a quest. There are many types of outcomes included with Level Up Quest, ranging anywhere from awarding points to enrolling the learner in a course, or even sending them emails.
+
+Outcomes can also be handled outside of the plugin, either with automated 3rd party systems, or manually by the instructor. Moreover, the instructors decide how everything is presented to the learner, so they can keep the mystery going!
+
+<Screenshot img={require('./quest-rewards.png')}>
+  Example of a generic closing story line and the rewards offered to the recruit.
+</Screenshot>
+
+## Linking quests
+
+Each quest should be relatively small, so that it is not overwhelming, but also to be part of a longer story. So, the best way to create a sequence of quests is to link them. To link a quest, we can use the outcome of a previous quest to recruit the learner for another quest.
+
+Using outcomes, when the quest is finished we can set the recruit to be assigned to another quest. That next quest will become accessible by the learner, continuing the story.

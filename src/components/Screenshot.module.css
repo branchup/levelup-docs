@@ -1,0 +1,20 @@
+.figure {
+  border: 1px solid #efefef;
+  padding: 1rem;
+  box-shadow: #efefef 2px 2px 4px;
+  display: inline-block;
+  margin: 0 2rem;
+}
+
+.figcaption {
+  border-top: 1px solid #efefef;
+  padding-top: 1rem;
+  margin: 0;
+  font-size: 0.875rem;
+  text-align: left;
+}
+
+.figure + .figure,
+.figure + p {
+  margin-top: var(--ifm-paragraph-margin-bottom);
+}
