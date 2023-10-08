@@ -17,7 +17,7 @@ These default rules are simple but educators can do a lot more. They can create 
 
 ### Actions that are ignored
 
-Only the users with the capability _block/xp:earnxp_ can earn points. By default, this capability is given to the student role. Also, actions triggered by guests, non-logged in users or administrators are ignored.
+Only the users with the [capability](./permissions) _block/xp:earnxp_ can earn points. By default, this capability is given to the student role. Also, actions triggered by guests, non-logged in users or administrators are ignored.
 
 The following events are always ignored:
 
@@ -28,6 +28,12 @@ The following events are always ignored:
 The default rules of XP ignore some events that are redundant, and would cause points to be awarded twice for the same action.
 
 Repeated actions within a short time interval are also ignored to prevent cheating when the cheat guard is enabled.
+
+:::note
+
+Since XP 3.15, administrators can be allowed to earn points by enabling the `adminscanearnxp` admin setting.
+
+:::
 
 ### See also
 
