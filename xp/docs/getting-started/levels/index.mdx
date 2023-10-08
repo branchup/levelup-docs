@@ -1,0 +1,62 @@
+---
+slug: /levels
+title: Customising the levels
+description: Setting up the levels
+sidebar_position: 1.5
+---
+
+import Screenshot from '@site/src/components/Screenshot';
+import RequiresXpPlus from '@site/src/components/RequiresXpPlus';
+
+# Customising the levels
+
+:::info
+
+This page describes the how to customise the levels from XP 3.15.
+
+:::
+
+By default, XP sets up 10 levels of snowballing difficulty. The defaults are a good start, but you will likely want to customise the levels and their required points according to how learners can earn points.
+
+## Level breakdown
+
+Here is what each individual will look like. Two fields allow you to manually customise the points of this level. Expanding the fold, will reveal settings to personalise the level even further.
+
+<Screenshot img={require('./level.png')}>An example of the level 2.</Screenshot>
+
+- **Start** represents the total number of points required to attain the level.
+- **Length** represents the additional number of points to earn to reach the next level.
+
+In the above example, level 2 will be reached at 100 points, and level 3 at 250 points, or 150 more than level 2.
+
+## Quick edit points
+
+While you can manually enter the points of each level manually, we recommend that you use the "Quick edit points" widget to automatically calculate and assign points to all levels.
+
+<Screenshot img={require('./quick-edit.png')}>Preview of the quick edit widget.</Screenshot>
+
+There are three calculation methods that you can pick from. We recommend the "Snowballing" method as it creates an environment where early levels are not too hard, but become increasingly difficult as a learner progresses. Let's go over each of the methods.
+
+### Equal
+
+This is the simplest method. Each level requires the exact same number of points to be reached. This makes it very predictable for both the learners and the educators. We would recommend against using this method unless the number of levels is rather low, and motivation will come from earning the points more than from levelling up. This method can take away the percieved achievement of reaching a level as each level is identical.
+
+### Increasing
+
+This method increases the difficulty between each level, in a linear fashion. In simple terms, reaching the next level requires the same amount as the current one, plus a little bit more. It may be easier for an instructor to use this method, as the points are predictable.
+
+### Snowballing
+
+This method also increases the difficulty between each level, starting with modest increases gradually becoming greater and greater. The points of a level are increased by a percentage of the previous one. This method allows for learners to quickly progress through the levels to begin with, and then slow down requiring a harder effort. This method may not be the most appropriate for a larger number of levels as the points may increase too much.
+
+## Awarding badges
+
+<RequiresXpPlus />
+
+You may elect to award a Moodle badge to a learn when they attain a level. To select a badge, expand the level and select the badge from the dropdown. Not every badge can be selected, see below for more.
+
+### Creating compatible badges
+
+Badges that can be awarded from XP must be created with a few requirements in mind. The criteria "Manually issued by role" must enabled, and it must not be combined with other criteria. After setting up the criteria, access to the badge must be enabled.
+
+If the badge has been set correctly, and you have the permission to award the badge, it will be available in the level settings.
