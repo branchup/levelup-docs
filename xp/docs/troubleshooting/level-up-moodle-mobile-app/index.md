@@ -6,7 +6,7 @@ Before anything else, note that _Level Up XP+_ is required to use _Level Up XP_ 
 
 If you have installed _Level Up XP+_, no further steps are required for it to be accessible using the official Moodle Mobile app. It also works with custom versions of the Moodle app, provided they are recent.
 
-Accessing _Level Up XP_ from the app will be different depending on how it is set-up on the Moodle site. If it was set to be used __For the whole site__, it will be appear in the main menu:
+Accessing _Level Up XP_ from the app will be different depending on how it is set-up on the Moodle site. If it was set to be used __Sitewide__, it will be appear in the main menu:
 
 ![Screenshot](mobile-system.png)
 ![Screenshot](level-up-whole-site.png)
