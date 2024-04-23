@@ -38,7 +38,7 @@ Once the information has been provided, continue by saving the page.
 
 Once a drop has been created, you need to copy its snippet and place it in some content.
 
-To get the code snippet of the drop, click on its name from the _Settings > Points > Drops_ page. This will open a popup showing a snippet looking something like `[xpdrop abc123]`. Copy the snippet to your clipboard.
+To get the code snippet of the drop, click on its name from the _Settings > Points > Drops_ page. This will open a popup showing a snippet looking something like `[xpdrop secret=abc123 id=123]`. Copy the snippet to your clipboard.
 
 ![Example of code snippet](snippet.png)
 
@@ -58,9 +58,21 @@ Note that the code snippet **must not** be shared with learners.
 
 Did you know that you can wrap the snippet within the shortcode `[xpiflevel]` to conditionally award the drop points? The example code below will only trigger the drop if the learner's level is below 5. [Read more](../use-shortcodes/index.mdx#xpiflevel)
 
-    [xpiflevel <5][xpdrop abc123][/xpiflevel]
+    [xpiflevel <5][xpdrop secret=abc123 id=123][/xpiflevel]
 
 :::
+
+## Backup and restore
+
+:::note
+
+This section is only relevant to drops and backups created on **versions prior to XP+ 1.16.**
+
+:::
+
+Before XP+ 1.16, drops could not be backed up and restored on the same site. In short, this was due to the lack of unique identifier in the drop snippet. Since XP+ 1.6, the drop shortcode includes both the drop secret, and the drop ID. This allows for backups to be restored on the same site.
+
+Note that all shortcodes should be updated to the new shortcode including both secret and ID for their restoration to work.
 
 ## Troubleshooting
 
