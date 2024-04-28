@@ -7,7 +7,6 @@ import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
 import NavbarSearch from '@theme/Navbar/Search';
 import NavbarItem from '@theme/NavbarItem';
 import SearchBar from '@theme/SearchBar';
-import React from 'react';
 import styles from './styles.module.css';
 
 function useNavbarItems() {

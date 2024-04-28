@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './Screenshot.module.css';
 
 type Props = { img: { default: string } | string; children: React.ReactNode };

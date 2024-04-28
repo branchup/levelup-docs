@@ -1,5 +1,4 @@
 import Link from '@docusaurus/Link';
-import React from 'react';
 import styles from './RequiresXpPlus.module.css';
 
 export default function () {

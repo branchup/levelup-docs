@@ -48,7 +48,7 @@ As you navigate back to the course page, the drop will display to you as "Drop: 
 
 That's it!
 
-:::caution
+:::warning
 
 Note that the code snippet **must not** be shared with learners.
 
@@ -58,7 +58,9 @@ Note that the code snippet **must not** be shared with learners.
 
 Did you know that you can wrap the snippet within the shortcode `[xpiflevel]` to conditionally award the drop points? The example code below will only trigger the drop if the learner's level is below 5. [Read more](../use-shortcodes/index.mdx#xpiflevel)
 
-    [xpiflevel <5][xpdrop secret=abc123 id=123][/xpiflevel]
+```
+[xpiflevel <5][xpdrop secret=abc123 id=123][/xpiflevel]
+```
 
 :::
 
