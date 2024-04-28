@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklevelupdocs=self.webpackChunklevelupdocs||[]).push([[1593],{4544:(e,s,u)=>{u.r(s),u.d(s,{default:()=>p});var c=u(6347),l=u(4848);function p(){return(0,l.jsx)(c.rd,{to:"/xp/docs",push:!1})}}}]);

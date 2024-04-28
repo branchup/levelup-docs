@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklevelupdocs=self.webpackChunklevelupdocs||[]).push([[5710],{2438:t=>{t.exports=JSON.parse('{"title":"Getting started","slug":"/category/getting-started","permalink":"/xp/docs/category/getting-started","navigation":{"previous":{"title":"Introduction","permalink":"/xp/docs/"},"next":{"title":"Installing XP","permalink":"/xp/docs/install"}}}')}}]);
