@@ -3,3 +3,6 @@
   /* padding-left: 1rem; */
   font-size: '.875rem';
 }
+.content img {
+  display: block;
+}

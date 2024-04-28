@@ -1,0 +1,87 @@
+---
+sidebar_position: 2
+description: Award points for activity, section and course completion.
+slug: /completion-rules
+---
+
+# Completion rules
+
+import RequiresXpPlus from '@site/src/components/RequiresXpPlus';
+import Screenshot from '@site/src/components/Screenshot';
+
+<RequiresXpPlus />
+
+The completion rules can be used to award points based on the completion of activities, sections and courses.
+
+The criteria for [completing activities](https://docs.moodle.org/en/Using_Activity_completion) and [completing courses](https://docs.moodle.org/en/Using_Course_completion) are defined within Moodle. Giving points for completing those follows the natural progression of the learner within their learning material.
+
+The "Completion rules" can be found the "Points" tab.
+
+<Screenshot img={require('./act-example.png')}>Example of a few conditions awarding different amount of points for different activities.</Screenshot>
+
+
+## Getting started
+
+Before exploring each of the activity, section and course completion methods, there are a few concepts to know about.
+
+The number of points to be awarded is assigned to a condition. For instance, we can give 10 points to "any activity". "Any activity" is a type of condition. Multiple conditions can be added, and some conditions can also be added multiple times.
+
+The conditions are evaluated in the order in which they appear on the screen, from top to bottom. The first condition that has had its criteria fulfilled will give its corresponding points. You do not have to worry about ordering the conditions, we do that for you. Our algorithm orders the conditions by type and points.
+
+To prevent an activity, section or course from giving any points, you can create new condition targeting it and assign it 0 points. Then, make sure that this new condition ranks above the other potentially conflicting ones.
+
+XP will never award points more than once for the completion of the same item. That is to circumvent potential abuses when Moodle would allow the completion to occur multiple times, such as with manual completion. This fact is important when testing the rules as the very first reward will prevent any subsequent one. Between tests, we recommend [resetting points](../reset-learners-points/index.mdx), or using different learner accounts.
+
+## Activity completion
+
+Definining the number of points to award is done by choosing a condition and attributing it a certain amount of points.
+
+### Out first condition
+
+The easiest way to get started is to add the condition "Any activity". After clicking "Add" and selecting "Any activity", you should be asked to set the number of points to award. Enter 10 points and press "Save".
+
+The resulting screen should look something like this:
+
+<Screenshot img={require('./act-any-activity.png')}>Any activity completed gives 10 points.</Screenshot>
+
+That's it, our first condition is set. With the above, any activity completed will give 10 points. That's a good starting point, but you will likely want to use other condition types to create some variety in the point rewards.
+
+### Condition types
+
+There are several condition types available to decide how many points to award for each activity. Some condition types can be used multiple times, so cannot. At the time of writing, three types were available:
+
+#### Specific activity
+
+This condition allows to select a specific activity and assign the number of points to be awarded when it is completed. You will find this useful to give more value to a particular activity such as an important quiz, or the opposite, you may want to set a particular activity to 0, so that it will not award any points.
+
+#### Activity name
+
+This condition type allow to target activities based on their name. This is useful when many activities following a naming convention are present in the course. For instance, if you had a year-long course with 52 weeks, and in each week you were running a "Weekly survey", adding a condition by activity name equal to "Weekly survey" would match all 52 surveys at once.
+
+#### Any activity
+
+This acts as the catch-all condition. Any activity that has not been matched by another condition will fall into this category.
+
+## Section completion
+
+The completion of a section is a concept introduced in XP, it refers to the completion of all activities contained within an individual section. A section is considered completed when the last of its activities is completed.
+
+Definining the number of points to award is done by choosing a condition and attributing it a certain amount of points.
+
+### Condition types
+
+#### Specific section
+
+This condition allows to select a specific section and assign the number of points to be awarded when it is completed.
+
+#### Any section
+
+This acts as the catch-all condition. Any section that has not been matched by another condition will fall into this category.
+
+## Course completion
+
+The completion of a course follows the same principles as activity and section completion, except that the number of condition types available is limited to "This course", and "Any course" when used sitewide.
+
+Note that the completion of a course is calculated by Moodle at regular intervals and may not be triggered immediately. In technical terns, they require [cron](https://docs.moodle.org/en/Cron) to run. Please keep this in mind when testing course completion.
+
+

@@ -90,6 +90,14 @@ const config: Config = {
         routeBasePath: 'quest/release-notes',
       },
     ],
+    [
+      '@docusaurus/plugin-content-pages',
+      {
+        id: 'rogue-pages',
+        path: 'xp/rogue',
+        routeBasePath: 'xp',
+      },
+    ],
   ],
 
   themeConfig: {

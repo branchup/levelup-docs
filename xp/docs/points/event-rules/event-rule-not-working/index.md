@@ -1,5 +1,7 @@
 ---
-sidebar_position: 0
+sidebar_position: 10
+sidebar_label: "My rule is not working"
+slug: /troubleshooting/event-rule-not-working
 ---
 
 # My rule is not working
@@ -16,7 +18,13 @@ Before checking whether your rule specifically isn't working, let's recap' what 
 - The events with an _educational level_ not equal to _Participating_
 - The actions performed by users that do not have the permission `block/xp:earnxp` (given to students by default)
 
-Since Moodle 2.8, a report lists all the events, it is accessible from your Moodle site at _Site administration > Reports > Events list_. You can use it to check the educational level of an event amongst other things.
+R report lists all the events, it is accessible from your Moodle site at _Site administration > Reports > Events list_. You can use it to check the educational level of an event amongst other things.
+
+:::info
+
+Since XP 3.15, administrators can be allowed to earn points by enabling the `adminscanearnxp` admin setting.
+
+:::
 
 ## Disable the cheat guard
 
