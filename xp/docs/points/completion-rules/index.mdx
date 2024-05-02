@@ -15,28 +15,58 @@ The completion rules can be used to award points based on the completion of acti
 
 The criteria for [completing activities](https://docs.moodle.org/en/Using_Activity_completion) and [completing courses](https://docs.moodle.org/en/Using_Course_completion) are defined within Moodle. Giving points for completing those follows the natural progression of the learner within their learning material.
 
-The "Completion rules" can be found the "Points" tab.
+The "Completion rules" can be found under the "Points" tab.
 
 <Screenshot img={require('./act-example.png')}>Example of a few conditions awarding different amount of points for different activities.</Screenshot>
 
 
-## Getting started
+## Read me first
 
-Before exploring each of the activity, section and course completion methods, there are a few concepts to know about.
+:::info[TL;DR]
+
+- Points are given by creating conditions
+- Conditions are processed from top to bottom
+- The first condition that has its condition met will give its points
+- Use 0 points to prevent something from giving points
+- Points will never be given twice for the same thing
+
+:::
+
+Before exploring each of the activity, section and course completion methods, there are a few things to familiarise yourself with.
 
 The number of points to be awarded is assigned to a condition. For instance, we can give 10 points to "any activity". "Any activity" is a type of condition. Multiple conditions can be added, and some conditions can also be added multiple times.
 
 The conditions are evaluated in the order in which they appear on the screen, from top to bottom. The first condition that has had its criteria fulfilled will give its corresponding points. You do not have to worry about ordering the conditions, we do that for you. Our algorithm orders the conditions by type and points.
 
-To prevent an activity, section or course from giving any points, you can create new condition targeting it and assign it 0 points. Then, make sure that this new condition ranks above the other potentially conflicting ones.
+To prevent an activity, section or course from giving any points, you can create a condition targeting it and assign it 0 points. Then, make sure that this new condition ranks above the other potentially conflicting ones.
 
 XP will never award points more than once for the completion of the same item. That is to circumvent potential abuses when Moodle would allow the completion to occur multiple times, such as with manual completion. This fact is important when testing the rules as the very first reward will prevent any subsequent one. Between tests, we recommend [resetting points](../reset-learners-points/index.mdx), or using different learner accounts.
+
+### Scope in sitewide mode
+
+:::info[TL;DR]
+
+- Switching scope is available when in sitewide mode
+- The scope of a condition defines where it applies
+- Conditions in the scope of a course take precedence over sitewide ones
+- Some options require to switch to a specific scope
+
+:::
+
+When XP is used sitewide, an option to change "scope" will appear. The scope defines where the rules will apply. There are two scopes available: Sitewide, and a specific course. To create conditions that will only apply in a specific course, you must change the scope to that course. Changing the scope can be done by using one of the buttons displayed next to the current scope.
+
+<Screenshot img={require('./scope-sitewide.png')}>What is displayed when the current scope is sitewide.</Screenshot>
+<Screenshot img={require('./scope-course.png')}>Example of being in the scope of a course named "XP Demo".</Screenshot>
+
+When an item is completed, XP will first check if there are conditions defined in the scope of the course where it occurred. If any condition in the course matches, it will stop and give the points defined in the course scope. If conditions do not exist, or none match, XP will evaluate the sitewide conditions. This method allows educators to create broad conditions while allowing them to be more specific within specific courses.
+
+Note that some conditions are only available in their scope. For instance, to target a specific activity in a course, you must first switch to the course's scope.
 
 ## Activity completion
 
 Definining the number of points to award is done by choosing a condition and attributing it a certain amount of points.
 
-### Out first condition
+### Our first condition
 
 The easiest way to get started is to add the condition "Any activity". After clicking "Add" and selecting "Any activity", you should be asked to set the number of points to award. Enter 10 points and press "Save".
 
