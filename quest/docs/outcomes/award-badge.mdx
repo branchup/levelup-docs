@@ -1,0 +1,23 @@
+---
+---
+
+# Award badge
+
+Badges can be awarded when a quest is completed.
+
+### Requirements
+
+- Moodle badges must be enabled by an admin via the setting `enablebadges`.
+- The permissions `moodle/badges:viewbadges` and `moodle/badges:awardbadge` must be granted to the instructor.
+- The recruit must have the permission `moodle/badges:earnbadge` to receive the badge.
+- Badges must be set up to be [compatible](#badges-setup), see below.
+
+## Creating compatible badges {#badges-setup}
+
+Due to technical limitations in Moodle, badges must be set up a certain way to be awarded.
+
+Badges must include the criterion "Manually issued by role", and access to the badge must be enabled.
+
+We recommend adding the "Manually issued by role" criterion and none other. When there are more than one criteria present, only the "Manually issued by role" will be marked as met, and as such the badge may not be issued as expected if other requirements are not yet met by the recruit.
+
+When the badge has been set correctly, and you have the permission to award the badge, it will be available for selection.
