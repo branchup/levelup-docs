@@ -1,0 +1,89 @@
+---
+title: Web Services API
+description: Award points from an external service via the Moodle Web Services API.
+sidebar_position: 100
+slug: /webservices-api/award-points
+---
+
+# Award points via the Web Services API
+
+import RequiresXpPlus from '../../../src/components/RequiresXpPlus';
+
+<RequiresXpPlus />
+
+The Web Services API of Moodle can be used to award points to students. This can be useful to automate the attribution of points for actions taken in another system.
+
+## Pre-requisites
+
+- An XP+ plan including API support
+- Moodle Web Services [configured and enabled](https://docs.moodle.org/en/Using_web_services) for the function `local_xp_award_points`
+- A Web Service token to authenticate with the API
+
+## Constructing the request
+
+:::info
+
+This guide assumes that the default `rest` Web Service plugin is used. If you are using another Web Service plugin than the standard one, please refer to their documentation.
+
+:::
+
+The Web Service function to award points is `local_xp_award_points`, and it requires the following arguments:
+
+- `userid` (int): The user ID of the Moodle user to whom points should be given
+- `points` (int): The number of points to give to the user
+- `courseid` (int): The ID of the course in which the points are given, when XP is used sitewide, use `1`.
+
+The default `rest` Web Service plugin requires:
+
+- All requests to be `POST`.
+- All requests to be sent to `https://moodle.example.com/webservice/rest/server.php`.
+- All requests to be `form` encoded, not the typical JSON.
+- A body (or query) parameter `wstoken` to declare the contain the authentication token.
+- A body (or query) parameter `wsfunction` to reference the Web Service function to call.
+- A body (or query) parameter `moodlewsrestformat` with value `json` to get a JSON response.
+
+### Sample query
+
+Here is a sample query awarding **10** points to the user with ID **20**, in the course **30**. Replace **WSTOKEN** with your Webservice Token`.
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="httpie" label="HTTPie" default>
+
+```sh
+http -f POST https://moodle.example.com/webservice/rest/server.php wstoken=WSTOKEN wsfunction=local_xp_award_points moodlewsrestformat=json userid=10 points=20 courseid=30
+```
+
+    Get [HTTPie CLI](https://httpie.io/cli)
+  </TabItem>
+  <TabItem value="curl" label="curl">
+```sh
+curl -X POST https://moodle.example.com/webservice/rest/server.php -d "wstoken=WSTOKEN" -d "wsfunction=local_xp_award_points" -d "moodlewsrestformat=json" -d "points=10" -d "userid=20" -d "courseid=30"
+```
+  </TabItem>
+  <TabItem value="plain" label="Plain text">
+    ```
+POST /webservice/rest/server.php HTTP/1.1
+...
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+
+wstoken=WSTOKEN&wsfunction=local_xp_award_points&moodlewsrestformat=json&courseid=30&userid=20&points=10
+    ```
+  </TabItem>
+</Tabs>
+
+#### Response
+
+After a successful request, the response will include an object with the updated total number of points of the user, for instance **1200** below:
+
+```json
+{"xp": 1200}
+```
+
+## Notes
+
+- The permissions are checked in the system context when used sitewide, else in the course context.
+- The user calling the API must have the permissions `block/xp:manage`.
+- The user to receive points must have the permission `block/xp:earnxp`.
