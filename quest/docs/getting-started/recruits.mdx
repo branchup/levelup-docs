@@ -1,0 +1,36 @@
+---
+sidebar_position: 4
+title: Recruits
+---
+
+"Recruits" refers to users who have been assigned a mission.
+
+Users will not know anything about a mission until they become a recruit. For instance, a quest that is discoverable cannot be seen or interacted with by users who have not been made a recruit.
+
+Delaying the recruitment of a mission is an important feature as it allows for progressive engagement of the learner without the risk of overwhelming them.
+
+## How to recruit users?
+
+Beyond the obvious option to recruit users manually, there are two main ways to recruit users for a mission.
+
+### Recruitment automations
+
+Recruitment automations automatically assign the mission to the users matching the automation settings. There are several types of automations that can be used for a variety of use cases. Typically, achievements and challenges will use automations as they are expected to broadly assigned.
+
+However, as quests create a storyline, they should only be assigned when the narrative evolves. As such, the very first quest will typically use an automation to assign everyone to it, but subsequent quests will use the "Assign quest" outcome.
+
+### Assign quest outcome
+
+Outcomes define what happens at the end of a mission. The outcome to assign a quest will therefore allow instructors to recruit the user for a quest (or multiple ones) once they have completed a previous one. We refer to this method as chaining quests together.
+
+## Search & filtering
+
+Several screens of the Level Up Quest management pages include lists of recruits with a "Filter recruits" search field. The terms in the search field are evaluated against multiple user identity fields, allowing instructors to quickly find the most relevant recruits.
+
+Identity fields include first and last names, and possibly the email address, ID number and username if the instructor has the permission to access this information. The visibility of these fields is defined by the administrator.
+
+Quest will not broadly look for any field _containing_ the search term. For instance, typing "am" to find a user named Amanda Holden **will not** return recruits named "J**am**ie" or those with an @ex**am**ple.com email address.
+
+Quest smartly applies the search term to the first and last name. As such, if we are looking for Amanda Holden, we can search for "am", "ho", "amanda h", "a h", or even "ho am" to find recruits **partially by first name, last name, and initials, in any order**.
+
+Partial matches on username, ID number and email address require at least 3 characters. To search by email domain, include the @ symbol in the search term (e.g. @example.com).
