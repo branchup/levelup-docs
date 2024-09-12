@@ -7,7 +7,7 @@ title: Compatibility
 
 :::info
 
-From XP 3.15, navigate to the Level Up XP admin settings to identify potential compatibility issues with your environment. Or search for the admin setting `compatibilitycheck` to get there.
+Navigate to the Level Up XP admin settings to identify potential compatibility issues with your environment. Or search for the admin setting `compatibilitycheck` to get there.
 
 :::
 
@@ -17,14 +17,14 @@ This happens when the plugins are installed on a major Moodle version that was r
 
 The simplest way to resolve this is to [upgrade XP and XP+](./upgrading.mdx) to their latest versions.
 
-## Out of sync {#out-of-sync}
+## XP plugins incompatibility (Out of sync) {#out-of-sync}
 
-This happens when XP has been upgraded, but XP+ was not. This means that Level Up XP+ is now extending a version of Level Up XP that it was not developed against. This can lead to unexpected issues, misbehaving features, or other unknown conflicts.
+It is crucial to keep both Level Up XP and Level Up XP+ updated to compatible versions. When they are not, they fall "out of sync" and become incompatible with each other. This issue occurs when XP has been upgraded to a new major version while XP+ remains outdated.
 
-:::warning
+This mismatch can lead to loss of functionality, bugs, and other unexpected consequences. To resolve this, you must [upgrade Level Up XP+](./upgrading.mdx).
 
-When a version of XP+ becomes excessively older than that of XP, XP+ may automatically disable itself to prevent malfunctioning.
+:::danger
+
+In the future, Level Up XP+ will automatically disable itself if it is not compatible. To prevent this from happening, ensure you do not upgrade Level Up XP to a new major version without also upgrading Level Up XP+.
 
 :::
-
-To resolve this issue, [upgrade XP+](./upgrading.mdx) to its latest version.
