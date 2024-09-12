@@ -1,0 +1,38 @@
+---
+slug: /leaderboard-isolation
+title: Leaderboard isolation
+description: Isolate leaderboard participants from one another
+---
+
+# Isolate leaderboard participants
+
+All users who have collected points are visible in the leaderboards. With the following options, groups of individuals can be isolated from one another by simulating multiple independent leaderboards.
+
+- [Default (group mode)](#default): The default option, using course groups.
+- [Using cohorts](#cohorts): Isolation using cohorts.
+
+## Default (group mode) {#default}
+
+This mode is applied by default in all versions of Level Up XP. In this mode, XP observes the [group mode](https://docs.moodle.org/en/Groups#Group_modes) setting of a course to determines whether to isolate participants. The group mode is a Moodle feature that defines isolation of participants at the course level using course groups.
+
+The group modes "Visible groups" and "Separate groups" will isolate participants based on their group memberships in the exact same fashion as Moodle isolates those participants.
+
+:::info
+
+This option does not apply when XP is used sitewide as the "group mode" course setting is not available globally.
+
+:::
+
+## Using cohorts {#cohorts}
+
+import RequiresXpPlus from '@site/src/components/RequiresXpPlus';
+
+<RequiresXpPlus plan="Premium" />
+
+With this option, participants are isolated from each other based on their cohort membership. Only members of the same cohort will appear in a person's leaderboard.
+
+:::info
+
+Participants should belong to only one cohort. If they belong to multiple cohorts, their leaderboard will be randomly chosen from one of those cohorts.
+
+:::
