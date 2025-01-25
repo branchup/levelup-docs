@@ -6,7 +6,7 @@ Before anything else, note that _Level Up XP+_ is required to use _Level Up XP_ 
 
 If you have installed _Level Up XP+_, no further steps are required for it to be accessible using the official Moodle Mobile app. It also works with custom versions of the Moodle app, provided they are recent.
 
-Accessing _Level Up XP_ from the app will be different depending on how it is set-up on the Moodle site. If it was set to be used __Sitewide__, it will be appear in the main menu:
+Accessing _Level Up XP_ from the app will be different depending on how it is set-up on the Moodle site. If it was set to be used __Sitewide__, it will appear in the main menu:
 
 ![Screenshot](mobile-system.png)
 ![Screenshot](level-up-whole-site.png)
@@ -29,7 +29,7 @@ From the dropdown menu on the _Course overview_ screen.
 
 Moodle provides an additional plugin called _[local_mobile](https://moodle.org/plugins/local_mobile)_ which enables newer versions of the mobile apps to work with older versions of Moodle.
 
-For example, in June 2018, the new Moodle app was released (codename Moodle Mobile 3.5), and was designed to work seamlessly with Moodle 3.5. However, previous Moodle versions (3.1 to 3.4) require the _local_mobile_ plugin to be installed for all features to be supported. If the latter is not installed, _Level Up XP_ will not appear.
+For example, in June 2018, the new Moodle app was released (codename Moodle Mobile 3.5) and was designed to work seamlessly with Moodle 3.5. However, previous Moodle versions (3.1 to 3.4) require the _local_mobile_ plugin to be installed for all features to be supported. If the latter is not installed, _Level Up XP_ will not appear.
 
 - Download [local_mobile here](https://moodle.org/plugins/local_mobile)
 - Follow the installation instructions at [Moodle documentation](https://docs.moodle.org/en/Moodle_Mobile_additional_features#Installation)
