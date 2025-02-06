@@ -5,6 +5,55 @@ import ReleaseDate from '@site/src/components/release-notes/ReleaseDate';
 
 # Release notes
 
+## Quest 1.6.0
+
+<ReleaseDate>February 10, 2024</ReleaseDate>
+
+<h3>New features ✨</h3>
+
+- Streaks! Recruits can now build streaks by completing objectives in a row
+- New objective to require the recruit to reach a certain streak
+- The mission tracker can be embedded in the content using a shortcode
+- The order the mission types on the mission tracker can be customised
+- Insights and recruits pages can be filtered by group
+- Achievements can require the recruit to complete multiple objectives
+- Added Streak insights to highlight activity and performance
+- Missions can be archived to hide them from recruits and reduce server load
+
+<h3>Quality of life 💪</h3>
+
+- The mission tracker automatically refreshes without requiring a page reload
+- Managers can manually increase the streak counter of a recruit
+- Many edit actions gracefully refresh the page content instead of reloading it
+- The mission tracker can be hidden from the block
+- The quest dialogue loading ellipsis can be skipped using the Enter or Space keys
+- Improved visual appearance of back navigation buttons on management pages
+- Achievement celebrations only occur in their course
+
+<h3>Bug fixes 🐛</h3>
+
+- Some placeholders could appear in excerpts of quest dialogues
+- Challenge deadline calculations now reliably use the server time zone
+- Non-repeating challenges can be reset even after they have ended
+- Completion challenge objective initialisation refers to the latest instance
+- Restoring in an existing course could modify existing missions
+- Restoring as merge & delete was not deleting the existing missions
+- Restoring user challenges could sometimes break the restore process
+- Users' objective counters were not included in backups
+- Users' missions iteration number and deadline were not included in backups
+- Achievement celebrations can no longer happen when tabbing out of the page
+- Completed challenges no longer cause the tracker to render when empty
+- Quest discovery shortcode no longer renders when viewed in the mobile app
+
+<h3>Technical changes 🛠</h3>
+
+- Managers must have permission to access all groups in courses using groups
+- Great expansion of our automated tests
+
+<h3>Additional notes 👀</h3>
+
+- Read our [release blog post](https://www.levelup.plus/blog/quest-release-1-6/) to learn more.
+
 ## Quest 1.5.0
 
 <ReleaseDate>October 3, 2024</ReleaseDate>
