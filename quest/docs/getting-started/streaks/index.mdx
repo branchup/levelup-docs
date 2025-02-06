@@ -1,0 +1,60 @@
+---
+sidebar_position: 4
+title: Streaks
+slug: ../streaks
+---
+
+import Screenshot from '@site/src/components/Screenshot';
+
+Streaks are counters of how many consecutive days (or weeks) recruits have completed their objectives. If recruits fail to complete their objectives, their streak breaks and the counter is resets to zero.
+
+## Objectives
+
+The objectives of a streak define which tasks must be fulfilled within the time interval to maintain and increase the streak counter.  Streaks can be designed to require recruits to perform multiple actions, or more of the same.
+
+:::info
+
+Make sure that the objectives chosen for a streak can be repeated within the chosen frequency; otherwise, learners could become frustrated by inevitably breaking their streak.
+
+:::
+
+## Streak interval
+
+There are three timing options for streaks.
+
+**Daily**: the objectives must be completed each day of the week. Missing a single day will break the streak.
+
+**Daily (except weekend)**: the objectives can and must be completed each weekday, but not on the weekends. Skipping Saturday and Sunday won't cause the streak to reset, and it's not be possible to increase the streak on the weekend.
+
+**Weekly**: the objectives must be completed each week, on any, or throughout multiple days.
+
+:::note
+
+Streaks consider each day to start at 00:00 and end at 23:59 in the server's time zone. Weeks start on Monday and end on Sunday at 23:59.
+
+:::
+
+
+## One streak per context
+
+Different streaks can be assigned in different courses or sitewide simultaneously. However, within a given context, learners will only see one streak at a time: the last one they were recruited for.
+
+For that reason, we do not recommend recruiting learners for multiple streaks at once. If you'd like to switch them to another streak, we suggest archiving those not actively used.
+
+## Best paired with
+
+The value of streaks comes from maintaining them and seeing them increase. Pairing them with achievements and challenges is a good idea to reward learners for reaching streak milestones.
+
+We recommend creating multiple achievements or challenges for reaching streaks of 5, 10, 25, and beyond. Achievements would be celebratory, surprising learners with a fun acknowledgment, while challenges offer a reward for building their streak, such as a few experience points.
+
+<Screenshot img={require('./achievement-login-streak.png')}>Example of an achievement celebrating a streak of 25 daily logins.</Screenshot>
+
+## Reversing a lost streak
+
+There may be a time when someone accidentally loses a long streak because of \<insert good excuse here\>... In those cases, instructors can manually increase the streak counter of a recruit to restore it to where they were.
+
+## Performance considerations
+
+Because streaks monitor activity (or lack thereof), they remain active even if users stop visiting. For example, if a course ends and nobody visits it anymore, that streak will still remain active.
+
+To stop the streak, we recommend archiving it (from the streak's advanced page). When archived, all current data is frozen and preserved, and the streak will no longer monitor users' behaviour. Once archived, the streak is not visible to learners.
