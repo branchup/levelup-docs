@@ -1,0 +1,40 @@
+---
+sidebar_position: 6
+title: Mission tracker
+slug: /mission-tracker
+---
+
+import Screenshot from '@site/src/components/Screenshot';
+
+The mission tracker is the place in which recruits can see all their relevant missions. These include:
+
+- **Ongoing quests**: The quests with ongoing objectives.
+- **Optional quests**: The quests offered to the recruit that have not yet been accepted.
+- **Ongoing achievements**: A few achievements that the recruit is making progress towards, with the highest completion rates first.
+- **Completed achievements**: A few achievements that were recently completed by the recruit.
+- **Challenges**: The list of challenges currently assigned.
+- **One streak**: The most recently assigned streak.
+
+<Screenshot img={require('./mission-tracker-block.png')}>
+    Example of the mission tracker containing a challenge,<br />an optional quest, an ongoing achievement and a completed one.
+</Screenshot>
+
+## Sections ordering
+
+Administrators can change the order in which items appear in the mission tracker with the admin setting `block_gearup/trackermissionsorder` which can be found at: Site administration > Plugins > Blocks > Level Up Quest.
+
+## Display missions elsewhere
+
+You can display the mission tracker anywhere else in your Moodle site. To do so, navigate to the Missions page and click on "Embed tracker" in the page's contextual menu (vertical dots). This will open a modal revealing the secret shortcode to place the tracker anywhere else.
+
+<Screenshot img={require('./embed-tracker-modal.png')}>The modal displaying the secret embed shortcode.</Screenshot>
+
+After copying and pasting the shortcode into the content, instructors will see "(Missions tracker placeholder)" in place of the actual tracker, while recruits will see the tracker, unless there is nothing for them to see.
+
+Embedding the tracker even allows the mission tracker of one course to be embedded in another, or for creating a collection of course trackers on a sitewide page.
+
+:::info
+
+This method requires the installation of the [recommended plugin Shortcodes](../../installation/recommended-plugins.mdx).
+
+:::
