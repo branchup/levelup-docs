@@ -14,6 +14,10 @@
   text-align: left;
 }
 
+.figcaption p:last-child {
+  margin-bottom: 0;
+}
+
 .figure + .figure,
 .figure + p,
 .figure + ul {
