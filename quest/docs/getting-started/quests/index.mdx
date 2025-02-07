@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Quests
+slug: ../quests
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -22,6 +23,29 @@ Quests are amazing at creating stories and narratives surrounding the objectives
 When a quest is optional, the introduction will be the first part of the storyline that the learner will see. When the quest is ongoing, whether because it is compulsory or has been accepted, the narrator will share the _instructions_ of the quest with the learner. And finally, when the learner has completed their objectives, the closing line of the story will be shared.
 
 Instructors can use the storylines as they please, Level Up Quest only enforces when they are displayed to the recruit.
+
+import video from './quest-narrator-dialogue.webm';
+
+<video style={{height: '250px'}} controls>
+  <source src={video} />
+</video>
+### Formatting and placeholders
+
+When writing the storyline elements, any new paragraph (two consecutive new lines) will create a new dialogue bubble. Dialogue bubbles are showing one at a time with a small pause in between to simulate that the character is actively typing.
+
+You may also place the following placeholders within your dialogues:
+
+- `[firstname]`: Display the recruit's first name.
+- `[fullname]`: Display the recruit's first and last name.
+- `[objectives]`: Displays the list of objectives to complete the quest.
+- `[rewards]`: Displays the list of rewards for completing the quest.
+
+:::info
+
+The placeholders `[objectives]` and `[rewards]` can be used to display the rewards and objectives before they naturally would, such as during the introduction of a quest, perfect to make it even more inviting! Please note that they must be placed in their own paragraphs to take effect.
+
+:::
+
 
 ## Types of quests
 
