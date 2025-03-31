@@ -20,6 +20,7 @@
 
 .figure + .figure,
 .figure + p,
-.figure + ul {
+.figure + ul,
+.figure + ol {
   margin-top: var(--ifm-paragraph-margin-bottom);
 }
