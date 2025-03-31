@@ -1,3 +1,7 @@
+---
+sidebar_position: 50
+---
+
 # Not showing in Moodle Mobile app
 
 Before anything else, note that _Level Up XP+_ is required to use _Level Up XP_ with the Moodle Mobile app. A recent version of the Moodle Mobile app and Moodle 3.1 are also required.
