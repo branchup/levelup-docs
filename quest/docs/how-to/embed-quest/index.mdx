@@ -1,0 +1,52 @@
+---
+description: Integrate quests into a page content to let learners discover them
+title: Embed quest
+---
+
+import Screenshot from '@site/src/components/Screenshot';
+
+# Embed quests into the content
+
+Embed quests directly into the page content to allow learners to discover quests as they navigate through courses, activities, or pretty much anywhere on the Moodle site. These quests are called "Discoverable quests" and have two main purposes:
+
+- Instructors can spread quests throughout learning materials so learners can find them naturally.
+- Instructors can use a quest as the first step before showing the learning materials.
+
+## Creating a discoverable quest
+
+:::info
+
+Discoverable quests require the plugin [Shortcodes](/quest/docs/installation/recommended-plugins) to be installed and enabled.
+
+:::
+
+1. Make a new quest.
+2. When asked, pick "Discoverable quest" for "Recruitment behaviour".
+
+<Screenshot img={require('./recruitment-behaviour.png')}>The choice of recruitment behaviour.</Screenshot>
+
+3. Finish making the quest and go to the quest page.
+4. On the page, there will be a "Shortcode" with a secret code to copy.
+
+<Screenshot img={require('./shortcode.png')}>Example of a secret shortcode for the quest.</Screenshot>
+
+5. Go to any page, edit the content and paste the code.
+6. After saving the page, as an instructor, you should see:
+   (Quest discovery placeholder: Name of the quest)
+
+Your quest is now ready but nobody will see it yet. To make the quest visible, you must recruit learners.
+
+## Recruiting learners
+
+Only the learners who are recruited can find the quest. Others will not be able to see it. This lets instructors decide when quests are visible to learners. You can recruit users in different ways, like manually or with automation, or by using "Outcomes" from another quest.
+
+## Require the discovery
+
+To make sure learners find and accept a quest before they see the course content:
+
+1. Create a discoverable quest.
+2. Put the quest shortcode at the start of the course, like in the section description.
+3. Use the [Restrict access](../access-restriction/index.mdx) feature to keep all other sections hidden until the quest "Has started".
+4. Set up recruitment automations to recruit learners to the quest.
+
+That's it. Thanks to the "Restrict access" feature, the content will stay hidden until the quest is accepted.
