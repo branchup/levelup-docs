@@ -1,0 +1,55 @@
+---
+title: Automatically populate users
+description: Automatically populate leaderboards and reports with users.
+slug: /automatic-user-provisioning
+---
+
+XP typically waits for users to earn points before they become visible. This means that some users may not appear in the leaderboard or in the report. This behaviour is intentional as to reduce unnecessary entries in the database.
+
+Please note the differences between XP modes:
+
+**Per course**
+
+- The leaderboard only displays users detected by XP
+- The report displays enrolled users with the permission `block/xp:earnxp`
+
+**Sitewide**
+
+- The leaderboard only displays users detected by XP
+- The report only displays users detected by XP
+
+
+The automatic user provisioning feature ensures that an entry is created for all missing users.
+
+## Activate automatic provisioning
+
+:::info
+
+This feature is considered an advanced feature. We advise to keep it disabled unless the absence of certain users in the reports and leaderboards is a problem.
+
+:::
+
+To enable the automatic user provisioning, navigate to the settings of Level Up XP under "Site administration > Plugins > Blocks > Level Up XP > General settings", or search for the setting `provisionstates`. Enabling this setting will enable the scheduled task `state_provisioner`.
+
+:::note
+
+Alternatively, you may choose to run the task manually once in a while.
+
+```bash
+php admin/cli/scheduled_task.php --execute=block_xp\task\state_provisioner_task
+```
+
+:::
+
+## Caveats
+
+- The courses where the setting "Enable XP gain" is set to "No" are ignored.
+- The scheduled task runs daily by default, and thus provisioning is not instant.
+- In course mode, all users with the permission `block/xp:earnxp` are considered.
+- In sitewide mode, only users who appear to have the permission `block/xp:earnxp` anywhere are considered.
+- Other users than intended could surface into the report and leaderboard.
+- Admin users are not provisioned unless they have explicit role assignments
+
+## Alternative method
+
+Instead of enabling the automatic user population, you may use [import feature](../../points/import/index.mdx). The CSV would contain the list of all users, with the `points` column set to `0`. During the import, the "Points import action" should be set to "Increase". This will force XP to create an entry for all missing users, while not affecting the points of existing ones.
