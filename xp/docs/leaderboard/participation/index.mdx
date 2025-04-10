@@ -1,0 +1,75 @@
+---
+slug: /leaderboard-opt-out
+title: Leaderboard opt-out
+description: Feature to define when learners can opt-in or out of the leaderboard.
+---
+
+import Screenshot from '@site/src/components/Screenshot';
+import RequiresXpPlus from '@site/src/components/RequiresXpPlus';
+
+# Leaderboard participation (opt-in and out)
+
+<RequiresXpPlus plan="Premium" />
+
+This feature allows learners to join or leave the leaderboard by their choice. It is useful when instructors want the leaderboard to be on, but do not want to force learners to take part in the competition.
+
+:::info[TL;DR]
+
+- Learners can choose to join or leave the leaderboard
+- Joining the leaderboard enforces a minimum partition time of a few days
+- Managers can change anyone's participation status
+- Administrators can force all leaderboards to allow opt-outs
+
+:::
+
+## Participation modes
+
+The participation mode is chosen in the leaderboard's page settings.
+
+There are three possible leaderboard participation modes:
+
+- **Automatic, no opt-out**: This is the default mode. All learners are in the leaderboard and cannot leave.
+- **Automatic, opt-out available**: All learners are in the leaderboard by default, but they can leave if they want. Learners who leave can join back anytime.
+- **Optional, by opt-in**: Only learners who choose to join the leaderboard will be in it. Learners can leave if they change their mind.
+
+## How can learners leave?
+
+Learners can leave the leaderboard by visit the leaderboard and locating their name. Their name will have a menu with the option to leave. If the option is not there, it means the leaderboard does not allow opt-outs, or a manager has locked the learner's participation for a long time.
+
+<Screenshot img={require('./leaderboard-leave-option.png')}>
+    The menu showing the option to leave the leaderboard.
+</Screenshot>
+
+### Minimim participation time
+
+Learners cannot leave the leaderboard right after joining. This encourages active participation and stops learners from joining just to see their rank. After joining, learners cannot leave for 3 days.
+
+<Screenshot img={require('./leaderboard-leave-locked.png')}>
+    Message indicating to a learner that they will be able to opt-out in the near future.
+</Screenshot>
+
+## Participation management
+
+:::info
+
+Participation management is only possible when the leaderboard allows opt-in or out.
+
+:::
+
+### Managing one person
+
+Managers can see and change a person's participation status. They can also choose to lock a learner's participation status for a certain time. Locking stops the learner from leaving or rejoining until the time is over.
+
+### Resetting everyone's state
+
+From the leaderboard's settings page, managers can reset everyone's state in the leaderboard. Any participation state set by a learner or their manager will be reset.
+
+## For administrators
+
+Administrators can choose the default value for the leaderboard participation setting (called `ladderparticipation`) from the "Level Up XP > Default settings" page in site administration. They can also lock the setting to make sure it is used in all leaderboards.
+
+When the setting is locked, managers can still set someone as participating or not, but they can no longer enforce that state by locking it for a time. Learners still have the choice to opt-in or out by themselves.
+
+## Team leaderboard
+
+This feature does not change the Team leaderboard. Learners who opt-out of the individual leaderboard will still contribute to their team's points.
