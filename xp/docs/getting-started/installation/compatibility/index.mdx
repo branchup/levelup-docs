@@ -3,6 +3,8 @@ slug: /requirements-compatibility
 title: Compatibility
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # Compatibility
 
 :::info
@@ -11,23 +13,31 @@ Navigate to the Level Up XP admin settings to identify potential compatibility i
 
 :::
 
+## Upgrade incompatibility notice {#upgrade}
+
+Administrators will be presented a non-blocking notice if they attempt to upgrade XP with an outdated version of XP+. Proceeding will result in XP+ to be disabled. The solution is to [upgrade XP+](../upgrading.mdx) with the same version as XP. If that's not possible, please see [this page](../../../troubleshooting/addon-deactivated/index.mdx).
+
+<Screenshot img={require('./upgrade-notice.png')}>
+    The notice visible when an administrator upgrades the site with incompatible versions.
+</Screenshot>
+
 ## XP+ disabled {#addon-deactivated}
 
-This occurs when XP and XP+ were deemed incompatible, and thus XP+ was disabled to prevent any issues. [Learn more](../../troubleshooting/addon-deactivated/index.mdx)
+This occurs when XP and XP+ were deemed incompatible, and thus XP+ was disabled to prevent any issues. [Learn more](../../../troubleshooting/addon-deactivated/index.mdx)
 
-To resolve this, you must [upgrade Level Up XP+](./upgrading.mdx) to same version as XP.
+To resolve this, you must [upgrade Level Up XP+](../upgrading.mdx) to same version as XP.
 
 ## Potential Moodle incompatibility {#potential-moodle-incompatibility}
 
 This happens when the plugins are installed on a major Moodle version that was released after XP. While we do our best to anticipate any potential issues, it is impossible to guarantee that XP is compatible with that Moodle version.
 
-The simplest way to resolve this is to [upgrade XP and XP+](./upgrading.mdx) to their latest versions.
+The simplest way to resolve this is to [upgrade XP and XP+](../upgrading.mdx) to their latest versions.
 
 ## XP plugins incompatibility (Out of sync) {#out-of-sync}
 
 It is crucial to keep both Level Up XP and Level Up XP+ updated to compatible versions. When they are not, they fall "out of sync" and become incompatible with each other. This issue occurs when XP has been upgraded to a new major version while XP+ remains outdated.
 
-This mismatch can lead to loss of functionality, bugs, and other unexpected consequences. To resolve this, you must [upgrade Level Up XP+](./upgrading.mdx).
+This mismatch can lead to loss of functionality, bugs, and other unexpected consequences. To resolve this, you must [upgrade Level Up XP+](../upgrading.mdx).
 
 :::danger
 
