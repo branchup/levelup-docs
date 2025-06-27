@@ -1,0 +1,25 @@
+---
+description: "Level Up Quest becomes hidden when the side block drawer is collapsed."
+title: "The block drawer is closed"
+---
+
+# The block drawer is closed
+
+In Moodle's default theme (Boost), a side block drawer contains all of the blocks displayed on the page. Users may choose to close the drawer on any page, in which case Moodle remembers their preferences and keeps the drawer closed.
+
+A closed drawer is likely to disrupt a learner's experience and engagement with Level Up Quest. Indeed, they could:
+
+- Miss a quest requiring their attention
+- Miss an opportunity to complete a timed challenge
+- Disengage from a running streak
+- Fail to engage with other features
+
+This can be detrimental to their overall experience and negatively affect an instructor's ability to foster certain behaviours.
+
+## Solution A: Force the drawer open
+
+Unfortunately, Moodle itself does not provide a system to prevent the block drawer from being closed. As a workaround, Level Up Quest provides the admin setting `keepdraweropen` to (re)open the drawer on course pages. Navigate to the plugin's admin settings to enable it.
+
+## Solution B: Embed the tracker in the course page
+
+To avoid having to use the drawer entirely, instructors may choose to embed the mission tracker directly in the course content (or elsewhere). Instructions on this can be found on the [Mission tracker page](../getting-started/mission-tracker/index.mdx#embed).
