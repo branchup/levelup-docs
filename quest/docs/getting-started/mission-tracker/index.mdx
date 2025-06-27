@@ -25,6 +25,12 @@ Administrators can change the order in which items appear in the mission tracker
 
 ## Display missions elsewhere {#embed}
 
+:::info
+
+This method requires the installation of the [recommended plugin Shortcodes](../../installation/recommended-plugins.mdx).
+
+:::
+
 You can display the mission tracker anywhere else in your Moodle site. To do so, navigate to the Missions page and click on "Embed tracker" in the page's contextual menu (vertical dots). This will open a modal revealing the secret shortcode to place the tracker anywhere else.
 
 <Screenshot img={require('./embed-tracker-modal.png')}>The modal displaying the secret embed shortcode.</Screenshot>
@@ -33,14 +39,15 @@ After copying and pasting the shortcode into the content, instructors will see "
 
 Embedding the tracker even allows the mission tracker of one course to be embedded in another, or for creating a collection of course trackers on a sitewide page.
 
-:::tip
+### Removing tracker from the block
 
-To hide the tracker from the block, turn editing mode on and navigate to "Configure Level Up Quest block" in the block's menu.
+To remove the tracker from the block, turn editing mode on and navigate to "Configure Level Up Quest block" from the block's menu. Then, set the setting "Tracker visibility" to "Hidden" to entirely hide the mission tracker from the block.
 
-:::
+### Specify sections and order
 
-:::info
+The shortcode can specify the sections and the order in which they appear on the tracker by using the parameter `show`. The parameter expects any of `quests`, `achievements`, `streaks` and `challenges` separated by commas. The order in the parameter sets the order in which they will appear.
 
-This method requires the installation of the [recommended plugin Shortcodes](../../installation/recommended-plugins.mdx).
-
-:::
+```
+[questtracker ... show="quests"]
+[questtracker ... show="achievements,challenges"]
+```
