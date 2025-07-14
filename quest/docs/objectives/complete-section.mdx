@@ -1,0 +1,24 @@
+---
+description: "Require recruits to complete a course section."
+title: "Complete section"
+---
+
+This objective requires recruits to complete all activities in a given course section.
+
+## Setting up
+
+The first option to choose from is whether a specific section must be completed, or any section will do. When the eligible section is set to a specific one, the recruit will be required to complete that given section. If eligible sections are set to any, the number of sections to be completed also needs to be provided.
+
+## Section numbering
+
+In Moodle, sections are identified by their internal number (starting at 1). When a section is moved, it does not carry its number it instead swaps it with the section it moved to. Similarly, when a section is created or deleted, it will affect the number of subsequent sections.
+
+This behaviour is important to note because Quest tracks the section number, and thus the objective could track another section if the sections have been manipulated since the objective was created.
+
+## Completion criteria
+
+At least one activity with completion criteria is required in a section, empty sections are never considered complete.
+
+Only activities with completion criteria must be completed, other activities are ignored as their completion status is unknown.
+
+Activities unavailable to the recruit are still required to be completed for the section to be considered complete. This is to avoid a situation where the section is marked as completed before the other activities are made available at a later stage.
