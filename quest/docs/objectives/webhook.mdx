@@ -1,0 +1,22 @@
+---
+description: "Complete objectives from an external system."
+title: "Webhook"
+---
+
+This objective can be incremented and marked as completed from an external system by calling a webhook.
+
+## Setting up
+
+When creating the objective, choose the count required to attain in this objective. This allows the objective to display a counter if it is greater than one. Once the objective has been created, opening its settings will reveal the unique webhook URL to call to increment the objective for a particular recruit.
+
+## How to use
+
+Send a request to the URL found in the objective's settings. Here is an example:
+
+    http://example.com/a/b/c/objincr/123/abcd1234/user/<id-or-email>/incr-by/<number>
+
+The request must be a POST request, and both placeholders must be replaced:
+
+- `<id-or-email>` is the recruit's internal Moodle user ID, or email.
+- `<number>` is the number to increment the objective counter by.
+
