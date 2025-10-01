@@ -51,11 +51,11 @@ For more information on installing plugins, please visit the [official Moodle do
 
 ## Manual installation
 
-_Level Up XP_ is a Moodle plugin of type `block`, it needs to be extracted in the `blocks/` directory.
+_Level Up XP_ is a Moodle plugin of type `block`, it needs to be extracted in the `[public]/blocks/` directory.
 
 1. Download the zip file of the latest version of the plugin from [moodle.org](https://moodle.org/plugins/pluginversions.php?plugin=block_xp).
-2. Extract the content of the zip file in the folder `blocks` of your Moodle installation.
-3. If you have extracted the content at the right place, the following file should be present: `blocks/xp/version.php`.
+2. Extract the content of the zip file in the folder `[public]/blocks` of your Moodle installation.
+3. If you have extracted the content at the right place, the following file should be present: `[public]/blocks/xp/version.php`.
 4. Visit the admin notifications page to trigger the installation.
    - Navigate to _Site administration > Notifications_.
    - Or directly visit _your.moodle.example.com_**/admin/index.php**.
@@ -70,7 +70,7 @@ You may choose to install the plugin using git. However, please note that the `m
 We recommend to checkout the latest tag.
 
 ```
-cd blocks/xp
+cd public/blocks/xp 2> /dev/null || cd blocks/xp
 git tag -l | sort -Vr | head -1
 git checkout <tag here>
 ```

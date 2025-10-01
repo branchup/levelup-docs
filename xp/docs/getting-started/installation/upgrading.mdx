@@ -22,8 +22,8 @@ If you are unable to update directly from the Moodle interface, please upgrade m
 ### Manual upgrade
 
 1. Identify and download the latest zip compatible with your Moodle version from the [plugin's page on moodle.org](https://moodle.org/plugins/pluginversions.php?plugin=block_xp).
-2. Replace the folder `blocks/xp` with the content of the zip file.
-3. When done correctly, you should find a file named `version.php` in the folder `blocks/xp`.
+2. Replace the folder `[public]/blocks/xp` with the content of the zip file.
+3. When done correctly, you should find a file named `version.php` in the folder `[public]/blocks/xp`.
    - Opening the above file should reveal the version downloaded earlier.
 4. If you also need to upgrade XP+, please **[skip to the section below](#xpplus)**.
 5. Visit the admin notifications page to trigger the installation.
@@ -56,12 +56,12 @@ The upgrade process is quite similar to the installation process, please visit t
 
 ### Manual upgrade
 
-XP+ is a Moodle plugin of type `local`, it needs to be extracted in the `local/` directory.
+XP+ is a Moodle plugin of type `local`, it needs to be extracted in the `[public]/local/` directory.
 
 1. Ensure that the latest version of XP is installed, or ready to be installed.
 2. Download the zip file `local_xp.zip` from your download link.
-3. Replace the content of the Moodle folder `local/xp` with the content of the zip file.
-4. If you have extracted the content at the right place, the following file should be present: `local/xp/version.php`.
+3. Replace the content of the Moodle folder `[public]/local/xp` with the content of the zip file.
+4. If you have extracted the content at the right place, the following file should be present: `[public]/local/xp/version.php`.
 5. Visit the admin notifications page to trigger the installation.
    - Navigate to _Site administration > Notifications_.
    - Or directly visit _your.moodle.example.com_ **/admin/index.php**.
