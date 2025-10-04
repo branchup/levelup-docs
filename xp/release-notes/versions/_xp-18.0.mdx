@@ -2,11 +2,13 @@ import ReleaseDate from '@site/src/components/release-notes/ReleaseDate';
 
 <ReleaseDate>April 14, 2025</ReleaseDate>
 
-We dropped the `v3.` prefix of our version number, XP `v18` is the version following `v3.17`.
+We dropped the `v3.` prefix of XP and the `v1.` prefix of XP+. XP `v18` is the version following `v3.17` and XP+ `v18` is the version following `v1.17`. From this release, XP and its compatible XP+ version will have the same number.
 
 <h3>New features ✨</h3>
 
 - Admins can automatically pre-populate the leaderboards with XP participants
+- Leaderboards can be configured to allow users to opt-out (XP+ Premium)
+- Administrators can enforce that all leaderboards support opt-out (XP+ Premium)
 
 <h3>Quality of life 💪</h3>
 
@@ -20,6 +22,8 @@ We dropped the `v3.` prefix of our version number, XP `v18` is the version follo
 
 - Filtering logs by group had no effect
 - Viewing the leaderboard of "All participants" was showing the user's group leaderboard
+- XP data source in custom reports was not available in Moodle pre-4.4 (XP+)
+- The drop form was not declaring the type of some fields (XP+)
 
 <h3>Technical changes 🛠</h3>
 
