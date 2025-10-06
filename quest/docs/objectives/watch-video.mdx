@@ -7,7 +7,15 @@ Objective to require the recruit to watch one or more videos to completion.
 
 ## Setting up
 
-Setting up the objective does not require any setting other than the number of videos to be watched.
+Set the number of videos to be watched, and optionally restrict which activity the videos must be placed in.
+
+### Restricted to activity
+
+When the objective is restricted to a particular activity, Quest will only consider videos that are viewed by navigating directly to the activity. The following activity types and options are supported:
+
+- Page: Where the video is embedded in the page content
+- File: Where the video is uploaded as a file
+- URL: Where the URL is a YouTube video, and the display mode is set to \"Embed\"
 
 ## Behaviour
 
@@ -17,6 +25,6 @@ Watching the same video multiple times will not progress the objective multiple 
 
 ## Eligible videos
 
-The videos compatible with this objective must be inserted in Moodle directly using Moodle's built-in text editor. Those must be played by the built-in video player called "VideoJS", which is the default behaviour. Videos that are played using another mechanism or player are currently not supported.
+The videos compatible with this objective must be played by the built-in video player called "VideoJS". Thishich is the default behaviour in Moodle. Videos that are played using another mechanism or player are currently not supported.
 
-Any video within the context of the mission can contribute to the objective.
+Administrators can navigate to "Site administration > Plugins > Media player > Manage media players" to check which players are enabled and their order of preference. The VideoJS player must be placed above all others.
