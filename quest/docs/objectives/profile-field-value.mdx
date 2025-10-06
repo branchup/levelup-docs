@@ -1,0 +1,37 @@
+---
+description: "Requires a recruit's profile field to match certain values."
+title: "Profile field value"
+---
+
+Track the value of a recruit's profile field, and mark the objective as complete when it meets the criteria.
+
+## Use case
+
+This objective is likely most useful when the value of profile fields are managed by external systems. For example recruits could be achieving certifications in an external system, and that system updates a profile field when the certification is achieved. The objective can then track that profile field and mark the objective as complete when the certification is achieved.
+
+## Setting up
+
+Select the profile field to track and how to treat the value found in the field: as a number, as text, or as a boolean. Quest supports tracking fields of type "Text input" and "Checkbox". It is expected that "Checkbox" fields are treated as boolean values.
+
+### Number value
+
+When the value is treated as a number, it will be treated as a whole number (integer), and rounding will apply if the value contains decimal places.
+
+The option **"Track progress from zero to the value"** indicates whether the value is expected to increase to a certain amount. For example, if the field contains a certain number of points, and the objective is to reach a certain number of points, then this option should be enabled. This will allow the objective to track progress towards the target value and display a progress bar.
+
+The option **"Keep track of the best value recorded"** determines whether the objective strictly tracks the value found in the field, or if it allows it to comes down. For example, if the field was tracking the latest score achieved in a test, but the objective should track the highest score achieved, then this option should be enabled.
+
+### Text value
+
+The text value value will be compared to the value of the field using the case-sensitivity defined below.
+
+| Comparison | Case-sensitive |
+|------------|----------------|
+| Is exactly | Yes            |
+| Is different than | Yes     |
+| Contains   | No             |
+| Does not contain | No       |
+
+### Boolean value
+
+If the field value is `1`, `true`, `yes`, `on`, or `enabled`, all case-insensitive, the value will be considered true. Otherwise it will be considered false.
