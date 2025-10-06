@@ -9,6 +9,12 @@ This objective requires recruits to complete all activities in a given course se
 
 The first option to choose from is whether a specific section must be completed, or any section will do. When the eligible section is set to a specific one, the recruit will be required to complete that given section. If eligible sections are set to any, the number of sections to be completed also needs to be provided.
 
+### Ignore unavailable activities
+
+By default, activities that are unavailable to the recruit are still required to be completed for the section to be considered complete. This is to avoid a situation where the section is marked as completed before the other activities are made available at a later stage.
+
+If this behaviour is not desired, use the setting "Complete when" to mark the objective as complete when only the accessible activities are completed.
+
 ## Section numbering
 
 In Moodle, sections are identified by their internal number (starting at 1). When a section is moved, it does not carry its number it instead swaps it with the section it moved to. Similarly, when a section is created or deleted, it will affect the number of subsequent sections.
@@ -21,4 +27,4 @@ At least one activity with completion criteria is required in a section, empty s
 
 Only activities with completion criteria must be completed, other activities are ignored as their completion status is unknown.
 
-Activities unavailable to the recruit are still required to be completed for the section to be considered complete. This is to avoid a situation where the section is marked as completed before the other activities are made available at a later stage.
+If some activities in the section have access restrictions, please review whether they are intended to be completed or not, and adjust the objective settings accordingly.
