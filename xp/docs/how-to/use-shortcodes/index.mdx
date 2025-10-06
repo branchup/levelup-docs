@@ -4,6 +4,8 @@ description: Enhance learning content with shortcodes.
 
 # Use shortcodes
 
+import RequiresXpPlus from '@site/src/components/RequiresXpPlus';
+
 :::info
 
 To use shortcodes with Level Up XP, the plugin [Shortcodes](https://moodle.org/plugins/filter_shortcodes) must be installed and enabled.
@@ -68,6 +70,12 @@ Note that these shortcodes CANNOT be nested within one another.
 
 ### xpladder
 
+:::info
+
+From XP 19, the shortcode will include the `ctx` and `secret` parameters when copied from the leaderboard page.
+
+:::
+
 By default, a portion of the ladder surrounding the current user will be displayed.
 
 ```
@@ -97,7 +105,13 @@ Note that when a course is using groups, the ladder will best guess which group 
 
 ### xpteamladder
 
-_Requires Level Up XP+_
+<RequiresXpPlus />
+
+:::info
+
+From XP 19, the shortcode will include the `ctx` and `secret` parameters when copied from the leaderboard page.
+
+:::
 
 By default, a portion of the team ladder surrounding the current user will be displayed.
 
