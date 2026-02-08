@@ -1,0 +1,55 @@
+---
+title: Selective tenant activation
+description: Enable Level Up XP+ for selected tenants when XP is deployed across your infrastructure.
+sidebar_position: 99
+slug: selective-activation
+---
+
+import RequiresXpPlus from '@site/src/components/RequiresXpPlus';
+
+<RequiresXpPlus plan="Enterprise" />
+
+Selective activation is intended for **hosting providers** and **Moodle Partners** running multi-tenant Moodle deployments where XP and XP+ are deployed broadly, but XP+ should only be enabled for selected tenants.
+
+## Overview
+
+By default, when XP+ is present it **activates automatically**. Selective activation works by disabling that default behaviour globally, and then explicitly enabling XP+ only for a subset of tenants.
+
+## Tenant-specific configuration file
+
+A deployment must support:
+
+- A **global** `config.php` shared by all tenants.
+- A **tenant-specific** config file that can set `$CFG` values for that tenant only.
+
+## Configuration
+
+### Global config (all tenants)
+
+In the global `config.php`, disable automatic activation so XP+ does not turn on by default:
+
+```php
+$CFG->local_xp_disable_automatic_activation = true;
+```
+
+After this, XP+ will not activate for any tenant unless explicitly enabled for that tenant.
+
+### Per-tenant config
+
+For each tenant where XP+ **should be enabled**, add this to that tenant-specific config file:
+
+```php
+// config-for-tenant-happykoala.php
+
+$CFG->local_xp_activate = true;
+```
+
+Only tenants with this setting will have XP+ active.
+
+## Licence and limits
+
+Each tenant where XP+ is activated counts as one website towards the [number of websites limitation](./websites-limitation). The number of activated tenants must not exceed the number of websites allowed by the licence.
+
+## Behaviour
+
+The selective activation of XP+ does not prevent its installation, such as the creation of database tables, the registration of its scheduled tasks and web services, etc. However, the execution of any of its services will not have any effect.
