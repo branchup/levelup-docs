@@ -10,7 +10,13 @@ import RequiresXpPlus from '@site/src/components/RequiresXpPlus';
 
 <RequiresXpPlus />
 
-There are several ways to give learner points based on their performance in a quiz. This page outlines three different methods of calculating points:
+:::info
+
+This page **focuses on quizzes** but its principles apply to most **graded activities**.
+
+:::
+
+There are several ways to give a learner points based on their performance in a quiz. This page outlines three different methods of calculating points:
 
 - [Method 1](#equal): Points exactly equal to the grade
 - [Method 2](#passing): Points for getting a passing (or minimum) grade
@@ -18,7 +24,7 @@ There are several ways to give learner points based on their performance in a qu
 
 :::info
 
-Performance-based gamification can have a negative effect on learners, especially those experiencing difficulties. Failure to receive the points can be perceived as a penalty and can compromise their overall motivation.
+Performance-based gamification **can have a negative effect** on learners, especially those experiencing difficulties. Failure to receive the points can be perceived as a penalty and can compromise their overall motivation.
 
 :::
 
@@ -92,3 +98,7 @@ Finally, navigate to **XP's Grade rules** and add a new 'Specific grade item' co
 <Screenshot img={require('./xp-grade-rule-calculated.png')}>XP grade rules after adding a specific grade item tied to "XP points for quiz".</Screenshot>
 
 That's it! Now, whenever a grade is obtained in the quiz, the calculated grade item will compute a grade of 0, 50, or 100. Then XP will award points according to the calculated grade item.
+
+Resources:
+
+- [Moodle documentation on calculated grade items](https://docs.moodle.org/en/Grade_calculations)
