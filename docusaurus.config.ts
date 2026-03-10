@@ -5,7 +5,8 @@ const { themes } = require('prism-react-renderer');
 const lightTheme = themes.github;
 const darkTheme = themes.dracula;
 
-const URL = 'https://docs.levelup.plus';
+const DOMAIN = 'docs.levelup.plus';
+const URL = `https://${DOMAIN}`;
 
 const config: Config = {
   title: 'Level Up Documentation',
@@ -96,6 +97,12 @@ const config: Config = {
         id: 'rogue-pages',
         path: 'xp/rogue',
         routeBasePath: 'xp',
+      },
+    ],
+    [
+      'docusaurus-plugin-plausible',
+      {
+        domain: DOMAIN,
       },
     ],
   ],
