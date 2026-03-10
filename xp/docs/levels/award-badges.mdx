@@ -1,0 +1,44 @@
+---
+title: Award badges
+description: Awarding Moodle badges when a level is attained
+sidebar_position: 9
+---
+
+import RequiresXpPlus from '@site/src/components/RequiresXpPlus';
+import Screenshot from '@site/src/components/Screenshot';
+
+<RequiresXpPlus />
+
+You may elect to award a Moodle badge to a learner when they attain a level.
+
+:::info
+
+Moodle badges are not the same as the level badges. A Moodle badge is a collectible, while a [level badge](./appearance) is a visual representation of a level.
+
+:::
+
+## Prerequisites
+
+- The Moodle admin setting `enablebadges` must be enabled.
+- Managers must have both permissions `moodle/badges:viewbadges` and `moodle/badges:awardbadge`.
+- Students must have the permission `moodle/badges:earnbadge` to receive the badge.
+- Badges must use the criteria "Manually issued by role" (see below).
+
+## Choosing a badge
+
+From XP settings, navigate to Levels > Setup. To select a badge, expand the level and choose a badge from the dropdown. Not every badge is compatible with XP, [see below](#creating-compatible-badges) for how to create compatible badges.
+
+When set, whenever the level is attained, the badge will be awarded to the learner. Note that this setting is not retroactive. If a learner has already attained a level, the badge will not be awarded to them automatically.
+
+<Screenshot img={require('./level-edit-badge.png')}>The badge "Completionist" selected for the level #10.</Screenshot>
+
+## Creating compatible badges {#creating-compatible-badges}
+
+Badges that can be awarded from XP must be created with a few requirements in mind.
+
+- The criteria "Manually issued by role" must be used on its own, not combined with other criteria.
+- Access to the badge must be enabled.
+
+When a badge has been configured correctly and you have the required permissions, it will be available in the level settings.
+
+<Screenshot img={require('./badge-issued-by.png')}>Choosing the roles when adding the badge criteria "Manually issued by role".</Screenshot>
