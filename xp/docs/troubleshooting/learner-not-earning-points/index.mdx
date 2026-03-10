@@ -1,0 +1,49 @@
+---
+description: Troubleshoot why a learner is not earning points.
+sidebar_position: 40
+---
+
+import Screenshot from '@site/src/components/Screenshot';
+
+# Learners are not earning points
+
+If a learner is not receiving points when you expect them to, work through the checks below in order. In most cases, the problem is related to settings, permissions, or how the rules are configured.
+
+## 1. Check points gain setting
+
+Points are only awarded when points gain is enabled. Navigate to the XP settings and confirm that **Enable points gain** is turned on. This setting enables and disables itself automatically when the XP block is added to or removed from a course.
+
+<Screenshot img={require('./points-gain-enabled.png')}>Example of the points gain setting in XP settings.</Screenshot>
+
+## 2. Check permissions
+
+The learner must have the [permission](../../getting-started/permissions.mdx) `block/xp:earnxp` where the action occurs. Actions performed by users who do not have the permission are ignored. Actions performed by administrators are always ignored unless explicitly enabled in the admin settings.
+
+**To check a user's permissions:**
+
+1. Navigate to the "Check permissions" page.
+    - In a course, find the page from the Participants page.
+    - In an activity, find the page from the activity navigation.
+2. Select the learner.
+3. Enter the permission name `block/xp:earnxp` in the filter field.
+4. Confirm that "Allowed" is set to "Yes" for the permission.
+
+<Screenshot img={require('./permissions-check.png')}>Example of checking a user's permissions in a course.</Screenshot>
+
+If "Allowed" is set to "No", confirm that the user has the expected roles, and that those roles allow the permission.
+
+- [Moodle documentation: Check permissions](https://docs.moodle.org/en/Permissions#Checking_permissions)
+- [Moodle documentation: Roles and permissions](https://docs.moodle.org/en/Roles_and_permissions)
+- [Moodle documentation: Assigning a role](https://docs.moodle.org/en/Assign_roles)
+
+## 3. Check the logs
+
+Confirm that the event related to the action is visible in the Moodle logs. This helps confirm the behaviour of Moodle, or the plugin emitting the event. In most cases, without an event, XP is unable to detect the action and award points accordingly.
+
+If the event is present in Moodle logs, check whether the action appears in the XP logs (from the report page). If it does with zero points, it signifies that a rule was incorrectly set, or that the learner has reached the maximum number of points that they can earn for this action or for a given time frame.
+
+- [Moodle documentation: Logs](https://docs.moodle.org/en/Logs)
+
+## 4. Check the rules
+
+Confirm that the rules have been configured correctly by referring to their specific documentation page. See [Points system](../../points/introduction.mdx).
