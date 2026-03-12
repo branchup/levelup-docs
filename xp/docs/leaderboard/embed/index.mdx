@@ -1,0 +1,49 @@
+---
+title: Embed leaderboard
+slug: /leaderboard-embed
+sidebar_position: 9
+---
+
+# Embed the leaderboard
+
+The leaderboard is available as a dedicated page, but you can also embed it directly anywhere on your site using a shortcode. This is useful when you want learners to see the leaderboard without leaving the course page.
+
+## Prerequisites
+
+To use shortcodes, the [Shortcodes](https://moodle.org/plugins/filter_shortcodes) filter plugin must be installed and enabled on your Moodle site.
+
+## How to embed the leaderboard
+
+1. Go to the leaderboard page.
+2. Click **Embed leaderboard** in the page menu.
+3. Copy the shortcode from the modal that appears.
+4. Paste the shortcode into any Moodle text editor, such as a course section description, a block content, or a page resource.
+
+The shortcode will look something like this:
+
+```
+[xpladder ctx=123 secret=abcd1234]
+```
+
+The `ctx` and `secret` parameters are generated automatically and tie the shortcode to the correct context. We recommend copying the shortcode from the modal rather than writing it by hand.
+
+## Options
+
+You can customise how the leaderboard is displayed by adding arguments to the shortcode:
+
+- `top` displays the top students instead of those surrounding the current user. You can optionally specify a number, e.g. `top=10`.
+- `hidelink` hides the link to the full leaderboard page.
+- `withprogress` adds a progress bar column, if progress is enabled in the leaderboard settings.
+
+For example:
+
+```
+[xpladder ctx=123 secret=abcd1234 top=10 hidelink]
+```
+
+See the [shortcodes reference](../../how-to/use-shortcodes/index.mdx#xpladder) for the full list of options.
+
+## Team leaderboard
+
+If you are using the team leaderboard, you can embed it the same way using the `[xpteamladder]` shortcode. The **Embed leaderboard** option in the page menu on the team leaderboard page will generate the correct shortcode for you.
+
