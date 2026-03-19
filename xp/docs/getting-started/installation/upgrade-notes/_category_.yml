@@ -1,0 +1,7 @@
+label: 'Upgrade notes'
+position: 50
+link:
+  slug: /upgrade-notes
+  type: generated-index
+  description: |
+    Here are the upgrade notes for XP and XP+, please read them before upgrading. When a version is not listed here, it does not require any special steps.
