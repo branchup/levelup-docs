@@ -1,0 +1,111 @@
+---
+title: Upgrading to v20
+sidebar_position: 1
+slug: /upgrade-notes/upgrading-to-v20
+description: Important information when upgrading to Level Up XP/XP+ 20.
+---
+
+Important information regarding the upgrade to Level Up XP and Level Up XP+ 20. For more information about the release itself, please refer to the [release notes](/xp/release-notes/#xp-20-0) instead.
+
+## Log migration {#logs}
+
+A new log table was introduced in XP 20 which requires the data from previous log tables to be migrated.
+
+:::info
+
+The migration of logs is important to prevent situations where previously earned points could be earned again, and to prevent the complete disappearance of any log from the user interface.
+
+:::
+
+### What is migrated?
+
+Log entries are migrated from:
+
+- `block_xp_log` to `block_xp_logs`.
+- `local_xp_log` to `block_xp_logs` (for XP+)
+
+### Default behavior (automatic migration)
+
+By default, migration is automatically enabled and run by an ad-hoc task that:
+
+1. Runs in batches.
+2. Stops when configured limits are reached.
+3. Re-schedules itself for a later run when there is still work to do.
+
+This allows large sites to progressively migrate data over multiple runs.
+
+### Configuration
+
+:::info
+
+To avoid any unexpected behaviour, always set the migration settings **before upgrading your Moodle site**.
+
+:::
+
+The configuration settings are:
+
+- `logmigrationenabled`: Whether automatic migration is enabled, defaults to true.
+- `logmigrationruninterval`: Delay in seconds betweeh runs of the adhoc task, defaults to 60s.
+- `logmigrationbatchsize`: Number of records inserted per batch, defaults to 5,000.
+- `logmigrationmaxitems`: Maximum number of records migrated per run, defaults to 100,000.
+- `logmigrationmaxruntime`: Maximum runtime per run in seconds, defaults to 10 minutes.
+
+You can override the migration settings in your `config.php` file, example:
+
+```php
+$CFG->forced_plugin_settings = [
+  'block_xp' => [
+    'logmigrationruntinterval' => 5 * 60, // Re-schedules every 5 minutes.
+    'logmigrationmaxruntime' => 5 * 60, // Runs for up to 5 minutes.
+  ],
+];
+```
+
+
+### Disable automatic migration
+
+To disable automatic migration, set this **before upgrading your Moodle site**:
+
+```php
+$CFG->forced_plugin_settings = [
+  'block_xp' => [
+    'logmigrationenabled' => 0,
+  ],
+];
+```
+
+When disabled, automatic task-based migration will not run. The migration will have to be run manually from CLI.
+
+:::warning
+
+If you disable automatic migration and XP+ is not upgraded at the same time as XP, **the migration will have to be run again** when XP+ is upgraded.
+
+:::
+
+### Run migration manually from CLI
+
+Use the CLI script:
+
+```bash
+php [public/]blocks/xp/cli/migrate_logs.php
+```
+
+By default, it runs in check-only mode and reports pending migrations.
+
+To execute migration:
+
+```bash
+php [public/]blocks/xp/cli/migrate_logs.php --execute
+```
+
+To change batch size:
+
+```bash
+php [public/]blocks/xp/cli/migrate_logs.php --execute --batchsize=10000
+```
+
+:::info
+
+It is safe to run the script multiple times, only records that have not been migrated yet will be processed.
+
+:::
