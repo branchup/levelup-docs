@@ -24,7 +24,9 @@ Log entries are migrated from:
 - `block_xp_log` to `block_xp_logs`.
 - `local_xp_log` to `block_xp_logs` (for XP+)
 
-### Default behavior (automatic migration)
+The records are not deleted from their original tables, they are copied to the new table.
+
+### Default behaviour (automatic migration)
 
 By default, migration is automatically enabled and run by an ad-hoc task that:
 
@@ -34,7 +36,7 @@ By default, migration is automatically enabled and run by an ad-hoc task that:
 
 This allows large sites to progressively migrate data over multiple runs.
 
-### Configuration
+### Migration settings
 
 :::info
 
