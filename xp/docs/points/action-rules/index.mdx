@@ -16,6 +16,15 @@ Setting a condition to 0 points is a valid way to exclude certain activities fro
 
 <Screenshot img={require('./actions-rules.png')}>The action rules page with a few rules present.</Screenshot>
 
+<br />
+<br />
+:::tip
+
+To award points for completing activities, sections, or courses, use the [completion rules](../completion-rules/index.mdx) instead.
+
+:::
+
+
 ## Structure of a rule
 
 A rule is made up of:
@@ -66,11 +75,24 @@ Conditions define where a rule applies. The condition types available for a rule
 | Specific activity | Targets actions in one specific activity or resource. |
 | Activity name | Matches actions in activities whose name meets the configured criteria. |
 | [Activity tag](../rule-conditions/activity-tag/index.mdx) | Matches actions in activities that have a specific tag applied to them. |
-| Specific section | Targets actions inone specific section in the course. |
+| Specific section | Targets actions in one specific section in the course. |
 | Course | Targets actions in a specific course. |
 | Any... | Catch-all that matches anything of a given type. |
+
+## When points are not awarded
+
+It can be helpful to understand the cases where points will not be given, especially when troubleshooting.
+
+**The user does not have the permission to earn points.** Only users with the `block/xp:earnxp` [capability](../../getting-started/permissions.mdx) will earn points. By default, this is granted to the student role. Guests and unauthenticated users never earn points. Administrators do not earn points unless explicitly enabled in the admin settings.
+
+**The action happened outside of a course or activity.** Actions that occur outside of a course or module context are ignored.
+
+**The action is flagged as anonymous.** Some Moodle activities, such as anonymous feedback, flag their events as anonymous. Those are always ignored.
+
+**A condition limit has been reached.** If a matching condition has an [limit](./limits.mdx) that has been exhausted, no points are awarded for that action, even if the action would otherwise qualify.
+
+**No rule matches.** If no condition in any rule matches the action, nothing is awarded.
 
 ## Good to know
 
 - Action rules only apply going forward. Actions performed before a rule was created will not earn points. [Learn more](../retroactivity.mdx)
-- Only learners with the [permission](../../getting-started/permissions.mdx) to earn points will be affected by action rules.
