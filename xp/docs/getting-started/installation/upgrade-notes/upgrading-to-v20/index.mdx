@@ -111,3 +111,16 @@ php [public/]blocks/xp/cli/migrate_logs.php --execute --batchsize=10000
 It is safe to run the script multiple times, only records that have not been migrated yet will be processed.
 
 :::
+
+## Action rules and event rules coexisting {#action-rules}
+
+XP 20 introduces [action rules](../../../points/action-rules/index.mdx), the new preferred way to award points for learner activity. As part of this upgrade, XP automatically replaces the default event rules with equivalent action rule defaults on sites where the defaults were not customised.
+
+If your site has customised the default event rules at the admin level, this automatic migration does not apply. In that case, new courses will have both your custom event rules and the new action rule defaults active at the same time, which may result in points being awarded from both.
+
+If this applies to your site, we recommend reviewing the situation and taking one of the following approaches:
+
+- **Keep using event rules**: if you want to continue with your existing event rules, remove the action rule defaults in the admin settings so they are not added to new courses.
+- **Migrate to action rules**: if you prefer to switch to action rules, clear your custom default event rules at the admin level so that new courses only use action rules going forward. You may also want to remove event rules from existing courses.
+
+Note that using both event rules and action rules at the same time is perfectly valid. Just be mindful that both can award points for the same learner actions, so it is worth checking that the combination behaves as intended.
