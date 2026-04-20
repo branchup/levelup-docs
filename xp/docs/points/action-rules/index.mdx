@@ -4,6 +4,8 @@ description: Award points for specific actions with Level Up XP action rules.
 slug: /action-rules
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # Action rules
 
 Action rules are the recommended way to award points for things learners do in Moodle. They replace the older [event rules](../event-rules/introduction.mdx), offering a simpler and more flexible setup.
@@ -12,6 +14,8 @@ Each rule targets a specific type of action, such as posting in a forum, viewing
 
 Setting a condition to 0 points is a valid way to exclude certain activities from giving any points at all.
 
+<Screenshot img={require('./actions-rules.png')}>The action rules page with a few rules present.</Screenshot>
+
 ## Structure of a rule
 
 A rule is made up of:
@@ -19,6 +23,8 @@ A rule is made up of:
 - An **action type**: the kind of action being performed, such as viewing content, writing content, or obtaining a certificate.
 - One or more **conditions**: each condition defines where the rule applies and how many points to award.
 - Optional **limits**: controls on how often a condition can give points. [Learn more](./limits.mdx)
+
+<Screenshot img={require('./actions-structure.png')}>A rule awarding 50 points for taking the "Final assessment" quiz, and 5 points for taking any other quiz.</Screenshot>
 
 ## Default rules
 
