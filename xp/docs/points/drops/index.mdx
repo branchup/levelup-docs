@@ -7,58 +7,65 @@ slug: /how-to/use-drops
 # Drops
 
 import RequiresXpPlus from '@site/src/components/RequiresXpPlus';
+import Screenshot from '@site/src/components/Screenshot';
 
 <RequiresXpPlus />
 
-Drops are code snippets that an instructor can _hide_ in the content of a course to award points when said content is being presented to the learner.
+Drops are code snippets that award points when Moodle displays specified course content to a learner.
 
-The drops can be placed in many locations, such as the description of an activity, the feedback at the end of a quiz, the page of a lesson, and more.
+You can put drops in activity descriptions, quiz feedback, lesson pages, and other course content.
 
-By placing drops in these locations, an instructor can create new ways to award points, reward deep learning and even provide points for failing a question!
+For example, you can use a drop to award points when a learner views feedback for an incorrect answer.
 
-Drops are invisible to the learner and only award their associated points once.
+Learners cannot see drops. Each drop awards its points only once to each learner.
 
 :::info
 
-**Why is it called drop?** In video games, some characters can _drop_ items or experience points on the ground for the player to pick up. These items and points are commonly referred to as drops.
+**Why is it called a drop?** In video games, some characters can drop items or experience points for the player to collect. These items and points are called drops.
 
 :::
 
 ## Creating drops
 
-Navigate to the page found in the plugin's _Settings > Points > Drops_, and click on the button to add a drop. You will be asked to provide the name and points of the drop.
+To create a drop:
 
-The **name** is only visible to you and is useful to organise your drops. The name will be displayed to _you_ when you preview the content where the snippet was placed.
+1. In the XP settings, select Points > Drops.
+2. Select the button to add a drop.
+3. Enter a name. The name helps you identify the drop. Learners cannot see it.
+4. Enter the number of points to award. Each learner receives the points the first time that they view content that contains the drop.
+5. Disable the drop if you do not want it to award points.
+6. Save the page.
 
-The **points** is the amount of points to award a learner when they load the page where the drop has been placed. Points are only awarded the first time the drop has been found.
-
-There also is an option to disable the drop, in which case it will not award points until it is enabled again.
-
-Once the information has been provided, continue by saving the page.
+When you preview content that contains the drop, Moodle shows the name to you.
 
 ## Placing the drop
 
-Once a drop has been created, you need to copy its snippet and place it in some content.
+After you create a drop, copy its code snippet to course content.
 
-To get the code snippet of the drop, click on its name from the _Settings > Points > Drops_ page. This will open a popup showing a snippet looking something like `[xpdrop secret=abc123 id=123]`. Copy the snippet to your clipboard.
+1. In the XP settings, select Points > Drops.
+2. Select the name of the drop. A dialog shows a code snippet, such as `[xpdrop secret=abc123 id=123]`.
+3. Copy the snippet to your clipboard.
 
-![Example of code snippet](snippet.png)
+<Screenshot img={require('./snippet.png')}>A code snippet for a drop.</Screenshot>
 
-Now, place this code into some content in Moodle, via an HTML editor, and save. To test your first drop, we recommend that you place it directly on the course page. To do so, navigate to the course page, turn editing on, and edit a section/topic (see menu on the same level as the section name). Place the drop in the section's description and save.
+To test your first drop, put the snippet in a section description on the course page:
 
-As you navigate back to the course page, the drop will display to you as "Drop: Name of drop". At this moment, any learner visiting the course will earn the points associated to the drop, once.
+1. Open the course page and turn editing on.
+2. Open the menu next to a section name and edit the section.
+3. Put the snippet in the section description.
+4. Save the section.
 
-That's it!
+When you return to the course page, Moodle shows the drop name to you. Each learner receives the points the first time that they open the course page.
 
 :::warning
 
-Note that the code snippet **must not** be shared with learners.
+Do not share the code snippet with learners.
 
 :::
 
 :::tip
 
-Did you know that you can wrap the snippet within the shortcode `[xpiflevel]` to conditionally award the drop points? The example code below will only trigger the drop if the learner's level is below 5. [Read more](/how-to/use-shortcodes/index.mdx#xpiflevel)
+You can put the snippet inside the shortcode `[xpiflevel]` to award points only at specified levels. The following example awards the drop points only if the learner's level is less than 5. For more information, see the [`xpiflevel` reference](../../how-to/use-shortcodes/index.mdx#xpiflevel).
 
 ```
 [xpiflevel <5][xpdrop secret=abc123 id=123][/xpiflevel]
@@ -70,24 +77,24 @@ Did you know that you can wrap the snippet within the shortcode `[xpiflevel]` to
 
 :::note
 
-This section is only relevant to drops and backups created on **versions prior to XP+ 1.16.**
+This section applies only to drops and backups from a version earlier than XP+ 1.16.
 
 :::
 
-Before XP+ 1.16, drops could not be backed up and restored on the same site. In short, this was due to the lack of unique identifier in the drop snippet. Since XP+ 1.6, the drop shortcode includes both the drop secret, and the drop ID. This allows for backups to be restored on the same site.
+Before XP+ 1.16, you could not back up and restore drops on the same site. The drop snippet did not contain a unique identifier. In XP+ 1.16 and later, the drop shortcode contains both the `secret` and `id` values. These values let you restore a backup on the same site.
 
-Note that all shortcodes should be updated to the new shortcode including both secret and ID for their restoration to work.
+Update all old drop shortcodes to include both values before you create a backup.
 
 ## Troubleshooting
 
-If the drop does not appear to be working, please check each items in the following order:
+If a drop does not work, do these checks in order:
 
-- Is the drop "enabled" in its settings?
-- Is the code snippet correct?
-- Is the drop displayed as "Drop: Name of drop" to the instructor?
-  - If not, the plugin [Shortcodes](https://moodle.org/plugins/filter_shortcodes) may be missing.
-  - Or, the plugin Shortcodes is not enabled in the given context, see filters.
-  - Or, the content is not compatible with filters.
-- Has the test user previously earned this drop? In doubt create a new drop, or use a new user account.
-- Has the user earned the points? Check their XP logs.
-  - If not, this is likely a permission issue. The user needs the permission _block/xp:earnxp_ to earn points from drops.
+1. Confirm that the drop is enabled in its settings.
+2. Confirm that the code snippet is correct.
+3. Open the content as an instructor and confirm that Moodle shows the drop name. If Moodle does not show the name, do these checks:
+   - Confirm that you installed and enabled the [Shortcodes plugin](../../getting-started/installation/recommended-plugins.mdx#shortcodes).
+   - Confirm that the Shortcodes filter is enabled in the applicable context.
+   - Confirm that the content supports Moodle filters.
+4. Confirm that the test learner did not receive the drop before. If you are not sure, create a new drop or use a different test account.
+5. Check the XP logs to confirm that the learner received the points.
+6. If the learner did not receive the points, confirm that the learner has the [`block/xp:earnxp` permission](../../getting-started/permissions.mdx#earnxp).
