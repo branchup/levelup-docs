@@ -1,5 +1,5 @@
 ---
-description: Award points in Moodle when learners obtain a certificate with the Custom certificate plugin.
+description: Award points when learners get a certificate from the Custom certificate plugin.
 title: "Obtain a certificate"
 ---
 
@@ -8,21 +8,23 @@ import Screenshot from '@site/src/components/Screenshot';
 
 <RequiresXpPlus plan="Premium" />
 
-The **Obtain a certificate** action awards points to learners when they receive a certificate issued by the [Custom certificate](https://moodle.org/plugins/mod_customcert) plugin. This is a popular third-party plugin that lets educators design and issue certificates directly within Moodle.
-
-Pairing certificates with points creates a natural reward moment: learners complete their work, earn their certificate, and are immediately recognised with points. It reinforces the value of the certificate and gives learners an extra reason to see their work through to the end.
+Use the Obtain a certificate action to award points when the Custom certificate plugin issues a certificate to a learner.
 
 ## Requirements
 
-- The [Custom certificate](https://moodle.org/plugins/mod_customcert) plugin version 5 or later must be installed, which itself requires Moodle 5.0 or later.
+You must use the following software:
 
-## Setting it up
+- Moodle 5.0 or later.
+- [Custom certificate](https://camp-registry.org/plugin/mod_customcert.html) version 5 or later.
 
-1. Navigate to the **Action rules** page.
-2. Add a new action and select **Obtain a certificate**.
-3. Choose the **Specific activity** condition and select your certificate activity, such as "Program certificate".
-4. Set the number of points to award.
+## Configure the action
 
-From this point on, whenever a learner receives a certificate, they will earn the configured points.
+1. Go to the Action rules page.
+2. Select Add action and then select Obtain a certificate.
+3. Add the Specific activity condition.
+4. Select the certificate activity, such as Program certificate.
+5. Enter the number of points to award.
 
-<Screenshot img={require('./rule-added.png')}>Example of 100 points awarded when learners obtain a certificate from the "Program certificate" activity.</Screenshot>
+Level Up XP awards the specified points when the selected activity issues a certificate to a learner.
+
+<Screenshot img={require('./rule-added.png')}>This action awards 100 points when a learner gets a certificate from the Program certificate activity.</Screenshot>
