@@ -1,26 +1,32 @@
 ---
 slug: level-based-course-enrolment
-description: Enrol learners in courses when they attain a level.
+description: Automatically enrol learners in a course when they reach a specified level.
 ---
 
-# Level-based course enrolment
+import Screenshot from '@site/src/components/Screenshot';
+
+# Enrol learners at a specified level
+
+The level enrolment method automatically enrols learners in a course when they reach a specified level. Use it to control access to advanced courses and reward learner progress.
 
 :::info
 
-This feature requires the enrolment plugin [Level Up XP Enrolment](https://moodle.org/plugins/enrol_xp) to be installed and enabled.
+To use this feature, install and enable [XP Enrol](../../getting-started/installation/recommended-plugins.mdx#xp-enrol).
 
 :::
 
-1. Go to the course to unlock at a certain level
-2. Navigate to the enrolment methods page
-   - Under _Course administration > Enrolment methods_
-   - Or _Participants > Enrolments methods_
-3. Select _Level enrolment_ from the _Add method_ dropdown
-4. Set the required level to gain access
-5. When using one block per course, also select the course in which the level needs to be attained
-6. Optionally add a welcome message
-7. Save your changes, you're done!
+1. Open the course in which you want to enrol learners.
+2. Open the Enrolment methods page:
+   - In some versions of Moodle, select Course administration > Enrolment methods.
+   - In other versions of Moodle, select Participants > Enrolment methods.
+3. In Add method, select Level Up XP Enrolment.
+4. In Level to attain, enter the required level.
+5. If Level Up XP is not in [Sitewide mode](../../getting-started/per-course-or-site.mdx)…
+   - Find Course to attain level in.
+   - Select the course in which learners must reach the level.
+6. If necessary, enter a welcome message.
+7. Save the changes.
 
-![Screenshot](level-up-course-restriction-enrol.png)
+<Screenshot img={require('./level-up-course-restriction-enrol.png')}>These settings enrol learners when they reach level 5.</Screenshot>
 
-More on enrolment methods at [Moodle documentation](https://docs.moodle.org/en/Enrolment_plugins).
+For more information, see [Enrolment plugins](https://docs.moodle.org/en/Enrolment_plugins) in the Moodle documentation.
