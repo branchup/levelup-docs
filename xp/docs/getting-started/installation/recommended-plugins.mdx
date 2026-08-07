@@ -2,18 +2,126 @@
 sidebar_position: 1
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
 # Recommended plugins
 
-To fully benefit from all the features offered by XP and XP+, some additional plugins may need to be installed. All of these are free and available directly from [moodle.org](https://moodle.org/plugins).
+To fully benefit from all the features offered by XP and XP+, some additional plugins need to be installed.
 
-## Availability XP
+All of these are free and maintained by ourselves.
 
-The plugin enables instructors to conditionally allow or restrict access to activities or sections in courses based on a learner's level. [View on moodle.org](https://moodle.org/plugins/availability_xp)
+## XP Availability
 
-## Enrol XP
+Instructors can use XP Availability to control access to course activities and sections according to each learner's level. This helps instructors adapt their gamification strategy.
 
-With this plugin, learners can automatically be enrolled in a course based on the level they attained in another course. [View on moodle.org](https://moodle.org/plugins/enrol_xp)
+<Tabs>
+  <TabItem value="camp" label="Get from CAMP" default>
+    1. Obtain the ZIP from [CAMP](https://camp-registry.org/plugin/availability_xp.html)
+    2. Then…
+        - Use the Moodle plugin installer from your Moodle site
+        - Or, extract the zip contents to `[public]/availability/condition/xp`
+    3. In your Moodle site, open the Notifications page in Site administration
+  </TabItem>
+
+  <TabItem value="moodle" label="Plugins directory">
+    1. Obtain the ZIP from [Moodle's plugins directory](https://moodle.org/plugins/availability_xp)
+    2. Then…
+        - Use the Moodle plugin installer from your Moodle site
+        - Or, extract the zip contents to `[public]/availability/condition/xp`
+    3. In your Moodle site, open the Notifications page in Site administration
+  </TabItem>
+
+  <TabItem value="git" label="Using git">
+    1. Clone the [official repository](https://github.com/FMCorz/moodle-availability_xp/) into `[public]/availability/condition/xp`
+    2. Check out the latest tag
+    3. In your Moodle site, open the Notifications page in Site administration
+
+    The following commands clone the official repository and check out the latest tag.
+
+    ```sh
+    cd public/availability/condition 2>/dev/null || cd availability/condition || exit 1
+    git clone https://github.com/FMCorz/moodle-availability_xp.git xp
+    cd xp
+    git checkout "$(git tag --list 'v*' --sort=-v:refname | head -n 1)"
+    ```
+
+  </TabItem>
+</Tabs>
+
+## XP Enrol
+
+With XP Enrol, instructors can automatically enrol learners in a course when the learners get to a specified level in another course.
+
+<Tabs>
+  <TabItem value="camp" label="Get from CAMP" default>
+    1. Obtain the ZIP from [CAMP](https://camp-registry.org/plugin/enrol_xp.html)
+    2. Then…
+        - Use the Moodle plugin installer from your Moodle site
+        - Or, extract the zip contents to `[public]/enrol/xp`
+    3. In your Moodle site, open the Notifications page in Site administration
+  </TabItem>
+
+  <TabItem value="moodle" label="Plugins directory">
+    1. Obtain the ZIP from [Moodle's plugins directory](https://moodle.org/plugins/enrol_xp)
+    2. Then…
+        - Use the Moodle plugin installer from your Moodle site
+        - Or, extract the zip contents to `[public]/enrol/xp`
+    3. In your Moodle site, open the Notifications page in Site administration
+  </TabItem>
+
+  <TabItem value="git" label="Using git">
+    1. Clone the [official repository](https://github.com/branchup/moodle-enrol_xp/) into `[public]/enrol/xp`
+    2. Check out the latest tag
+    3. In your Moodle site, open the Notifications page in Site administration
+
+    The following commands clone the official repository and check out the latest tag.
+
+    ```sh
+    cd public/enrol 2>/dev/null || cd enrol || exit 1
+    git clone https://github.com/branchup/moodle-enrol_xp.git xp
+    cd xp
+    git checkout "$(git tag --list 'v*' --sort=-v:refname | head -n 1)"
+    ```
+
+  </TabItem>
+</Tabs>
 
 ## Shortcodes
 
-Shortcodes are code snippets that instructors can use to [enhance their course content](/how-to/use-shortcodes/index.mdx). [View on moodle.org](https://moodle.org/plugins/filter_shortcodes)
+Instructors can use shortcodes to [add content to their courses](/how-to/use-shortcodes/index.mdx).
+
+<Tabs>
+  <TabItem value="camp" label="Get from CAMP" default>
+    1. Obtain the ZIP from [CAMP](https://camp-registry.org/plugin/filter_shortcodes.html)
+    2. Then…
+        - Use the Moodle plugin installer from your Moodle site
+        - Or, extract the zip contents to `[public]/filter/shortcodes`
+    3. In your Moodle site, open the Notifications page in Site administration
+  </TabItem>
+
+  <TabItem value="moodle" label="Plugins directory">
+    1. Obtain the ZIP from [Moodle's plugins directory](https://moodle.org/plugins/filter_shortcodes)
+    2. Then…
+        - Use the Moodle plugin installer from your Moodle site
+        - Or, extract the zip contents to `[public]/filter/shortcodes`
+    3. In your Moodle site, open the Notifications page in Site administration
+  </TabItem>
+
+  <TabItem value="git" label="Using git">
+    1. Clone the [official repository](https://github.com/branchup/moodle-filter_shortcodes/) into `[public]/filter/shortcodes`
+    2. Check out the latest tag
+    3. In your Moodle site, open the Notifications page in Site administration
+
+    The following commands clone the official repository and check out the latest tag.
+
+    ```sh
+    cd public/filter 2>/dev/null || cd filter || exit 1
+    git clone https://github.com/branchup/moodle-filter_shortcodes.git shortcodes
+    cd shortcodes
+    git checkout "$(git tag --list 'v*' --sort=-v:refname | head -n 1)"
+    ```
+
+  </TabItem>
+</Tabs>

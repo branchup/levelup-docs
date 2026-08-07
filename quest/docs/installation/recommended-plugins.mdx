@@ -3,18 +3,123 @@ sidebar_position: 3
 description: Recommended plugins to get the most out of Quest.
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Recommended plugins
 
-To fully benefit from all the features of Quest, we recommend installing these additional plugins. All of these plugins are available for free.
+Install these free plugins to use more Quest features.
 
 ## Quest Availability
 
-The plugin enables instructors to conditionally allow or restrict access to activities or sections in courses based on a learner's progess in quests, achievements and challenges. [Get from our repository](https://github.com/branchup/moodle-availability_gearup/tags)
+Instructors can use Quest Availability to control access to course activities and sections according to each learner's progress in quests, achievements, and challenges.
+
+<Tabs>
+  <TabItem value="camp" label="Get from CAMP" default>
+    1. Obtain the ZIP from [CAMP](https://camp-registry.org/plugin/availability_gearup.html)
+    2. Then…
+        - Use the Moodle plugin installer from your Moodle site
+        - Or, extract the zip contents to `[public]/availability/condition/gearup`
+    3. In your Moodle site, open the Notifications page in Site administration
+  </TabItem>
+
+  <TabItem value="git" label="Using git">
+    1. Clone the [official repository](https://github.com/branchup/moodle-availability_gearup/) into `[public]/availability/condition/gearup`
+    2. Check out the latest tag
+    3. In your Moodle site, open the Notifications page in Site administration
+
+    The following commands clone the official repository and check out the latest tag.
+
+    ```sh
+    cd public/availability/condition 2>/dev/null || cd availability/condition || exit 1
+    git clone https://github.com/branchup/moodle-availability_gearup.git gearup
+    cd gearup
+    git checkout "$(git tag --list 'v*' --sort=-v:refname | head -n 1)"
+    ```
+
+  </TabItem>
+</Tabs>
 
 ## Shortcodes
 
-Shortcodes are code snippets that instructors can use to enhance their content, so of Quest features rely on it. [Get from moodle.org](https://moodle.org/plugins/filter_shortcodes)
+Instructors can use shortcodes to add Quest content to their courses. Some Quest features require this plugin.
+
+<Tabs>
+  <TabItem value="camp" label="Get from CAMP" default>
+    1. Obtain the ZIP from [CAMP](https://camp-registry.org/plugin/filter_shortcodes.html)
+    2. Then…
+        - Use the Moodle plugin installer from your Moodle site
+        - Or, extract the zip contents to `[public]/filter/shortcodes`
+    3. In your Moodle site, open the Notifications page in Site administration
+  </TabItem>
+
+  <TabItem value="moodle" label="Plugins directory">
+    1. Obtain the ZIP from [Moodle's plugins directory](https://moodle.org/plugins/filter_shortcodes)
+    2. Then…
+        - Use the Moodle plugin installer from your Moodle site
+        - Or, extract the zip contents to `[public]/filter/shortcodes`
+    3. In your Moodle site, open the Notifications page in Site administration
+  </TabItem>
+
+  <TabItem value="git" label="Using git">
+    1. Clone the [official repository](https://github.com/branchup/moodle-filter_shortcodes/) into `[public]/filter/shortcodes`
+    2. Check out the latest tag
+    3. In your Moodle site, open the Notifications page in Site administration
+
+    The following commands clone the official repository and check out the latest tag.
+
+    ```sh
+    cd public/filter 2>/dev/null || cd filter || exit 1
+    git clone https://github.com/branchup/moodle-filter_shortcodes.git shortcodes
+    cd shortcodes
+    git checkout "$(git tag --list 'v*' --sort=-v:refname | head -n 1)"
+    ```
+
+  </TabItem>
+</Tabs>
 
 ## Level Up XP
 
-Award points to learners for completing their quests and challenges, and create objectives based on their levels or points. Level Up XP integrates well with Level Up Quest. [Get from our website](https://levelup.plus/xp/)
+Instructors can use Level Up XP to award points when learners complete quests and challenges. Instructors can also create Quest objectives that use learners' levels or points.
+
+<Tabs>
+  <TabItem value="xp" label="Get from us" default>
+    1. Obtain the ZIP from [our website](https://www.levelup.plus/xp/)
+    2. Then…
+        - Use the Moodle plugin installer from your Moodle site
+        - Or, extract the zip contents to `[public]/blocks/xp`
+    3. In your Moodle site, open the Notifications page in Site administration
+  </TabItem>
+
+  <TabItem value="camp" label="CAMP" default>
+    1. Obtain the ZIP from [CAMP](https://camp-registry.org/plugin/block_xp.html)
+    2. Then…
+        - Use the Moodle plugin installer from your Moodle site
+        - Or, extract the zip contents to `[public]/blocks/xp`
+    3. In your Moodle site, open the Notifications page in Site administration
+  </TabItem>
+
+  <TabItem value="moodle" label="Plugins directory">
+    1. Obtain the ZIP from [Moodle's plugins directory](https://moodle.org/plugins/block_xp)
+    2. Then…
+        - Use the Moodle plugin installer from your Moodle site
+        - Or, extract the zip contents to `[public]/blocks/xp`
+    3. In your Moodle site, open the Notifications page in Site administration
+  </TabItem>
+
+  <TabItem value="git" label="Using git">
+    1. Clone the [official repository](https://github.com/FMCorz/moodle-block_xp/) into `[public]/blocks/xp`
+    2. Check out the latest tag
+    3. In your Moodle site, open the Notifications page in Site administration
+
+    The following commands clone the official repository and check out the latest tag.
+
+    ```sh
+    cd public/blocks 2>/dev/null || cd blocks || exit 1
+    git clone https://github.com/FMCorz/moodle-block_xp.git xp
+    cd xp
+    git checkout "$(git tag --list 'v*' --sort=-v:refname | head -n 1)"
+    ```
+
+  </TabItem>
+</Tabs>
