@@ -5,103 +5,114 @@ description: Enhance learning content with shortcodes.
 # Use shortcodes
 
 import RequiresXpPlus from '@site/src/components/RequiresXpPlus';
+import Screenshot from '@site/src/components/Screenshot';
 
 :::info
 
-To use shortcodes with Level Up XP, the plugin [Shortcodes](https://moodle.org/plugins/filter_shortcodes) must be installed and enabled.
+You must install and enable the [Shortcodes plugin](../../getting-started/installation/recommended-plugins.mdx#shortcodes) to use shortcodes with Level Up XP.
 
 :::
 
 ## Introduction
 
-Shortcodes are short words delimited by square brackets such as `[xpbadge]` which can be added to text editors in Moodle. When displayed, they are transformed into alternate content. The term shortcode was popularised by Wordpress.
+Shortcodes are tags enclosed in square brackets, such as `[xpbadge]`. You can add shortcodes in Moodle text editors. When Moodle displays the text, it replaces each shortcode with its result.
 
-Here are the shortcodes built-in _Level Up XP_:
+## Example
 
-- [xpbadge](#xpbadge): To display the level badge
-- [xpdrop](#xpdrop)^: To award points anywhere
-- [xpiflevel](#xpiflevel): To display or hide some content according to the students' level
-- [xpladder](#xpladder): To display the leaderboard
-- [xpteamladder](#xpteamladder)^: To display the team leaderboard
-- [xplevelname](#xplevelname): To display the level name
-- [xppoints](#xppoints): To highlight points displayed as experience points
-- [xpprogressbar](#xpprogressbar): To display the progress bar
+You can combine any of the available shortcodes with text and layout elements. The following image shows one example on a course page.
 
-^ Requires _Level Up XP+_
+<Screenshot img={require('./xp-course-page-with-shortcodes.png')}>Shortcodes display level and progress information on a course page.</Screenshot>
+
+The course page in the previous image uses the following editor content. When Moodle displays the content, it replaces the shortcodes with information for the current user.
+
+<Screenshot img={require('./shortcodes-in-editor.png')}>Shortcodes combined with text and layout elements in a Moodle text editor.</Screenshot>
+
+## Available shortcodes
+
+The following shortcodes are built into Level Up XP:
+
+- [`xpbadge`](#xpbadge) displays the level badge.
+- [`xpdrop`](#xpdrop) awards points from Moodle content.
+- [`xpiflevel`](#xpiflevel) displays or hides content according to the current user's level.
+- [`xpladder`](#xpladder) displays the leaderboard.
+- [`xpteamladder`](#xpteamladder) displays the team leaderboard.
+- [`xplevelname`](#xplevelname) displays the level name.
+- [`xppoints`](#xppoints) displays points in the experience points format.
+- [`xpprogressbar`](#xpprogressbar) displays the progress bar.
 
 ### xpbadge
 
-Displays the badge matching the level of current user.
-
-`[xpbadge]`
+`[xpbadge]` displays the badge for the current user's level.
 
 ### xpdrop
 
-With this shortcode, points can be awarded virtually anywhere. However, it is not intended to be constructed manually. Please see the [documentation page to use drops](/points/drops/index.mdx).
+<RequiresXpPlus />
+
+You can use `[xpdrop]` to award points from most Moodle content. Do not write this shortcode manually. For instructions, see [Use drops](/points/drops/index.mdx).
 
 ### xpiflevel
 
-Displays the content within its brackets according to the user's level. When a level is strictly specified, the content will be displayed regardless of the other rules. The greater and less than rules must all match for the content to be displayed, watch out as that may sometimes result in the content never being displayed! Note that teachers, or other users with editing capabilities, will always see everything.
+`[xpiflevel]` displays its content when the current user's level matches its conditions. If the user's level matches an exact level, the shortcode ignores the comparison conditions. If no exact level matches, the user's level must match all comparison conditions. Teachers and other users who can edit the content always see it.
 
 ```
 [xpiflevel 1 3 5]
-    Displayed if the user's level is exactly 1, 3 or 5.
+    This content appears when the user's level is exactly 1, 3, or 5.
 [/xpiflevel]
 
 [xpiflevel >3]
-    Displayed if the user's level is greater than 3.
+    This content appears when the user's level is greater than 3.
 [/xpiflevel]
 
 [xpiflevel >=3]
-    Displayed if the user's level is greater or equal to 3.
+    This content appears when the user's level is greater than or equal to 3.
 [/xpiflevel]
 
 [xpiflevel >=10 <20 30]
-    Displayed if the user's level is greater or equal to 10 AND is strictly less than 20
-    OR is exactly equal to 30.
+    This content appears when the user's level is 10 or more and less than 20.
+    It also appears when the user's level is exactly 30.
 [/xpiflevel]
 
 [xpiflevel <=10 >=20]
-    Never displayed because the user's level can never be less or equal to 10 AND more or equal to 20.
+    This content does not appear. A level cannot be 10 or less and 20 or more at the same time.
 [/xpiflevel]
 ```
 
-Note that these shortcodes CANNOT be nested within one another.
+`[xpiflevel]` cannot contain another `[xpiflevel]` shortcode. You can put other shortcodes, such as `[xpdrop]`, inside `[xpiflevel]`.
 
 ### xpladder
 
 :::info
 
-From XP 19, the shortcode will include the `ctx` and `secret` parameters when copied from the leaderboard page.
+You can get the embed code from the leaderboard page. For instructions, see [Embed the leaderboard](../../leaderboard/embed/index.mdx). In XP 19 and later, the embed code includes the `ctx` and `secret` parameters.
 
 :::
 
-By default, a portion of the ladder surrounding the current user will be displayed.
+By default, `[xpladder]` displays the part of the leaderboard around the current user.
 
 ```
 [xpladder]
 ```
 
-To display the top 10 students instead of the neighbours of the current user, set the parameter `top`. You can optionally set the number of users to display like so `top=20`.
+To display the top 10 users, add the `top` parameter. To select the number of users, give `top` a value, such as `top=15`.
 
 ```
 [xpladder top]
 [xpladder top=15]
 ```
 
-A link to the full ladder will automatically be displayed below the table, if you do not want to display such link, add the argument `hidelink`.
+By default, the shortcode displays a link to the full leaderboard below the table. To hide this link, add the `hidelink` parameter.
 
 ```
 [xpladder hidelink]
 ```
 
-By default, the table does not include the progress column which displays the progress bar. If such column has been selected in the additional colums in the ladder's settings, you can use the argument `withprogress` to display it.
+By default, the table does not include the progress bar column. If you enable this column in the leaderboard settings, add the `withprogress` parameter to include it.
 
 ```
 [xpladder withprogress]
 ```
 
-Note that when a course is using groups, the ladder will best guess which group to display the ladder of.
+If a course uses groups, Level Up XP selects which group to use for the leaderboard.
 
 ### xpteamladder
 
@@ -109,52 +120,51 @@ Note that when a course is using groups, the ladder will best guess which group 
 
 :::info
 
-From XP 19, the shortcode will include the `ctx` and `secret` parameters when copied from the leaderboard page.
+You can get the embed code from the team leaderboard page. For instructions, see [Embed the team leaderboard](../../leaderboard/embed/index.mdx#team-leaderboard). In XP 19 and later, the embed code includes the `ctx` and `secret` parameters.
 
 :::
 
-By default, a portion of the team ladder surrounding the current user will be displayed.
+By default, `[xpteamladder]` displays the teams near the current user's team.
 
 ```
 [xpteamladder]
 ```
 
-To display the top 5 teams instead of the teams neighbouring those of the current user, set the parameter `top`. You can optionally set the number of teams to display by giving `top` a value, like so: `top=20`.
+To display the top 5 teams, add the `top` parameter. To select the number of teams, give `top` a value, such as `top=15`.
 
 ```
 [xpteamladder top]
 [xpteamladder top=15]
 ```
 
-A link to the full ladder will automatically be displayed below the table if there are more results to be displayed, if you do not want to display such link, add the argument `hidelink`.
+If more results are available, the shortcode displays a link to the full team leaderboard below the table. To hide this link, add the `hidelink` parameter.
 
 ```
 [xpteamladder hidelink]
 ```
 
-By default, the table does not include the progress column which displays the progress bar. If such column has been selected in the additional colums in the ladder\'s settings, you can use the argument `withprogress` to display it.
+By default, the table does not include the progress bar column. If you enable this column in the team leaderboard settings, add the `withprogress` parameter to include it.
 
 ```
 [xpteamladder withprogress]
 ```
 
-Note that when the current user belongs to multiple teams, the plugin will use the one with the best rank as reference.
+If the current user belongs to multiple teams, Level Up XP uses the team with the highest rank as the reference.
 
 ### xplevelname
 
-By default the tag displays the name of the current user's level.
-Alternatively, you can use the `level` argument to display the name of a specific level.
+By default, `[xplevelname]` displays the name of the current user's level. To display the name of a specified level, add the `level` parameter.
 
 ```
 [xplevelname]
 [xplevelname level=5]
 ```
 
-If the `level` argument is provided and the level does not exist, nothing will be displayed.
+If the specified level does not exist, the shortcode displays no content.
 
 ### xppoints
 
-Displays, and highlights, a number of points formatted as experience points.
+`[xppoints]` displays and highlights a number in the experience points format.
 
 ```
 [xppoints 1000]
@@ -162,18 +172,8 @@ Displays, and highlights, a number of points formatted as experience points.
 [xppoints plain]
 ```
 
-If the number of points is not specified, it will display the number of points held by the current user. The `plain` keyword will display the number of points without any formatting.
-
-:::note
-
-This shortcode was added in XP 3.12.0. The ability to display the current user's points and the `plain` keyword were added in XP 3.15.0.
-
-:::
+If you do not specify a number, the shortcode displays the current user's points. Add the `plain` keyword to display the number without formatting.
 
 ### xpprogressbar
 
-Displays the current user's progress bar towards the next level.
-
-```
-[xpprogressbar]
-```
+`[xpprogressbar]` displays the current user's progress towards the next level.

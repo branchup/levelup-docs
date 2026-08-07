@@ -9,3 +9,5 @@ Use ASD-STE100 Simplified Technical English (STE) in documentation. Check all pr
 - Use the `<Screenshot>` component for screenshots.
 - Prefer internal documentation links when a relevant page exists.
 - Refer to `docs.moodle.org` as "the Moodle documentation."
+
+Never try to build the site yourself.
