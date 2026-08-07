@@ -1,0 +1,63 @@
+---
+sidebar_position: 50
+sidebar_label: Missing from Mobile app
+description: Troubleshoot why Level Up XP does not appear in the Moodle Mobile app.
+---
+
+import RequiresXpPlus from '@site/src/components/RequiresXpPlus';
+import Screenshot from '@site/src/components/Screenshot';
+
+# Level Up XP does not appear in the Moodle Mobile app
+
+<RequiresXpPlus />
+
+Level Up XP supports the Moodle Mobile app on Moodle 3.1 or later. Use a Moodle Mobile app version that is compatible with your Moodle site. Compatible custom mobile apps can also show Level Up XP.
+
+## Find Level Up XP in the Moodle Mobile app
+
+The location of Level Up XP depends on its use mode.
+
+If the use mode is Sitewide, Level Up XP appears in the main menu.
+
+<Screenshot img={require('./mobile-system.png')}>Level Up XP in the main menu.</Screenshot>
+
+<Screenshot img={require('./level-up-whole-site.png')}>Level Up XP on a site page.</Screenshot>
+
+If the use mode is In courses, you can open Level Up XP from these locations:
+
+- The course menu.
+
+<Screenshot img={require('./mobile-course-menu.png')}>Level Up XP in the course menu.</Screenshot>
+
+- The menu on the course page.
+
+<Screenshot img={require('./mobile-course-dropdown.png')}>Level Up XP in the menu on a course page.</Screenshot>
+
+- The course menu on the Course overview page.
+
+<Screenshot img={require('./mobile-course-dropdown-2.png')}>The course menu on the Course overview page.</Screenshot>
+
+## Use Moodle Mobile app 3.5 with an older Moodle site
+
+The `local_mobile` plugin adds Moodle Mobile app 3.5 features to Moodle 3.1 through 3.4. If you use Moodle Mobile app 3.5 with one of these Moodle versions, install this plugin. Without this plugin, Level Up XP might not appear.
+
+1. Get `local_mobile` from the [moodlehq/moodle-local_mobile repository](https://github.com/moodlehq/moodle-local_mobile).
+2. Follow the installation instructions in [the Moodle documentation](https://docs.moodle.org/en/Moodle_Mobile_additional_features#Installation).
+3. Log out of all sites in the Moodle Mobile app.
+4. Add your site to the Moodle Mobile app again.
+
+## Troubleshooting checklist
+
+Do these checks in order:
+
+1. Confirm that you installed and enabled Level Up XP+.
+2. Confirm that your site uses Moodle 3.1 or later.
+3. Confirm that the Moodle Mobile app is compatible with your Moodle site.
+4. If you use Moodle Mobile app 3.5 with Moodle 3.1 through 3.4, confirm that you installed and enabled [`local_mobile`](https://github.com/moodlehq/moodle-local_mobile).
+5. In Site administration > Mobile app > Mobile features, confirm that Level Up XP is not disabled. You can also search for the setting `tool_mobile | disabledfeatures`.
+6. Confirm that you added the Level Up XP block to the applicable location:
+   - For Sitewide mode, add the block to the site home page or the default Dashboard page.
+   - For In courses mode, add the block to each applicable course.
+7. If you use Moodle Classic, wait a few minutes for the mobile app to load the remote add-on for the first time.
+8. In the Moodle Mobile app, select Main menu > Change site, and then sign in to the site again.
+9. If Level Up XP still does not appear, wait five minutes for the local caches to expire.
