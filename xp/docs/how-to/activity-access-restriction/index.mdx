@@ -1,26 +1,31 @@
 ---
-description: Use activity restriction to control access based on a level.
+sidebar_label: Unlock an activity at a certain level
+description: Restrict access to an activity based on a learner's level.
 ---
 
-# Unlock an activity at a certain level
+import Screenshot from '@site/src/components/Screenshot';
+
+# Unlock an activity at a specified level
+
+Use level restrictions to make activities and resources available when learners reach a specified level. This helps you control access to course content and reward learners for their progress.
 
 :::info
 
-This feature requires the availability plugin [Level Up XP Availability](https://moodle.org/plugins/availability_xp) to be installed and enabled. The Moodle setting `enableavailability` must also be enabled.
+To use this feature, install and enable [XP Availability](../../getting-started/installation/recommended-plugins.mdx#xp-availability). You must also enable the Moodle setting `enableavailability`.
 
 :::
 
-1. Navigate to the settings of the activity or resource to restrict access to
-2. Locate the section _Restrict access_
-3. Click the button _Add a restriction_ and select _Level_
-4. Choose the desired level from the dropdown and save the changes
+1. Open the settings for the activity or resource.
+2. Expand Restrict access.
+3. Select Add restriction, and then select Level.
+4. Select the required level and save the changes.
 
-![Screenshot](level-up-access-restriction.png)
+<Screenshot img={require('./level-up-access-restriction.png')}>Learners can access the activity when they reach level 5.</Screenshot>
+
+For more information, see [Restrict access settings](https://docs.moodle.org/en/Restrict_access_settings) in the Moodle documentation.
 
 :::tip
 
-This can also be applied to whole sections.
+You can also apply this restriction to a whole course section.
 
 :::
-
-More on access restriction at [Moodle documentation](https://docs.moodle.org/en/Restrict_access_settings).
