@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-ai-mcp/admin" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Administrator guide | Level Up Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://docs.levelup.plus/xp/docs/ai-mcp/admin"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="og:type" content="website"><meta data-rh="true" name="og:image" content="https://docs.levelup.plus/img/og.png"><meta data-rh="true" name="og:image:secure_url" content="https://docs.levelup.plus/img/og.png"><meta data-rh="true" name="twitter:image" content="https://docs.levelup.plus/img/og.png"><meta data-rh="true" name="twitter:site" content="@BranchUpTech"><meta data-rh="true" name="twitter:creator" content="@BranchUpTech"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Administrator guide | Level Up Documentation"><meta data-rh="true" name="description" content="Set up and control the Level Up XP MCP integration."><meta data-rh="true" property="og:description" content="Set up and control the Level Up XP MCP integration."><link data-rh="true" rel="icon" href="/img/favicon.png"><link data-rh="true" rel="canonical" href="https://docs.levelup.plus/xp/docs/ai-mcp/admin"><link data-rh="true" rel="alternate" href="https://docs.levelup.plus/xp/docs/ai-mcp/admin" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.levelup.plus/xp/docs/ai-mcp/admin" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Administrator guide","item":"https://docs.levelup.plus/xp/docs/ai-mcp/admin"}]}</script><link key="docusaurus-plugin-plausible-preconnect" rel="preconnect" href="https://plausible.io">
+<script key="docusaurus-plugin-plausible-script" async defer="defer" data-domain="docs.levelup.plus" src="https://plausible.io/js/plausible.js"></script>
+<script key="docusaurus-plugin-plausible-custom-events">window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script><link rel="stylesheet" href="/assets/css/styles.c4e282af.css">
+<script src="/assets/js/runtime~main.38e86361.js" defer="defer"></script>
+<script src="/assets/js/main.81197a5c.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>document.documentElement.setAttribute("data-theme","light"),document.documentElement.setAttribute("data-theme-choice","light"),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="Level Up" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="Level Up" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate"></b></a><div class="navbar__item"><strong>XP</strong></div><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/xp/docs">Docs</a><a class="navbar__item navbar__link" href="/xp/release-notes">Releases</a></div><div class="navbar__items navbar__items--right"><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/xp/docs"><span title="Overview" class="linkLabel_WmDU">Overview</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/xp/docs/category/getting-started"><span title="Getting started" class="categoryLinkLabel_W154">Getting started</span></a><button aria-label="Expand sidebar category &#x27;Getting started&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/xp/docs/levels"><span title="Levels" class="categoryLinkLabel_W154">Levels</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/xp/docs/points"><span title="Points system" class="categoryLinkLabel_W154">Points system</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/xp/docs/category/leaderboard"><span title="Leaderboard" class="categoryLinkLabel_W154">Leaderboard</span></a><button aria-label="Expand sidebar category &#x27;Leaderboard&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/xp/docs/ai-mcp"><span title="AI and MCP" class="categoryLinkLabel_W154">AI and MCP</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/xp/docs/ai-mcp"><span title="Overview" class="linkLabel_WmDU">Overview</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/xp/docs/ai-mcp/connect"><span title="Connect your AI assistant" class="linkLabel_WmDU">Connect your AI assistant</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/xp/docs/ai-mcp/use-cases"><span title="Ways to use XP with AI" class="linkLabel_WmDU">Ways to use XP with AI</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/xp/docs/ai-mcp/admin"><span title="Administrator guide" class="linkLabel_WmDU">Administrator guide</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/xp/docs/ai-mcp/troubleshooting"><span title="Troubleshooting AI and MCP" class="linkLabel_WmDU">Troubleshooting AI and MCP</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/xp/docs/category/how-to"><span title="How to" class="categoryLinkLabel_W154">How to</span></a><button aria-label="Expand sidebar category &#x27;How to&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/xp/docs/category/troubleshooting"><span title="Troubleshooting" class="categoryLinkLabel_W154">Troubleshooting</span></a><button aria-label="Expand sidebar category &#x27;Troubleshooting&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/xp/docs/category/xp-licence"><span title="XP+ Licence" class="categoryLinkLabel_W154">XP+ Licence</span></a><button aria-label="Expand sidebar category &#x27;XP+ Licence&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">AI and MCP</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Administrator guide</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Administrator guide</h1></header>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Under development</div><div class="admonitionContent_BuS1"><p>We will release this feature with XP+ v21.</p></div></div>
+<p>The Level Up XP MCP integration lets an AI assistant get information from
+Moodle. It can also perform permitted actions with the permissions of the
+connected Moodle user.</p>
+<p>Use this page to configure the integration and control its users, tools and
+OAuth clients.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="requirements">Requirements<a href="#requirements" class="hash-link" aria-label="Direct link to Requirements" title="Direct link to Requirements" translate="no">​</a></h2>
+<p>You need:</p>
+<ul>
+<li class="">An XP+ plan that includes MCP access.</li>
+<li class="">Level Up XP v21.0 or later and XP+ v21.0 or later.</li>
+<li class="">A Moodle site that uses HTTPS.</li>
+<li class="">An AI client that supports remote MCP servers and OAuth.</li>
+</ul>
+<p>A cloud-based AI client connects from the AI provider&#x27;s systems. If your
+Moodle site is on a private network or behind a firewall, review the provider&#x27;s
+network requirements.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="enable-and-configure-mcp">Enable and configure MCP<a href="#enable-and-configure-mcp" class="hash-link" aria-label="Direct link to Enable and configure MCP" title="Direct link to Enable and configure MCP" translate="no">​</a></h2>
+<ol>
+<li class="">Go to Site administration &gt; Plugins &gt; Blocks &gt; Level Up XP.</li>
+<li class="">Find the AI settings section.</li>
+<li class="">Set Enable MCP to Yes.</li>
+<li class="">Select an option for MCP tools allowed.</li>
+<li class="">Save the changes.</li>
+<li class="">Select the full list of declared tools link to review the available tools
+and their status.</li>
+</ol>
+<p>Enable MCP is the sitewide control for the integration. Set it to No to stop
+OAuth authorisation and MCP requests for the site.</p>
+<p>The MCP endpoint is:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">https://moodle.example.com/blocks/xp/mcp.php</span><br></span></code></pre></div></div>
+<p>Replace <code>https://moodle.example.com</code> with the address of your Moodle site.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="control-who-can-connect">Control who can connect<a href="#control-who-can-connect" class="hash-link" aria-label="Direct link to Control who can connect" title="Direct link to Control who can connect" translate="no">​</a></h2>
+<p>A user must have <code>local/xp:usemcp</code> at the system level to authorise a
+connection and use it. The user must also have this capability in the context
+where an MCP tool runs. An Allow permission at the system level normally
+applies in lower contexts unless you override it.</p>
+<p>The capability does not replace the user&#x27;s other Moodle permissions. Each MCP
+tool also checks permissions in the relevant Moodle context. For example,
+many tools require <code>block/xp:manage</code>. Reports, logs and learner information
+require the relevant XP permissions.</p>
+<p>You can override or prohibit <code>local/xp:usemcp</code> in a course or another context.
+The user can stay connected, but the MCP tools cannot operate in that context.
+For more information, see <a class="" href="/xp/docs/getting-started/permissions#usemcp"><code>local/xp:usemcp</code> in the permissions
+guide</a>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="control-the-available-tools">Control the available tools<a href="#control-the-available-tools" class="hash-link" aria-label="Direct link to Control the available tools" title="Direct link to Control the available tools" translate="no">​</a></h2>
+<p>The MCP tools allowed setting controls tool types. It does not give users new
+Moodle permissions.</p>
+<table><thead><tr><th>Setting</th><th>Available tools</th></tr></thead><tbody><tr><td>Read only</td><td>Tools that read non-personal information, such as levels, rules and configuration.</td></tr><tr><td>Read only + Personal</td><td>Read-only tools that can also return learner information, reports, logs and individual leaderboard data.</td></tr><tr><td>Read + Write</td><td>Read and write tools that do not use personal information.</td></tr><tr><td>All</td><td>All tools, including tools that use personal information or make changes. This setting is required to award points.</td></tr></tbody></table>
+<p>The tools list also depends on whether XP operates sitewide or in each course.
+XP+ automatically disables tools that do not apply to the configured mode. You
+can review the full list of tools and their descriptions in the Level Up XP AI
+settings.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="control-oauth-clients">Control OAuth clients<a href="#control-oauth-clients" class="hash-link" aria-label="Direct link to Control OAuth clients" title="Direct link to Control OAuth clients" translate="no">​</a></h2>
+<p>OAuth lets users sign in on your Moodle site and approve a connection. Users
+do not give their Moodle password to the AI client.</p>
+<p>Level Up XP includes this OAuth service only for the MCP integration. Its
+access tokens are valid only for the Level Up XP MCP endpoint. They do not
+grant access to Moodle web services or other Moodle APIs.</p>
+<p>The OAuth endpoint uses paths under <code>blocks/xp/oauth.php/</code>. Your web server
+must support slash arguments for these paths. For configuration instructions,
+see <a class="" href="/xp/docs/getting-started/installation/slasharguments">Slash arguments</a>. If
+an OAuth route returns a not found error, see <a class="" href="/xp/docs/ai-mcp/troubleshooting#an-oauth-route-returns-a-not-found-error">OAuth route
+troubleshooting</a>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="automatically-registered-clients">Automatically registered clients<a href="#automatically-registered-clients" class="hash-link" aria-label="Direct link to Automatically registered clients" title="Direct link to Automatically registered clients" translate="no">​</a></h3>
+<p>Some AI clients use a Client ID Metadata Document (CIMD) to register
+automatically. The document identifies the client and its OAuth redirect URLs.</p>
+<p>The OAuth CIMD domains setting contains the domains that can register
+automatically. Enter one exact domain per line. A client can register only when
+its metadata document is on a domain in this list. The user must still sign in
+to Moodle and approve the connection.</p>
+<p>This setting controls new automatic registrations. Use Manage OAuth clients to
+enable, disable or delete clients that are already registered.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="manually-registered-clients">Manually registered clients<a href="#manually-registered-clients" class="hash-link" aria-label="Direct link to Manually registered clients" title="Direct link to Manually registered clients" translate="no">​</a></h3>
+<p>Some AI clients require manual OAuth registration. The redirect URL that you
+register must exactly match the URL that the AI client uses. The client might
+provide this URL only after you enter the client ID and secret.</p>
+<ol>
+<li class="">In the Level Up XP AI settings, select Manage OAuth clients.</li>
+<li class="">Select Add client.</li>
+<li class="">Enter a clear name. If the AI client has provided its redirect URL, enter
+the exact URL.</li>
+<li class="">Save the client.</li>
+<li class="">Open the client details.</li>
+<li class="">Copy the client ID, client secret, Authorize URL and Token URL to the AI
+client&#x27;s connection settings.</li>
+<li class="">If the AI client now provides its redirect URL, edit the OAuth client and
+save the exact URL.</li>
+</ol>
+<p>The client secret is a credential that the AI client uses to authenticate.</p>
+<p>You can disable an OAuth client to block new and existing connections that use
+it.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="review-data-and-privacy">Review data and privacy<a href="#review-data-and-privacy" class="hash-link" aria-label="Direct link to Review data and privacy" title="Direct link to Review data and privacy" translate="no">​</a></h2>
+<p>The MCP server runs on your Moodle site. MCP requests and responses do not pass
+through our systems.</p>
+<p>The AI client receives the information that an MCP tool returns. Depending on
+the tool, this information can include:</p>
+<ul>
+<li class="">Course names, sections, activities and descriptions.</li>
+<li class="">XP configuration, levels, rules and settings.</li>
+<li class="">Learner names and Moodle user IDs.</li>
+<li class="">Usernames, ID numbers and email addresses when Moodle makes these identity
+fields visible to the connected user.</li>
+<li class="">Points, levels, leaderboard positions and team membership.</li>
+<li class="">XP logs and recent activity.</li>
+</ul>
+<p>Moodle controls visible identity fields through the Show user identity setting
+and the <code>moodle/site:viewuseridentity</code> capability. Level Up XP uses the
+username, ID number and email address fields from this configuration. See
+<a href="https://docs.moodle.org/en/User_policies#Show_user_identity" target="_blank" rel="noopener noreferrer" class="">Show user identity in the Moodle documentation</a>.</p>
+<p>The information that an AI client can receive depends on:</p>
+<ul>
+<li class="">The MCP tools allowed setting.</li>
+<li class="">The tools that are available for the XP sitewide or per-course mode.</li>
+<li class="">The connected user&#x27;s Moodle and XP permissions.</li>
+<li class="">Moodle and XP settings that control user and leaderboard visibility.</li>
+</ul>
+<p>After the AI client receives information, the AI provider handles it under the
+terms that apply to the user&#x27;s account or workspace.</p>
+<p>For information about the data that XP stores in Moodle, see
+<a class="" href="/xp/docs/getting-started/user-privacy">User information and privacy</a>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hardening">Hardening<a href="#hardening" class="hash-link" aria-label="Direct link to Hardening" title="Direct link to Hardening" translate="no">​</a></h2>
+<p>To make MCP available only to selected users:</p>
+<ol>
+<li class="">Remove <code>local/xp:usemcp</code> from the Authenticated user role.</li>
+<li class="">Create or select a role that you can assign at the system level.</li>
+<li class="">Allow <code>local/xp:usemcp</code> for that role.</li>
+<li class="">Assign the role at the system level to the selected users.</li>
+<li class="">Override or prohibit the capability in lower contexts where necessary.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="disable-or-revoke-access">Disable or revoke access<a href="#disable-or-revoke-access" class="hash-link" aria-label="Direct link to Disable or revoke access" title="Direct link to Disable or revoke access" translate="no">​</a></h2>
+<p>Use the control that matches the scope of the access change:</p>
+<ul>
+<li class="">Remove the connection in the AI client to stop its use in that client.</li>
+<li class="">Remove <code>local/xp:usemcp</code> at the system level to block one Moodle user.</li>
+<li class="">Prohibit <code>local/xp:usemcp</code> in a context to block MCP tools in that context.</li>
+<li class="">Disable an OAuth client to block all connections that use that client.</li>
+<li class="">Set Enable MCP to No to block all MCP connections to the site.</li>
+<li class="">Delete an OAuth client to remove its configuration and OAuth tokens.</li>
+</ul>
+<p>Changes to Enable MCP, MCP tools allowed and Moodle permissions take effect on
+the server immediately. An AI client might continue to show an old tool list.
+Refresh or reconnect the integration if this occurs.</p>
+<p>For connection and permission problems, see
+<a class="" href="/xp/docs/ai-mcp/troubleshooting">Troubleshooting AI and MCP</a>.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/xp/docs/ai-mcp/use-cases"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Ways to use XP with AI</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/xp/docs/ai-mcp/troubleshooting"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Troubleshooting AI and MCP</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#requirements" class="table-of-contents__link toc-highlight">Requirements</a></li><li><a href="#enable-and-configure-mcp" class="table-of-contents__link toc-highlight">Enable and configure MCP</a></li><li><a href="#control-who-can-connect" class="table-of-contents__link toc-highlight">Control who can connect</a></li><li><a href="#control-the-available-tools" class="table-of-contents__link toc-highlight">Control the available tools</a></li><li><a href="#control-oauth-clients" class="table-of-contents__link toc-highlight">Control OAuth clients</a><ul><li><a href="#automatically-registered-clients" class="table-of-contents__link toc-highlight">Automatically registered clients</a></li><li><a href="#manually-registered-clients" class="table-of-contents__link toc-highlight">Manually registered clients</a></li></ul></li><li><a href="#review-data-and-privacy" class="table-of-contents__link toc-highlight">Review data and privacy</a></li><li><a href="#hardening" class="table-of-contents__link toc-highlight">Hardening</a></li><li><a href="#disable-or-revoke-access" class="table-of-contents__link toc-highlight">Disable or revoke access</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">XP</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/xp/docs">Documentation</a></li><li class="footer__item"><a class="footer__link-item" href="/xp/release-notes">Release notes</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Quest</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/quest/docs">Documentation</a></li><li class="footer__item"><a class="footer__link-item" href="/quest/release-notes">Release notes</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Other resources</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/branchup/levelup-docs" target="_blank" rel="noopener noreferrer" class="footer__link-item">Contributing<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://levelup.plus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Website<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="bottom_g6qf"><div><div class="licence_jPrB">Content licenced under<!-- --> <a class="footer__link-item" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</div></div><div class="copyright_E5Mg"><div class="footer__copyright">Copyright © 2026 Branch Up Pty Ltd</div></div></div></div></footer></div>
+</body>
+</html>
