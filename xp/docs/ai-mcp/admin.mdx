@@ -1,0 +1,172 @@
+---
+title: Administrator guide
+description: Enable and govern the Level Up XP MCP integration.
+sidebar_position: 4
+---
+
+# Administrator guide
+
+The Level Up XP MCP integration allows external AI assistants to read
+information from Moodle and, when permitted, perform actions on behalf of a
+Moodle user.
+
+This page is for Moodle administrators deciding whether and how the
+integration should be used.
+
+## Requirements
+
+You need:
+
+- An XP+ plan that includes MCP access
+- A supported version of Level Up XP and XP+
+- An HTTPS Moodle site that the selected AI service can reach
+- An AI client that supports remote MCP servers and OAuth
+- An organisational policy that permits the selected AI service to receive the
+  information users request from Moodle
+
+Cloud-based AI clients connect from their own infrastructure. If Moodle is only
+available on a private network, behind a VPN or restricted by a firewall,
+review the AI provider's network requirements before enabling the integration.
+
+## Enable MCP
+
+1. Go to the Level Up XP settings under **Site administration > Plugins >
+   Blocks > Level Up XP**.
+2. Find the **AI settings** section.
+3. Set **Enable MCP** to **Yes**.
+4. Set **MCP tools allowed** to **Read only** for the initial rollout.
+5. Follow the link to review the full list of MCP tools and their status.
+6. Save the settings.
+
+The MCP endpoint is:
+
+```text
+https://moodle.example.com/local/xp/mcp.php
+```
+
+Use your Moodle site's address in place of `https://moodle.example.com`.
+
+## Permissions
+
+Users must have `local/xp:usemcp` at the system level to connect. Grant this
+capability only to trusted staff. The integration is designed for teachers,
+instructors and administrators, not learners.
+
+The capability allows a user to connect, but it does not replace their normal
+Moodle permissions. Each MCP tool also checks the user's access in the relevant
+context. Most XP tools require `block/xp:manage`, while reports, logs and
+learner information require their corresponding XP permissions.
+
+Review role assignments carefully:
+
+- Prefer individual staff accounts over shared accounts.
+- Do not grant broader Moodle permissions merely to make an MCP tool work.
+- Remove `local/xp:usemcp` when a user no longer needs the integration.
+- Where appropriate, prohibit MCP use in contexts where it should not be
+  available.
+
+## Choose which tools are available
+
+The **MCP tools allowed** setting filters tools according to the type of access
+they require.
+
+| Setting | What it allows |
+| --- | --- |
+| **Read only** | Reads non-personal information, such as XP levels, rules and configuration. |
+| **Read only + Personal** | Also reads learner information, reports, logs and individual leaderboard data. |
+| **Read + Write** | Allows non-personal read and write tools. Review the tools list. |
+| **All (Read + Write + Personal)** | Allows personal and write tools. Required to award points. |
+
+Start with **Read only**. Enable personal information or write access only for
+a documented use case, and review the tools list after upgrading XP+.
+
+The list is also affected by whether XP is configured sitewide or per course.
+Tools that do not apply to the configured mode are disabled automatically.
+
+## OAuth clients
+
+AI assistants authenticate through OAuth. This means users sign in on the
+Moodle site and approve access without giving their Moodle password to the AI
+assistant.
+
+### Automatically registered clients
+
+Compatible clients can identify and register themselves. The **OAuth CIMD
+domains** setting controls which domains are trusted to do this. ChatGPT and
+Claude domains are included by default. CIMD stands for Client ID Metadata
+Document.
+
+Keep this list limited to AI clients your organisation has reviewed. Do not add
+a domain solely to bypass an authorisation error.
+
+### Manually registered clients
+
+Some clients require manual registration:
+
+1. Open **Manage OAuth clients** from the Level Up XP AI settings.
+2. Add a client.
+3. Enter a recognisable name and the exact OAuth redirect URL supplied by the
+   client.
+4. Save the client.
+5. Open its details to obtain the client ID, client secret, authorisation URL
+   and token URL.
+6. Enter those values in the AI client's advanced connection settings.
+
+Treat the client secret as a credential. Do not place it in documentation,
+support requests or chat messages.
+
+You can disable a client to stop new and existing connections while retaining
+its configuration. Deleting a client also deletes its associated OAuth
+credentials.
+
+## Data and privacy
+
+The MCP server is part of XP+ and runs on your Moodle site. Level Up does not
+operate an intermediate MCP service.
+
+However, information returned by an MCP tool is sent to the connected AI
+client. Depending on the tool, this may include:
+
+- Course names, structure and descriptions
+- XP configuration, levels and rules
+- Learner names and visible identity fields
+- Points, levels, leaderboard positions and teams
+- XP logs and recent activity
+
+Before enabling access:
+
+- Review the AI provider's data use, retention and residency terms.
+- Follow your organisation's privacy, security and records policies.
+- Use the lowest suitable **MCP tools allowed** setting.
+- Confirm that staff understand when they are working with personal
+  information.
+- Avoid using learner data in prompts unless it is necessary.
+
+Connecting the integration changes the boundary described by XP's general
+privacy documentation: selected Moodle information can leave the Moodle site
+when a user asks an external assistant to retrieve it.
+
+## Recommended rollout
+
+1. Enable MCP with **Read only** tools.
+2. Grant `local/xp:usemcp` to a small group of trusted staff.
+3. Connect an approved AI client.
+4. Test a read-only request for levels or rules.
+5. Review the information sent to and displayed by the client.
+6. Enable personal or write tools only when there is a clear need.
+7. Document who approved the client and the permitted use cases.
+
+## Disable or revoke access
+
+Use the narrowest response that fits the situation:
+
+- Remove the connection in the AI client to stop using it there.
+- Remove `local/xp:usemcp` from a user to block that Moodle account.
+- Disable an OAuth client to block every connection using that client.
+- Set **Enable MCP** to **No** to disable the integration sitewide.
+- Delete an OAuth client when its configuration and associated credentials are
+  no longer needed.
+
+After changing the tool risk setting or upgrading XP+, refresh the tool list in
+the AI client. Some clients keep a previously approved copy of the available
+tools until an administrator refreshes or republishes the connection.

@@ -1,0 +1,143 @@
+---
+title: Troubleshooting AI and MCP
+description: Resolve common connection, authorisation and permission problems.
+sidebar_position: 5
+---
+
+# Troubleshooting AI and MCP
+
+## The AI or MCP settings are missing
+
+Check that:
+
+- XP+ is installed and activated
+- Your XP+ plan includes MCP access
+- Level Up XP and XP+ are on compatible versions
+- You are signed in as a site administrator
+
+## The assistant cannot reach the MCP server
+
+Confirm that the MCP URL is correct:
+
+```text
+https://moodle.example.com/local/xp/mcp.php
+```
+
+The AI service must be able to reach the Moodle site over HTTPS. A site that is
+only available on a private network, through a VPN or from selected IP
+addresses may require additional network configuration supported by the AI
+provider.
+
+Do not use the address of the Moodle login page or the Level Up XP settings
+page as the MCP URL.
+
+## MCP access is disabled
+
+An administrator must set **Enable MCP** to **Yes** in the Level Up XP AI
+settings.
+
+## The authorisation request is invalid
+
+An administrator should review **Manage OAuth clients** and check that:
+
+- The client appears in the list and is enabled
+- Automatically registered clients come from an approved OAuth client domain
+- A manually registered client has the exact redirect URL required by the AI
+  client
+- The client ID and secret were entered correctly when manual registration is
+  used
+
+Do not approve an authorisation page showing an unexpected client, Moodle site
+or redirect address.
+
+## The Moodle sign-in or authorisation page does not appear
+
+Make sure the AI client is configured to use OAuth. Do not configure a static
+token or place Moodle credentials in the MCP URL.
+
+Pop-up blocking, an expired Moodle session or an organisational sign-in policy
+may also interrupt the authorisation flow. Retry the connection and complete
+the Moodle sign-in in the window opened by the client.
+
+## The connection works but no XP tools are available
+
+Ask an administrator to check:
+
+- **Enable MCP** is set to **Yes**
+- At least **Read only** tools are allowed
+- The OAuth client is enabled
+- The tool applies to XP's sitewide or per-course mode
+
+The AI client may have cached an older tool list. Refresh, rescan or republish
+the connection, then start a new conversation.
+
+## A tool reports a permission error
+
+The connected Moodle user needs:
+
+- `local/xp:usemcp` at the system level
+- Permission to use MCP in the requested context
+- The normal Level Up XP permissions required by the operation
+
+Most tools require `block/xp:manage`. Accessing reports or logs also requires
+the corresponding report or log permission.
+
+Do not grant site administrator access to solve a tool permission problem.
+Grant only the capability required for the user's role.
+
+## The assistant cannot find a course
+
+Check that:
+
+- The course name in the request is correct
+- The connected user can access the course
+- The user can manage Level Up XP in that course
+- MCP use has not been prohibited in that context
+
+If several courses have similar names, include the course short name in the
+request.
+
+## Learner details, logs or leaderboard entries are unavailable
+
+The **MCP tools allowed** setting must include **Personal** access. The user
+must also have the normal Moodle permissions to view the learner, report, log
+or leaderboard information.
+
+Personal information may be intentionally unavailable. Do not broaden access
+until the administrator has confirmed that the use case and AI provider are
+approved.
+
+## The assistant cannot award points
+
+Awarding points requires:
+
+- **All (Read + Write + Personal)** in **MCP tools allowed**
+- Permission to use MCP
+- The normal XP permissions to find the learner and award points
+- A learner who can participate in XP in the selected context
+
+Ask the assistant to identify the learner and intended award before trying the
+action again.
+
+## Stop a connection
+
+Remove or disconnect Level Up XP in the AI client's settings.
+
+For an immediate administrative response, remove the user's
+`local/xp:usemcp` capability or disable the OAuth client. To stop every MCP
+connection, set **Enable MCP** to **No**.
+
+## Information to include in a support request
+
+Include:
+
+- Moodle, Level Up XP and XP+ versions
+- The AI client and plan
+- Whether XP is sitewide or per course
+- The selected **MCP tools allowed** setting
+- The exact error message
+- The time the error occurred
+- Whether the problem affects all users or one user
+
+Never include Moodle passwords, OAuth client secrets, access tokens or full
+learner records.

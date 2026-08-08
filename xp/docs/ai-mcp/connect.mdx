@@ -1,0 +1,101 @@
+---
+title: Connect your AI assistant
+description: Connect ChatGPT, Claude or another compatible AI assistant to Level Up XP.
+sidebar_position: 2
+---
+
+# Connect your AI assistant
+
+Before you start, ask your Moodle administrator to confirm that:
+
+- AI and MCP access is enabled in Level Up XP
+- You have permission to use the integration
+- Your AI assistant is approved by your organisation
+
+You will also need the Level Up XP MCP URL for your Moodle site. It normally
+looks like this:
+
+```text
+https://moodle.example.com/local/xp/mcp.php
+```
+
+Replace `https://moodle.example.com` with the address of your Moodle site.
+
+## Connect ChatGPT
+
+ChatGPT refers to MCP connections as custom apps. Their availability depends on
+your ChatGPT plan and your workspace settings. A ChatGPT workspace
+administrator may need to create and publish the app before you can use it.
+
+To create the connection when your account allows it:
+
+1. Open **Settings > Apps** in ChatGPT.
+2. Enable developer mode if ChatGPT asks you to.
+3. Choose the option to create a custom app.
+4. Name the app **Level Up XP** and enter your Level Up XP MCP URL.
+5. Select OAuth authentication, then ask ChatGPT to scan the available tools.
+6. Sign in to Moodle and review the authorisation request.
+7. Approve the request only when the Moodle site and ChatGPT workspace are the
+   ones you expect.
+8. Finish creating the app. A workspace administrator may then need to publish
+   it or make it available to you.
+
+Once connected, select the Level Up XP app when starting a conversation.
+
+ChatGPT's plans and interface change over time. Refer to
+[OpenAI's current instructions for MCP apps](https://help.openai.com/en/articles/12584461-developer-mode-apps-and-full-mcp-connectors-in-chatgpt-beta)
+if the options in your account differ.
+
+## Connect Claude
+
+For an individual Claude account:
+
+1. Open **Customize > Connectors**.
+2. Select **+**, then **Add custom connector**.
+3. Name the connector **Level Up XP** and enter your Level Up XP MCP URL.
+4. Add the connector. You do not normally need to enter the advanced OAuth
+   fields.
+5. Select **Connect**, then sign in to Moodle.
+6. Review and approve the authorisation request.
+
+For Claude Team and Enterprise accounts, an owner must first add the connector
+under **Organization settings > Connectors**. Individual users can then find it
+under **Customize > Connectors** and select **Connect**.
+
+When starting a conversation, use **+ > Connectors** to make Level Up XP
+available in that conversation.
+
+Refer to
+[Claude's current custom connector instructions](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
+if the options in your account differ.
+
+## Connect another assistant
+
+Other AI assistants can connect when they support remote MCP servers with OAuth
+authentication.
+
+In the assistant's MCP or connector settings:
+
+1. Add a remote MCP server.
+2. Enter a name and the Level Up XP MCP URL.
+3. Choose OAuth authentication.
+4. Sign in to Moodle and approve access.
+
+If the assistant asks for an OAuth client ID, client secret or redirect URL,
+contact your Moodle administrator. The assistant may need to be
+[registered manually](./admin.mdx#oauth-clients).
+
+Never enter your Moodle password directly into an AI conversation or store it
+in an MCP configuration file. The connection should send you to your Moodle
+site to sign in.
+
+## Check the connection
+
+Start with a request that does not make changes:
+
+> Show me the Level Up XP levels for Introduction to Psychology. If XP is used
+> sitewide, show me the sitewide levels. Do not make any changes.
+
+If the assistant cannot find Level Up XP, make sure the connection is enabled
+for the conversation. If it connects but cannot complete the request, see
+[Troubleshooting](./troubleshooting.mdx).
