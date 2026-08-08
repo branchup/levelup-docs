@@ -1,43 +1,50 @@
 ---
 sidebar_position: 9
+sidebar_label: Uninstall
+title: Uninstall Level Up XP
+description: Uninstall XP and XP+ from Moodle.
 ---
 
-# Uninstalling the plugins
+# Uninstall Level Up XP
+
+If XP and XP+ are installed, uninstall XP+ first. Then uninstall XP.
 
 :::danger
 
-Uninstalling the plugins will delete all of their associated data. Please make sure that you have made the appropriate backups prior to proceeding.
+Moodle permanently deletes the data stored by each plugin that you uninstall. Back up your Moodle site before you continue.
 
 :::
 
-## XP+ (local_xp) {#xpplus}
+<span id="xpplus"></span>
 
-- Navigate to _Site administration > Plugins > Plugins overview_
-- Locate "Level Up XP+" (or `local_xp`) in the list of plugins
-- Click its _Uninstall_ link and follow the process
+## Uninstall XP+
 
-If prompted to, remove all the server files located at `[public]/local/xp` to prevent the plugin from re-installing itself.
+1. Open Site administration > Plugins > Plugins overview.
+2. Find Level Up XP+ (`local_xp`) in the list of plugins.
+3. Select Uninstall and follow the uninstall process.
+4. If Moodle asks you to remove the plugin files, remove `[public]/local/xp`.
 
-## XP Community (block_xp) {#xp}
+<span id="xp"></span>
+
+## Uninstall XP
 
 :::info
 
-In order to uninstall XP, you may need to uninstall other plugins, such as:
+Before you uninstall XP, uninstall the following plugins if they are installed:
 
-- [Level Up XP+](#xpplus) (`local_xp`) if you own it.
-- Level Up XP Enrolment (`enrol_xp`)
-- Level Up XP Availability (`availability_xp`)
+- Uninstall Level Up XP+ (`local_xp`).
+- Uninstall Level Up XP Enrol (`enrol_xp`).
+- Uninstall Level Up XP Availability (`availability_xp`).
 
 :::
 
-- Navigate to _Site administration > Plugins > Plugins overview_
-- Locate "Level Up XP" (or `block_xp`) in the list of plugins
-- Click its _Uninstall_ link and follow the process
+1. Open Site administration > Plugins > Plugins overview.
+2. Find Level Up XP (`block_xp`) in the list of plugins.
+3. Select Uninstall and follow the uninstall process.
+4. If Moodle asks you to remove the plugin files, remove `[public]/blocks/xp`.
 
 :::warning
 
-If the uninstall option is not visible, [orphan blocks may exist](/troubleshooting/block-cannot-be-deleted/index.mdx), or dependent plugins may be still be installed.
+If Uninstall is not available, a dependent plugin might still be installed. If you removed all dependent plugins, [orphan blocks](../../troubleshooting/block-cannot-be-deleted/index.mdx) might prevent the uninstall.
 
 :::
-
-If prompted to, remove all the server files located at `[public]/blocks/xp` to prevent the plugin from re-installing itself.
