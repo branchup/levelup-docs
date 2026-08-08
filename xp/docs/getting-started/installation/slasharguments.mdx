@@ -29,7 +29,7 @@ The latter rule assumes that the path should be passed to the `file` argument, a
 Alternatively, and note that this is discouraged, you can add the follow _rewrite_ rule **before** the previous rewrite rule. Your Nginx site definition should therefore read this:
 
 ```
-rewrite ^/(blocks/xp/.*.php)(/)(.*)$ /$1?_r=/$3 last;
+rewrite ^/(blocks/xp/[^/?]+\.php)(/)(.*)$ /$1?_r=/$3 last;
 rewrite ^/(.*.php)(/)(.*)$ /$1?file=/$3 last;
 ```
 
@@ -43,7 +43,7 @@ You will need to add a second rewrite rule for XP itself, please configure as fo
 
 - Requested URL: Matches the pattern
 - Using: Regular expressions
-- Pattern: `^(blocks\/xp\/[^\?]+?\.php)(\/.+)$`
+- Pattern: `^(blocks\/xp\/[^\/\?]+\.php)(\/.+)$`
 - Action: Rewrite
 - Rewrite URL: `{R:1}?_r={R:2} `
 - Append query string: Checked

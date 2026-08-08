@@ -6,21 +6,30 @@ sidebar_position: 3
 
 # Ways to use XP with AI
 
+:::info[Under development]
+
+We will release this feature with XP+ v21.
+
+:::
+
 You can speak naturally to your AI assistant. You do not need to know the names
 of the Level Up XP tools or find Moodle record IDs yourself.
 
-Be specific about the course, learner or period you are interested in. When a
-request could make a change, ask the assistant to review the details with you
-first.
+Include the exact course, learner or time period that applies to your request.
+If a request can make a change, ask the assistant to review the details with
+you first.
+
+The example prompts use placeholders in square brackets. Before you send a
+prompt, replace each placeholder with your information.
 
 ## Understand how points are earned
 
 Ask the assistant to combine the XP levels, rules and course structure into a
 plain-language summary.
 
-> In Introduction to Psychology, summarise how learners earn points and how
-> many points they need for each level. Highlight activities that do not appear
-> to have a related reward. Do not make any changes.
+> In [course name], summarise how learners earn points and how many points they
+> need to reach each level. Identify activities that do not have a related
+> reward. Do not make any changes.
 
 You can follow up with questions such as:
 
@@ -30,79 +39,83 @@ You can follow up with questions such as:
 
 ## Review a learner's progress
 
-When access to personal information is allowed, the assistant can find a
-learner and review their XP progress.
+If you have permission to access personal information, the assistant can find a
+learner and review the learner's XP progress.
 
-> Find Jordan Lee in Introduction to Psychology and summarise their current
+> In [course name], find [learner name] and summarise the learner's current
 > points, level and progress towards the next level.
 
-If more than one learner matches the name, the assistant should ask you to
-choose rather than guess.
+If the name matches more than one learner, ask the assistant to show you the
+matches. Select the correct learner before you continue.
 
 ## Investigate recent points
 
-The XP logs can help explain what recently happened.
+The XP logs show recent point awards.
 
-> Review Jordan Lee's Level Up XP activity in Introduction to Psychology over
-> the last seven days. Summarise where their points came from and identify
-> repeated awards.
+> Review the Level Up XP activity for [learner name] in [course name] during the
+> last seven days. Summarise where the points came from and identify repeated
+> awards.
 
-The assistant reports what appears in the XP logs. It cannot determine a
-learner's intent, and an unusual pattern is not necessarily misuse.
+The assistant reports the information in the XP logs. It cannot determine a
+learner's intent. An unusual pattern does not always indicate misuse.
 
 ## Review a leaderboard
 
-The assistant can summarise individual and team standings without requiring
-you to export the leaderboard.
+The assistant can summarise individual and team standings. You do not need to
+export the leaderboard.
 
-> Summarise the top ten positions in the Introduction to Psychology
-> leaderboard. Include the gap between each position and the next one.
+> Summarise the top ten positions in the [course name] leaderboard. Include the
+> gap between each position and the next one.
 
-Only request identifiable learner information when you have a legitimate
-reason to use it.
+Request identifiable learner information only when you need it for your task
+and your organisation permits it.
 
 ## Get ideas for improving the setup
 
 The assistant can compare the course structure with the Level Up XP features
 and rules available to you.
 
-> Review the XP setup and course structure for Introduction to Psychology.
-> Suggest three small improvements that use features currently available in
-> Level Up XP. Explain why each suggestion may help. Do not make changes.
+> Review the XP setup and course structure for [course name]. Suggest three
+> small improvements that use features currently available in Level Up XP.
+> Explain why each suggestion may help. Do not make changes.
 
-The assistant can suggest changes that you apply in Moodle, but it cannot
-currently edit XP settings, levels or rules for you.
+The assistant can suggest changes for you to apply in Moodle. It cannot
+currently edit XP settings, levels or rules.
 
 ## Award points
 
-Awarding points changes a learner's XP total. First ask the assistant to resolve
-the learner and show you the intended action:
+Awarding points changes a learner's XP total. First, ask the assistant to
+identify the learner and show you the proposed award:
 
-> Find Jordan Lee in Introduction to Psychology. Prepare an award of 50 points
-> for helping another learner, but do not award the points yet.
+> In [course name], find [learner name]. Prepare an award of [number of points]
+> for [award reason]. Show me the proposed award, but do not award the points.
 
-After checking the learner, course and amount, give an explicit instruction:
+After you check the learner, course, amount and reason, give an explicit
+instruction:
 
-> Award the 50 points now. Do not send a notification.
+> In [course name], award [number of points] to [learner name] for
+> [award reason]. Do not send a notification.
 
 To notify the learner, say so explicitly and provide the message:
 
-> Award the 50 points now and notify the learner with the message: Thank you
-> for helping another learner.
+> In [course name], award [number of points] to [learner name] for
+> [award reason]. Send this notification: [notification message].
 
-If awarding points is unavailable, your administrator may have disabled tools
-that make changes. See the [administrator guide](./admin.mdx#choose-which-tools-are-available).
+If the assistant cannot award points, your administrator may have disabled
+tools that make changes. See the
+[administrator guide](./admin.mdx#choose-which-tools-are-available).
 
 ## Use safer prompts
 
 These phrases help make your intent clear:
 
-- **Do not make any changes** when you only want advice or information.
-- **Show me what you intend to do first** before an action.
-- Include the exact course and learner when they are known.
-- State whether a learner should be notified.
-- Ask the assistant to say when it cannot verify something.
+- Add "Do not make any changes" when you only want advice or information.
+- Add "Show me what you intend to do first" before you ask the assistant to
+  perform an action.
+- Include the exact course and learner names when you know them.
+- State whether you want the assistant to notify the learner.
+- Ask the assistant to tell you when it cannot verify information.
 
 Always review important results in Moodle. An AI assistant can help you work
-with XP, but it remains your responsibility to decide whether its conclusions
-and actions are appropriate.
+with XP. You remain responsible for deciding whether its conclusions and
+actions are appropriate.

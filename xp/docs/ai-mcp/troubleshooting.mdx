@@ -1,143 +1,118 @@
 ---
 title: Troubleshooting AI and MCP
-description: Resolve common connection, authorisation and permission problems.
+description: Resolve common connection, authorisation, and permission problems.
 sidebar_position: 5
 ---
 
 # Troubleshooting AI and MCP
 
+:::info[Under development]
+
+We will release this feature with XP+ v21.
+
+:::
+
 ## The AI or MCP settings are missing
 
-Check that:
+Complete these checks:
 
-- XP+ is installed and activated
-- Your XP+ plan includes MCP access
-- Level Up XP and XP+ are on compatible versions
-- You are signed in as a site administrator
+- Make sure that XP+ is installed and active.
+- Make sure that your XP+ plan includes MCP access.
+- Make sure that the Level Up XP and XP+ versions are compatible.
+- Make sure that you are signed in as a site administrator.
+
+For the version and plan requirements, see the [administrator
+guide](./admin.mdx#requirements).
 
 ## The assistant cannot reach the MCP server
 
 Confirm that the MCP URL is correct:
 
 ```text
-https://moodle.example.com/local/xp/mcp.php
+https://moodle.example.com/blocks/xp/mcp.php
 ```
 
-The AI service must be able to reach the Moodle site over HTTPS. A site that is
-only available on a private network, through a VPN or from selected IP
-addresses may require additional network configuration supported by the AI
-provider.
-
-Do not use the address of the Moodle login page or the Level Up XP settings
-page as the MCP URL.
+The AI service must have access to the Moodle site over HTTPS. If the site is
+available only on a private network, through a VPN, or from selected IP
+addresses, use network configuration that the AI provider supports.
 
 ## MCP access is disabled
 
-An administrator must set **Enable MCP** to **Yes** in the Level Up XP AI
-settings.
+Ask a site administrator to set Enable MCP to Yes in the Level Up XP AI
+settings. For the full procedure, see [Enable and configure
+MCP](./admin.mdx#enable-and-configure-mcp).
 
 ## The authorisation request is invalid
 
-An administrator should review **Manage OAuth clients** and check that:
+Ask an administrator to open Manage OAuth clients and complete these checks:
 
-- The client appears in the list and is enabled
-- Automatically registered clients come from an approved OAuth client domain
-- A manually registered client has the exact redirect URL required by the AI
-  client
-- The client ID and secret were entered correctly when manual registration is
-  used
+- Make sure that the client is in the list and is enabled.
+- Make sure that an automatically registered client comes from an approved
+  OAuth client domain.
+- Make sure that a manually registered client has the exact redirect URL that
+  the AI client requires.
+- Make sure that the client ID and client secret are correct when you use
+  manual registration.
 
-Do not approve an authorisation page showing an unexpected client, Moodle site
-or redirect address.
+## An OAuth route returns a not found error
 
-## The Moodle sign-in or authorisation page does not appear
+OAuth uses `.well-known` and other paths under `blocks/xp/oauth.php/`. For
+example:
 
-Make sure the AI client is configured to use OAuth. Do not configure a static
-token or place Moodle credentials in the MCP URL.
+```text
+https://moodle.example.com/blocks/xp/oauth.php/.well-known/
+```
 
-Pop-up blocking, an expired Moodle session or an organisational sign-in policy
-may also interrupt the authorisation flow. Retry the connection and complete
-the Moodle sign-in in the window opened by the client.
-
-## The connection works but no XP tools are available
-
-Ask an administrator to check:
-
-- **Enable MCP** is set to **Yes**
-- At least **Read only** tools are allowed
-- The OAuth client is enabled
-- The tool applies to XP's sitewide or per-course mode
-
-The AI client may have cached an older tool list. Refresh, rescan or republish
-the connection, then start a new conversation.
+Web servers often block files and directories with names that start with a
+period. These rules can also block `.well-known`. Make sure that your web
+server allows this path and supports slash arguments. For configuration
+instructions, see [Slash
+arguments](../getting-started/installation/slasharguments.mdx).
 
 ## A tool reports a permission error
 
-The connected Moodle user needs:
+Complete these permission checks for the connected Moodle user:
 
-- `local/xp:usemcp` at the system level
-- Permission to use MCP in the requested context
-- The normal Level Up XP permissions required by the operation
+- Make sure that the user has `local/xp:usemcp` at the system level.
+- Make sure that the user has `local/xp:usemcp` in the requested context.
+- Make sure that the user has the Level Up XP permissions that the operation
+  requires.
 
 Most tools require `block/xp:manage`. Accessing reports or logs also requires
-the corresponding report or log permission.
-
-Do not grant site administrator access to solve a tool permission problem.
-Grant only the capability required for the user's role.
+the applicable report or log permission. For more information, see the
+[permissions guide](../getting-started/permissions.mdx).
 
 ## The assistant cannot find a course
 
-Check that:
+Complete these checks:
 
-- The course name in the request is correct
-- The connected user can access the course
-- The user can manage Level Up XP in that course
-- MCP use has not been prohibited in that context
+- Make sure that the course name in the request is correct.
+- Make sure that the connected user can access the course.
+- Make sure that the user can manage Level Up XP in the course.
+- Make sure that `local/xp:usemcp` is not prohibited in the course context.
 
 If several courses have similar names, include the course short name in the
 request.
 
-## Learner details, logs or leaderboard entries are unavailable
+## Learner details, logs, or leaderboard entries are unavailable
 
-The **MCP tools allowed** setting must include **Personal** access. The user
-must also have the normal Moodle permissions to view the learner, report, log
-or leaderboard information.
+Set MCP tools allowed to Read only + Personal or All. The connected user must
+also have the Moodle permissions to view the learner, report, log, or
+leaderboard information.
 
-Personal information may be intentionally unavailable. Do not broaden access
-until the administrator has confirmed that the use case and AI provider are
-approved.
+An administrator can intentionally make personal information unavailable. Do
+not increase access until the administrator confirms that the use case and AI
+provider are approved.
 
 ## The assistant cannot award points
 
-Awarding points requires:
+Complete these checks before you award points:
 
-- **All (Read + Write + Personal)** in **MCP tools allowed**
-- Permission to use MCP
-- The normal XP permissions to find the learner and award points
-- A learner who can participate in XP in the selected context
+- Make sure that MCP tools allowed is set to All.
+- Make sure that the connected user has `local/xp:usemcp`.
+- Make sure that the connected user has the XP permissions to find the learner
+  and award points.
+- Make sure that the learner can participate in XP in the selected context.
 
-Ask the assistant to identify the learner and intended award before trying the
-action again.
-
-## Stop a connection
-
-Remove or disconnect Level Up XP in the AI client's settings.
-
-For an immediate administrative response, remove the user's
-`local/xp:usemcp` capability or disable the OAuth client. To stop every MCP
-connection, set **Enable MCP** to **No**.
-
-## Information to include in a support request
-
-Include:
-
-- Moodle, Level Up XP and XP+ versions
-- The AI client and plan
-- Whether XP is sitewide or per course
-- The selected **MCP tools allowed** setting
-- The exact error message
-- The time the error occurred
-- Whether the problem affects all users or one user
-
-Never include Moodle passwords, OAuth client secrets, access tokens or full
-learner records.
+Before you try the action again, ask the assistant to identify the learner and
+describe the intended award.

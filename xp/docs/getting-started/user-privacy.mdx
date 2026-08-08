@@ -1,10 +1,36 @@
 ---
 title: User privacy
-description: How is user information and privacy handled?
+description: Where Level Up XP stores data and how optional AI connections work.
 ---
 
 # User information and privacy
 
-The information collected by the Moodle plugin Level Up XP is contained within the Moodle installation and is **never** transmitted, communicated or shared with us or third parties. The mechanisms for attributing points to learners, generating the leaderboard, sending notifications, etc... is executed within Moodle itself.
+We never receive or see personal information from your Moodle site. It stays in
+Moodle, where we cannot access it, and is not sent to third parties. The only
+exception is the optional MCP integration. When it is enabled, Moodle can send
+information directly to a connected AI provider.
 
-As of Moodle 3.3.5, 3.4.2, 3.5 or greater, Level Up XP is conforming to Moodle's requirements for GDPR compliance.
+The plugin supports Moodle's privacy API for data requests and deletion. It can
+occasionally send us anonymised usage information, such as the site URL,
+software versions, and aggregate feature usage.
+
+## AI agents and MCP
+
+XP+ includes an optional MCP integration for external AI agents. If a Moodle
+administrator enables this integration, users with the required permissions
+can connect a compatible AI client. When a user asks the AI agent to use an XP
+tool, Moodle sends the tool result directly to the AI client. The information
+does not pass through our systems.
+
+The information sent depends on the selected MCP tools and the permissions of
+the connected Moodle user. It can include course content, XP configuration,
+learner identity information, points, leaderboard information and XP logs.
+The AI provider handles this information under the terms that apply to the
+user's account or workspace.
+
+For configuration and data controls, see the [AI and MCP administrator
+guide](../ai-mcp/admin.mdx#review-data-and-privacy).
+
+## See also
+
+- [Level Up privacy policy](https://www.levelup.plus/privacy-policy/)

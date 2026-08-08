@@ -107,3 +107,16 @@ Given to **nobody** by default.
 :::
 
 Moodle requires for this permission to be defined, it controls whether a user can add the block to their dashboard. By default it is not given to anyone, instead we advise for administrators to customise the default dashboard of their users.
+
+## local/xp:usemcp {#usemcp}
+
+:::note
+
+Available in XP+ v21.0 or later.
+
+:::
+
+This permission lets a user authorise a connection and send requests through
+the Level Up XP MCP integration. It does not override or replace other Moodle
+or XP permissions. Each MCP tool checks all permissions that its operation
+requires. See the [AI and MCP administrator guide](../ai-mcp/admin.mdx#control-who-can-connect).
