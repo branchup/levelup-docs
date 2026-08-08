@@ -1,82 +1,83 @@
 ---
 slug: /install
 sidebar_position: 0
-title: Installing XP
+title: Install Level Up XP
+description: Install Level Up XP and its optional add-on.
 ---
 
-# Installing Level Up XP
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Admonition from '@theme/Admonition';
 
-:::info
+# Install Level Up XP
 
-This document relates to the free version of XP, for the add-on XP+, please [read this page](./plus.mdx).
+You can install XP by itself or add XP+ for more features.
 
-:::
+## Get the plugins
+
+| Plugin | Code name | How to obtain |
+| --- | --- | --- |
+| XP (required) | `block_xp` | Download the ZIP file from the [Level Up website](https://www.levelup.plus/xp/#packages), [CAMP](https://camp-registry.org/plugin/block_xp.html), or the [Moodle plugins directory](https://moodle.org/plugins/block_xp). You can also use the Git method below. |
+| XP+ (optional) | `local_xp` | Purchase an XP+ licence from the [Level Up website](https://www.levelup.plus/xp/#packages). You will receive an email with a link to download `local_xp.zip`. If you lost the link, use the [licence recovery tool](https://levelup.plus/recover). |
 
 :::tip
 
-Also install the [recommended plugins](./recommended-plugins.mdx) to benefit from all features!
+If XP is already installed, do not install it again. Install only XP+. Moodle will tell you if you must [upgrade XP](./upgrading.mdx) first.
 
 :::
 
-## Guided
+## Installation
 
-:::warning
+Choose an installation method.
 
-This method is not always available. It depends on the Moodle administrator and hosting provider.
+<Tabs>
+  <TabItem value="zip" label="ZIP upload" default>
+    <Admonition type="note">
+      This method is not available on all Moodle sites. Its availability depends on the site configuration and hosting provider.
+    </Admonition>
 
-:::
+    1. Sign in to your Moodle site and open Site administration > Plugins > Install plugins.
+    2. Upload the XP ZIP file and follow the installation process. Skip this step if XP is already installed.
+    3. If you use XP+, upload `local_xp.zip` and follow the installation process.
+  </TabItem>
 
-1. Login to your Moodle site and navigate to _Site administration > Plugins > Install plugins_.
-2. Click on the button reading _Install plugins from the Moodle plugins directory_. This will redirect you to moodle.org.
-3. In the search field, type `level up` and hit "Search".
-4. Click on _Level Up XP_, it should be the first result.
-5. Click the button _Install now_ and select your Moodle site.
-6. Follow the installation steps.
+  <TabItem value="server" label="Server files">
+    1. Extract the XP ZIP contents into `[public]/blocks/xp`. Skip this step if XP is already installed.
+    2. If you use XP+, extract the contents of `local_xp.zip` into `[public]/local/xp`.
+    3. Confirm that each plugin folder contains a `version.php` file.
+    4. Open Site administration > Notifications and follow the installation process.
+  </TabItem>
 
-For more information on installing plugins, please visit the [official Moodle documentation](https://docs.moodle.org/en/Installing_plugins).
+  <TabItem value="git" label="Git">
+    This method installs XP only.
 
-## Zip upload
+    1. From the Moodle root directory, go to `[public]/blocks` or `blocks`.
+    2. Clone the [official XP repository](https://github.com/FMCorz/moodle-block_xp) into a folder named `xp`.
+    3. Check out the latest release tag.
+    4. Open Site administration > Notifications and follow the installation process.
 
-:::warning
+    The following commands clone the official repository and check out the latest tag.
 
-This method is not always available. It depends on the Moodle adminstrator and hosting provider.
+    ```sh
+    cd public/blocks 2>/dev/null || cd blocks || exit 1
+    git clone https://github.com/FMCorz/moodle-block_xp.git xp
+    cd xp
+    git checkout "$(git tag --list 'v*' --sort=-v:refname | head -n 1)"
+    ```
+  </TabItem>
+</Tabs>
 
-:::
+## Recommended plugins
 
-1. Download the zip file of the latest version of the plugin from [moodle.org](https://moodle.org/plugins/pluginversions.php?plugin=block_xp).
-2. Login to your Moodle site and navigate to _Site administration > Plugins > Install plugins_.
-3. Upload the zip file in the form, and follow the steps.
+The following free plugins add optional features:
 
-For more information on installing plugins, please visit the [official Moodle documentation](https://docs.moodle.org/en/Installing_plugins).
+- XP Availability lets instructors restrict access to course content according to a learner's level.
+- XP Enrol lets instructors enrol learners in a course when they reach a specified level in another course.
+- Shortcodes lets instructors add XP content to Moodle text areas.
 
-## Manual installation
+[Install the recommended plugins](./recommended-plugins.mdx) that provide the features you need.
 
-_Level Up XP_ is a Moodle plugin of type `block`, it needs to be extracted in the `[public]/blocks/` directory.
+## Next steps
 
-1. Download the zip file of the latest version of the plugin from [moodle.org](https://moodle.org/plugins/pluginversions.php?plugin=block_xp).
-2. Extract the content of the zip file in the folder `[public]/blocks` of your Moodle installation.
-3. If you have extracted the content at the right place, the following file should be present: `[public]/blocks/xp/version.php`.
-4. Visit the admin notifications page to trigger the installation.
-   - Navigate to _Site administration > Notifications_.
-   - Or directly visit _your.moodle.example.com_**/admin/index.php**.
-5. Follow the Moodle installation process.
-
-For more information on installing plugins, please visit the [official Moodle documentation](https://docs.moodle.org/en/Installing_plugins).
-
-## Using git
-
-You may choose to install the plugin using git. However, please note that the `master` should not be used. The `master` branch is reserved for development, can contain unstable code, and is certainly not recommended in production.
-
-We recommend to checkout the latest tag.
-
-```
-cd public/blocks/xp 2> /dev/null || cd blocks/xp
-git tag -l | sort -Vr | head -1
-git checkout <tag here>
-```
-
-## Additional resources
-
-- [Latest releases](https://moodle.org/plugins/pluginversions.php?plugin=block_xp)
-- [Git repository](https://github.com/FMCorz/moodle-block_xp)
-- [Moodle documentation: Installing plugins](https://docs.moodle.org/en/Installing_plugins)
+1. [Choose whether to use XP in each course or across your site](../per-course-or-site.mdx).
+2. [Add the XP block](./adding-the-block.mdx).
