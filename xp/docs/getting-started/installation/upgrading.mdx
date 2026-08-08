@@ -1,82 +1,81 @@
 ---
 slug: /upgrade
 sidebar_position: 2
+sidebar_label: Upgrade
+title: Upgrade Level Up XP
+description: Upgrade XP and XP+ while keeping the plugins compatible.
 ---
 
-# Upgrading to latest versions
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Admonition from '@theme/Admonition';
 
-Upgrading XP and XP+ to their latest version can be done following steps below.
+# Upgrade Level Up XP
 
-:::info
+Upgrade XP by itself, or upgrade XP and XP+ together when both are installed.
 
-Please always consult the **[upgrade notes](./upgrade-notes/)** and **[release notes](/xp/release-notes)** prior to upgrading.
+## Before you upgrade
 
-:::
+Read the [upgrade notes](./upgrade-notes/) for any extra steps and the [release notes](/xp/release-notes) for details about each version.
 
-## Upgrading XP {#xp}
+## Get the updates
 
-:::warning
+<span id="xp"></span>
+<span id="xpplus"></span>
 
-If you purchased XP+, please [read this note first](#note-xpplus-users).
+| Plugin | Code name | How to obtain |
+| --- | --- | --- |
+| XP (required) | `block_xp` | Download the ZIP file from the [Level Up website](https://www.levelup.plus/xp/#packages), [CAMP](https://camp-registry.org/plugin/block_xp.html), or the [Moodle plugins directory](https://moodle.org/plugins/block_xp). You can also use the Git method below. |
+| XP+ (if installed) | `local_xp` | Download `local_xp.zip` from your licence download link. If you lost the link, use the [licence recovery tool](https://levelup.plus/recover). Your licence determines which versions you can download. |
 
-:::
-
-Generally, Moodle will notify system administrators that a new version is available for them to install. When that is the case, you may be able to upgrade the plugin directly [from the Moodle web interface](https://docs.moodle.org/en/Installing_plugins#Plugin_updating_from_within_Moodle) as an administrator.
-
-If you are unable to update directly from the Moodle interface, please upgrade manually.
-
-### Manual upgrade
-
-1. Identify and download the latest zip compatible with your Moodle version from the [plugin's page on moodle.org](https://moodle.org/plugins/pluginversions.php?plugin=block_xp).
-2. Replace the folder `[public]/blocks/xp` with the content of the zip file.
-3. When done correctly, you should find a file named `version.php` in the folder `[public]/blocks/xp`.
-   - Opening the above file should reveal the version downloaded earlier.
-4. If you also need to upgrade XP+, please **[skip to the section below](#xpplus)**.
-5. Visit the admin notifications page to trigger the installation.
-   - Navigate to _Site administration > Notifications_.
-   - Or directly visit _your.moodle.example.com_**/admin/index.php**.
-6. Follow the Moodle upgrade process.
-
-The upgrade process is quite similar to the installation process, please visit the [official Moodle documentation](https://docs.moodle.org/en/Installing_plugins) for more information.
-
-## Upgrading XP+ {#xpplus}
-
-To obtain the latest version of _Level Up XP+_, please navigate to your download link which was shared by email at the time of purchase. If you no longer have your download link, you can recover it from the [recover page](https://levelup.plus/recover). Note that latest version available to you may not be the latest version if your licence has expired.
-
-New versions of _Level Up XP+_ often **require the latest version of _Level Up XP_** to be installed, if you haven't upgraded it yet, please follow the steps in the above section to install it.
-
-### Zip upload (easy)
+<span id="note-xpplus-users"></span>
 
 :::warning
 
-This method is not always available. It depends on the Moodle administrator and hosting provider.
+If you use XP+, obtain updates for both plugins before you start. XP and XP+ must have the same major version. Do not continue the Moodle upgrade until you update the files for both plugins.
 
 :::
 
-1. Ensure that the latest version of _Level Up XP_ is installed, or ready to be installed.
-2. Download the zip file `local_xp.zip` from your download link.
-3. Login to your Moodle site and navigate to _Site administration > Plugins > Install plugins_.
-4. Upload the zip file in the form, and follow the steps.
+## Upgrade
 
-The upgrade process is quite similar to the installation process, please visit the [official Moodle documentation](https://docs.moodle.org/en/Installing_plugins) for more information.
+Choose the method that you use to manage the plugin files.
 
-### Manual upgrade
+<Tabs>
+  <TabItem value="zip" label="ZIP upload" default>
+    <Admonition type="note">
+      This method is not available on all Moodle sites. Its availability depends on the site configuration and hosting provider.
+    </Admonition>
 
-XP+ is a Moodle plugin of type `local`, it needs to be extracted in the `[public]/local/` directory.
+    1. Sign in to your Moodle site and open Site administration > Plugins > Install plugins.
+    2. Upload the XP ZIP file.
+    3. If XP+ is installed, return to Site administration > Plugins > Install plugins and upload `local_xp.zip`.
+    4. Follow the Moodle upgrade process.
+  </TabItem>
 
-1. Ensure that the latest version of XP is installed, or ready to be installed.
-2. Download the zip file `local_xp.zip` from your download link.
-3. Replace the content of the Moodle folder `[public]/local/xp` with the content of the zip file.
-4. If you have extracted the content at the right place, the following file should be present: `[public]/local/xp/version.php`.
-5. Visit the admin notifications page to trigger the installation.
-   - Navigate to _Site administration > Notifications_.
-   - Or directly visit _your.moodle.example.com_ **/admin/index.php**.
-6. Follow the Moodle upgrade process.
+  <TabItem value="server" label="Server files">
+    1. Replace `[public]/blocks/xp` with the contents of the XP ZIP file.
+    2. If XP+ is installed, replace `[public]/local/xp` with the contents of `local_xp.zip`.
+    3. Confirm that each plugin folder contains a `version.php` file.
+    4. Open Site administration > Notifications and follow the Moodle upgrade process.
+  </TabItem>
 
-The upgrade process is quite similar to the installation process, please visit the [official Moodle documentation](https://docs.moodle.org/en/Installing_plugins) for more information.
+  <TabItem value="git" label="Git">
+    This method upgrades XP only.
 
-## Note for XP+ users {#note-xpplus-users}
+    1. From the Moodle root directory, go to `[public]/blocks/xp` or `blocks/xp`.
+    2. Fetch the release tags from the [official XP repository](https://github.com/FMCorz/moodle-block_xp).
+    3. Check out the latest release tag.
+    4. If XP+ is installed, replace `[public]/local/xp` with the contents of `local_xp.zip`.
+    5. Open Site administration > Notifications and follow the Moodle upgrade process.
 
-If XP+ is installed on your Moodle site, please always try and upgrade to the latest version of XP+ first. Installing a newer version of XP with an older version of XP+ can cause the plugins to go [out of sync](/troubleshooting/plugins-out-of-sync/index.mdx) which can cause unexpected bugs and issues.
+    The following commands fetch the release tags from the official repository and check out the latest tag.
 
-Upgrading XP+ first will determine which version of XP is required.
+    ```sh
+    cd public/blocks/xp 2>/dev/null || cd blocks/xp || exit 1
+    git fetch --tags
+    git checkout "$(git tag --list 'v*' --sort=-v:refname | head -n 1)"
+    ```
+  </TabItem>
+</Tabs>
+
+After the upgrade, open Site administration > Plugins > Plugins overview and confirm the installed versions.
