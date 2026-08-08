@@ -1,26 +1,38 @@
 ---
 sidebar_position: 45
+title: The block cannot be added
+description: Troubleshoot a missing Level Up XP block in Moodle.
 ---
 
 # The block cannot be added
 
-If you cannot see the Level Up XP block when trying to add a block work through the checks below.
+Use these checks if Level Up XP does not appear in the Add a block list.
 
-## Check where you are trying to add the block
+## Check the page
 
-XP can run either **per course** or **sitewide**. If you are trying to add the block to the **Dashboard** or **Site home** while XP is configured **per course**, it is expected that the Level Up block does not appear in the "Add a block" list for those pages. In that case, either:
+The [XP mode](../../getting-started/per-course-or-site.mdx) controls where you can add the block:
 
-- Add the block inside individual courses, or
-- Ask an administrator to switch XP to [sitewide mode](../../getting-started/per-course-or-site.mdx).
+- In per-course mode, add the block inside a course. It does not appear on the Site home or Dashboard.
+- In sitewide mode, you can add the block to the Site home, a Dashboard, a course, or another page.
 
-## Check that the block is enabled and not locked
+If you need the block on the Site home or Dashboard, ask an administrator to enable sitewide mode.
 
-Even if the plugin is installed, the block itself can be **disabled** or **locked** by an administrator in Moodle's block management page. If it is disabled or locked, it will not appear in the "Add a block" list.
+## Check your permissions
 
-1. Navigate to _Site administration > Plugins > Blocks > Manage blocks_.
-2. Find the **Level Up XP** block in the list.
-3. Confirm that:
-   - The block is **enabled**.
-   - The block is **unlocked** (if it is locked, unlock it).
+To add the block to a course or another page, your role must have the `block/xp:addinstance` capability.
 
-After enabling and unlocking the block, return to the page where you want to add it and try again.
+For Dashboard use, an administrator must [add the block to the default Dashboard](../../getting-started/installation/adding-the-block.mdx#add-the-block-to-every-users-dashboard) for all users.
+
+For more information, see [XP permissions](../../getting-started/permissions.mdx).
+
+## Check the block status
+
+Ask a site administrator to complete these steps:
+
+1. Open Site administration > Plugins > Blocks > Manage blocks.
+2. Find Level Up XP in the list.
+3. Confirm that the block is enabled.
+4. Confirm that the block is unlocked. If it is locked, unlock it.
+5. Return to the page where you want to add the block and try again.
+
+If Level Up XP is not in the list of blocks, confirm that [XP is installed](../../getting-started/installation/index.mdx).
