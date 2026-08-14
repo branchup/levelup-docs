@@ -16,8 +16,8 @@ The Level Up XP MCP integration lets an AI assistant get information from
 Moodle. It can also perform permitted actions with the permissions of the
 connected Moodle user.
 
-Use this page to configure the integration and control its users, tools and
-OAuth clients.
+Use this page to configure the integration and control its users, tool
+permissions, and OAuth clients.
 
 ## Requirements
 
@@ -36,22 +36,34 @@ network requirements.
 
 1. Go to Site administration > Plugins > Blocks > Level Up XP.
 2. Find the AI settings section.
-3. Set Enable MCP to Yes.
-4. Select an option for MCP tools allowed.
-5. Save the changes.
-6. Select the full list of declared tools link to review the available tools
-   and their status.
+3. Set Enable MCP access to Yes.
+4. In MCP tool permissions, select each checkbox for the type of operation
+   that you want to allow.
+5. Set Allow ChatGPT connections to Yes if users can connect ChatGPT.
+6. Set Allow Claude connections to Yes if users can connect Claude.
+7. Enter Connect instructions if users need information about another
+   assistant.
+8. Save the changes.
+9. Select the full list of tools link to review the available tools and their
+   status.
 
-Enable MCP is the sitewide control for the integration. Set it to No to stop
-OAuth authorisation and MCP requests for the site.
+Enable MCP access is the sitewide control for the integration. Set it to No to
+stop OAuth authorisation and MCP requests for the site.
 
-The MCP endpoint is:
+## Provide connection instructions
 
-```text
-https://moodle.example.com/blocks/xp/mcp.php
-```
+The Connect instructions setting adds information to the AI page in Level Up
+XP. This information appears before the ChatGPT and Claude instructions. Use
+it to give users a link and the steps to access an assistant.
 
-Replace `https://moodle.example.com` with the address of your Moodle site.
+This setting is useful for assistants other than ChatGPT and Claude. You can
+also use it for an assistant that is available only to your organisation. For
+example, you can create AI clients in Microsoft Foundry (Azure AI Studio) and
+tell users how to access them.
+
+The Connect instructions setting provides information only. You must configure
+the client in the AI environment. If the client requires OAuth credentials,
+you must also [register it manually](#manually-registered-clients).
 
 ## Control who can connect
 
@@ -72,15 +84,19 @@ guide](../getting-started/permissions.mdx#usemcp).
 
 ## Control the available tools
 
-The MCP tools allowed setting controls tool types. It does not give users new
-Moodle permissions.
+The MCP tool permissions setting contains three checkboxes. The checkboxes
+control the types of operations that tools can perform. They do not give users
+new Moodle permissions.
 
-| Setting | Available tools |
+| Checkbox | Effect |
 | --- | --- |
-| Read only | Tools that read non-personal information, such as levels, rules and configuration. |
-| Read only + Personal | Read-only tools that can also return learner information, reports, logs and individual leaderboard data. |
-| Read + Write | Read and write tools that do not use personal information. |
-| All | All tools, including tools that use personal information or make changes. This setting is required to award points. |
+| Read information | Allows tools that read information, such as levels, rules and configuration. |
+| Access personal data | Allows tools that access learner information, reports, logs or individual leaderboard data. |
+| Make changes or trigger actions | Allows tools that change data or trigger an action, such as awarding points or sending a notification. |
+
+You must select every checkbox that a tool requires before you can use the
+tool. For example, the tool that awards points requires Access personal data
+and Make changes or trigger actions.
 
 The tools list also depends on whether XP operates sitewide or in each course.
 XP+ automatically disables tools that do not apply to the configured mode. You
@@ -104,16 +120,19 @@ troubleshooting](./troubleshooting.mdx#an-oauth-route-returns-a-not-found-error)
 
 ### Automatically registered clients
 
-Some AI clients use a Client ID Metadata Document (CIMD) to register
-automatically. The document identifies the client and its OAuth redirect URLs.
+ChatGPT and Claude use Client ID Metadata Documents (CIMDs) to register
+automatically. These documents identify the clients and their OAuth redirect
+URLs.
 
-The OAuth CIMD domains setting contains the domains that can register
-automatically. Enter one exact domain per line. A client can register only when
-its metadata document is on a domain in this list. The user must still sign in
-to Moodle and approve the connection.
+Use Allow ChatGPT connections and Allow Claude connections to control automatic
+registration. When you allow an assistant, users can connect it without manual
+OAuth registration. The user must still sign in to Moodle and approve the
+connection.
 
-This setting controls new automatic registrations. Use Manage OAuth clients to
-enable, disable or delete clients that are already registered.
+Set Allow ChatGPT connections to No to disable automatically registered
+ChatGPT clients. Set Allow Claude connections to No to disable automatically
+registered Claude clients. Use Manage OAuth clients to review, enable, disable
+or delete existing clients.
 
 ### Manually registered clients
 
@@ -127,7 +146,7 @@ provide this URL only after you enter the client ID and secret.
    the exact URL.
 4. Save the client.
 5. Open the client details.
-6. Copy the client ID, client secret, Authorize URL and Token URL to the AI
+6. Copy the client ID, client secret, Authorisation URL and Token URL to the AI
    client's connection settings.
 7. If the AI client now provides its redirect URL, edit the OAuth client and
    save the exact URL.
@@ -136,6 +155,10 @@ The client secret is a credential that the AI client uses to authenticate.
 
 You can disable an OAuth client to block new and existing connections that use
 it.
+
+## Moodle AI subsystem
+
+Level Up XP does not use the Moodle AI subsystem. You do not configure an AI provider or API key in Moodle.
 
 ## Review data and privacy
 
@@ -160,7 +183,7 @@ username, ID number and email address fields from this configuration. See
 
 The information that an AI client can receive depends on:
 
-- The MCP tools allowed setting.
+- The MCP tool permissions setting.
 - The tools that are available for the XP sitewide or per-course mode.
 - The connected user's Moodle and XP permissions.
 - Moodle and XP settings that control user and leaderboard visibility.
@@ -189,12 +212,12 @@ Use the control that matches the scope of the access change:
 - Remove `local/xp:usemcp` at the system level to block one Moodle user.
 - Prohibit `local/xp:usemcp` in a context to block MCP tools in that context.
 - Disable an OAuth client to block all connections that use that client.
-- Set Enable MCP to No to block all MCP connections to the site.
+- Set Enable MCP access to No to block all MCP connections to the site.
 - Delete an OAuth client to remove its configuration and OAuth tokens.
 
-Changes to Enable MCP, MCP tools allowed and Moodle permissions take effect on
-the server immediately. An AI client might continue to show an old tool list.
-Refresh or reconnect the integration if this occurs.
+Changes to Enable MCP access, MCP tool permissions, and Moodle permissions take
+effect on the server immediately. An AI client might continue to show an old
+tool list. Refresh or reconnect the integration if this occurs.
 
 For connection and permission problems, see
 [Troubleshooting AI and MCP](./troubleshooting.mdx).

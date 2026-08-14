@@ -18,8 +18,8 @@ Before you start, ask your Moodle administrator to confirm that:
 - You have permission to use the integration
 - Your AI assistant is approved by your organisation
 
-You will also need the Level Up XP MCP URL for your Moodle site. It normally
-looks like this:
+To connect ChatGPT or Claude, you will also need the Level Up XP MCP URL for
+your Moodle site. It normally looks like this:
 
 ```text
 https://moodle.example.com/blocks/xp/mcp.php
@@ -73,20 +73,18 @@ if the options in your account differ.
 
 ## Connect another assistant
 
-You can connect another AI assistant if it supports remote MCP servers with
-OAuth authentication.
+Your Moodle administrator must register and configure another assistant before
+you can use it with Level Up XP. You cannot connect it only by entering the MCP
+URL.
 
-In the assistant's MCP or connector settings:
+1. Open Level Up XP and select AI.
+2. In Connect an AI assistant, follow the instructions from your
+   administrator.
+3. If there are no instructions for your assistant, contact your
+   administrator.
 
-1. Add a remote MCP server.
-2. Enter a name and the Level Up XP MCP URL.
-3. Choose `Streamable HTTP` as the MCP connection type.
-4. Choose OAuth authentication.
-5. Sign in to Moodle and approve access.
-
-If the assistant asks for an OAuth client ID, client secret or redirect URL,
-contact your Moodle administrator. The administrator may need to
-[register the assistant manually](./admin.mdx#oauth-clients).
+The instructions can direct you to an assistant that your organisation already
+provides.
 
 Never enter your Moodle password directly into an AI conversation or store it
 in an MCP configuration file. The connection should send you to your Moodle
@@ -102,3 +100,16 @@ Start with a request that does not make changes:
 If the assistant cannot find Level Up XP, make sure the connection is enabled
 for the conversation. If it connects but cannot complete the request, see
 [Troubleshooting](./troubleshooting.mdx).
+
+## Revoke access
+
+Disconnecting an AI assistant does not always revoke its access in Moodle. To
+revoke all AI access for your Moodle account:
+
+1. Open Level Up XP and select AI.
+2. In Current AI access, select Revoke all AI access.
+3. Confirm the action.
+
+All AI assistants will lose access to Level Up XP through your Moodle account.
+You must authorise a new connection before you can use Level Up XP with an
+assistant again.

@@ -38,7 +38,7 @@ addresses, use network configuration that the AI provider supports.
 
 ## MCP access is disabled
 
-Ask a site administrator to set Enable MCP to Yes in the Level Up XP AI
+Ask a site administrator to set Enable MCP access to Yes in the Level Up XP AI
 settings. For the full procedure, see [Enable and configure
 MCP](./admin.mdx#enable-and-configure-mcp).
 
@@ -47,8 +47,8 @@ MCP](./admin.mdx#enable-and-configure-mcp).
 Ask an administrator to open Manage OAuth clients and complete these checks:
 
 - Make sure that the client is in the list and is enabled.
-- Make sure that an automatically registered client comes from an approved
-  OAuth client domain.
+- For ChatGPT, make sure that Allow ChatGPT connections is set to Yes.
+- For Claude, make sure that Allow Claude connections is set to Yes.
 - Make sure that a manually registered client has the exact redirect URL that
   the AI client requires.
 - Make sure that the client ID and client secret are correct when you use
@@ -96,19 +96,20 @@ request.
 
 ## Learner details, logs, or leaderboard entries are unavailable
 
-Set MCP tools allowed to Read only + Personal or All. The connected user must
-also have the Moodle permissions to view the learner, report, log, or
-leaderboard information.
+Ask a site administrator to select Read information and Access personal data
+in MCP tool permissions. The connected user must also have the Moodle
+permissions to view the learner, report, log, or leaderboard information.
 
-An administrator can intentionally make personal information unavailable. Do
-not increase access until the administrator confirms that the use case and AI
-provider are approved.
+A site administrator can intentionally block access to personal information.
+The administrator must confirm that the use case and AI provider are approved
+before granting this access.
 
 ## The assistant cannot award points
 
 Complete these checks before you award points:
 
-- Make sure that MCP tools allowed is set to All.
+- In MCP tool permissions, select Read information, Access personal data, and
+  Make changes or trigger actions.
 - Make sure that the connected user has `local/xp:usemcp`.
 - Make sure that the connected user has the XP permissions to find the learner
   and award points.
