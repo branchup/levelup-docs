@@ -6,7 +6,7 @@
 <title data-rh="true">Troubleshooting AI and MCP | Level Up Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://docs.levelup.plus/xp/docs/ai-mcp/troubleshooting"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="og:type" content="website"><meta data-rh="true" name="og:image" content="https://docs.levelup.plus/img/og.png"><meta data-rh="true" name="og:image:secure_url" content="https://docs.levelup.plus/img/og.png"><meta data-rh="true" name="twitter:image" content="https://docs.levelup.plus/img/og.png"><meta data-rh="true" name="twitter:site" content="@BranchUpTech"><meta data-rh="true" name="twitter:creator" content="@BranchUpTech"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Troubleshooting AI and MCP | Level Up Documentation"><meta data-rh="true" name="description" content="Resolve common connection, authorisation, and permission problems."><meta data-rh="true" property="og:description" content="Resolve common connection, authorisation, and permission problems."><link data-rh="true" rel="icon" href="/img/favicon.png"><link data-rh="true" rel="canonical" href="https://docs.levelup.plus/xp/docs/ai-mcp/troubleshooting"><link data-rh="true" rel="alternate" href="https://docs.levelup.plus/xp/docs/ai-mcp/troubleshooting" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.levelup.plus/xp/docs/ai-mcp/troubleshooting" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Troubleshooting AI and MCP","item":"https://docs.levelup.plus/xp/docs/ai-mcp/troubleshooting"}]}</script><link key="docusaurus-plugin-plausible-preconnect" rel="preconnect" href="https://plausible.io">
 <script key="docusaurus-plugin-plausible-script" async defer="defer" data-domain="docs.levelup.plus" src="https://plausible.io/js/plausible.js"></script>
 <script key="docusaurus-plugin-plausible-custom-events">window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script><link rel="stylesheet" href="/assets/css/styles.c4e282af.css">
-<script src="/assets/js/runtime~main.38e86361.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.7d7925e5.js" defer="defer"></script>
 <script src="/assets/js/main.81197a5c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -32,15 +32,15 @@ guide</a>.</p>
 available only on a private network, through a VPN, or from selected IP
 addresses, use network configuration that the AI provider supports.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="mcp-access-is-disabled">MCP access is disabled<a href="#mcp-access-is-disabled" class="hash-link" aria-label="Direct link to MCP access is disabled" title="Direct link to MCP access is disabled" translate="no">​</a></h2>
-<p>Ask a site administrator to set Enable MCP to Yes in the Level Up XP AI
+<p>Ask a site administrator to set Enable MCP access to Yes in the Level Up XP AI
 settings. For the full procedure, see <a class="" href="/xp/docs/ai-mcp/admin#enable-and-configure-mcp">Enable and configure
 MCP</a>.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-authorisation-request-is-invalid">The authorisation request is invalid<a href="#the-authorisation-request-is-invalid" class="hash-link" aria-label="Direct link to The authorisation request is invalid" title="Direct link to The authorisation request is invalid" translate="no">​</a></h2>
 <p>Ask an administrator to open Manage OAuth clients and complete these checks:</p>
 <ul>
 <li class="">Make sure that the client is in the list and is enabled.</li>
-<li class="">Make sure that an automatically registered client comes from an approved
-OAuth client domain.</li>
+<li class="">For ChatGPT, make sure that Allow ChatGPT connections is set to Yes.</li>
+<li class="">For Claude, make sure that Allow Claude connections is set to Yes.</li>
 <li class="">Make sure that a manually registered client has the exact redirect URL that
 the AI client requires.</li>
 <li class="">Make sure that the client ID and client secret are correct when you use
@@ -77,16 +77,17 @@ the applicable report or log permission. For more information, see the
 <p>If several courses have similar names, include the course short name in the
 request.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="learner-details-logs-or-leaderboard-entries-are-unavailable">Learner details, logs, or leaderboard entries are unavailable<a href="#learner-details-logs-or-leaderboard-entries-are-unavailable" class="hash-link" aria-label="Direct link to Learner details, logs, or leaderboard entries are unavailable" title="Direct link to Learner details, logs, or leaderboard entries are unavailable" translate="no">​</a></h2>
-<p>Set MCP tools allowed to Read only + Personal or All. The connected user must
-also have the Moodle permissions to view the learner, report, log, or
-leaderboard information.</p>
-<p>An administrator can intentionally make personal information unavailable. Do
-not increase access until the administrator confirms that the use case and AI
-provider are approved.</p>
+<p>Ask a site administrator to select Read information and Access personal data
+in MCP tool permissions. The connected user must also have the Moodle
+permissions to view the learner, report, log, or leaderboard information.</p>
+<p>A site administrator can intentionally block access to personal information.
+The administrator must confirm that the use case and AI provider are approved
+before granting this access.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-assistant-cannot-award-points">The assistant cannot award points<a href="#the-assistant-cannot-award-points" class="hash-link" aria-label="Direct link to The assistant cannot award points" title="Direct link to The assistant cannot award points" translate="no">​</a></h2>
 <p>Complete these checks before you award points:</p>
 <ul>
-<li class="">Make sure that MCP tools allowed is set to All.</li>
+<li class="">In MCP tool permissions, select Read information, Access personal data, and
+Make changes or trigger actions.</li>
 <li class="">Make sure that the connected user has <code>local/xp:usemcp</code>.</li>
 <li class="">Make sure that the connected user has the XP permissions to find the learner
 and award points.</li>

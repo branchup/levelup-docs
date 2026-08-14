@@ -6,7 +6,7 @@
 <title data-rh="true">Connect your AI assistant | Level Up Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://docs.levelup.plus/xp/docs/ai-mcp/connect"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="og:type" content="website"><meta data-rh="true" name="og:image" content="https://docs.levelup.plus/img/og.png"><meta data-rh="true" name="og:image:secure_url" content="https://docs.levelup.plus/img/og.png"><meta data-rh="true" name="twitter:image" content="https://docs.levelup.plus/img/og.png"><meta data-rh="true" name="twitter:site" content="@BranchUpTech"><meta data-rh="true" name="twitter:creator" content="@BranchUpTech"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Connect your AI assistant | Level Up Documentation"><meta data-rh="true" name="description" content="Connect ChatGPT, Claude or another compatible AI assistant to Level Up XP."><meta data-rh="true" property="og:description" content="Connect ChatGPT, Claude or another compatible AI assistant to Level Up XP."><link data-rh="true" rel="icon" href="/img/favicon.png"><link data-rh="true" rel="canonical" href="https://docs.levelup.plus/xp/docs/ai-mcp/connect"><link data-rh="true" rel="alternate" href="https://docs.levelup.plus/xp/docs/ai-mcp/connect" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.levelup.plus/xp/docs/ai-mcp/connect" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Connect your AI assistant","item":"https://docs.levelup.plus/xp/docs/ai-mcp/connect"}]}</script><link key="docusaurus-plugin-plausible-preconnect" rel="preconnect" href="https://plausible.io">
 <script key="docusaurus-plugin-plausible-script" async defer="defer" data-domain="docs.levelup.plus" src="https://plausible.io/js/plausible.js"></script>
 <script key="docusaurus-plugin-plausible-custom-events">window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script><link rel="stylesheet" href="/assets/css/styles.c4e282af.css">
-<script src="/assets/js/runtime~main.38e86361.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.7d7925e5.js" defer="defer"></script>
 <script src="/assets/js/main.81197a5c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -21,8 +21,8 @@
 <li class="">You have permission to use the integration</li>
 <li class="">Your AI assistant is approved by your organisation</li>
 </ul>
-<p>You will also need the Level Up XP MCP URL for your Moodle site. It normally
-looks like this:</p>
+<p>To connect ChatGPT or Claude, you will also need the Level Up XP MCP URL for
+your Moodle site. It normally looks like this:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">https://moodle.example.com/blocks/xp/mcp.php</span><br></span></code></pre></div></div>
 <p>Replace <code>https://moodle.example.com</code> with the address of your Moodle site.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="connect-chatgpt">Connect ChatGPT<a href="#connect-chatgpt" class="hash-link" aria-label="Direct link to Connect ChatGPT" title="Direct link to Connect ChatGPT" translate="no">​</a></h2>
@@ -63,19 +63,18 @@ in that conversation.</p>
 <a href="https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp" target="_blank" rel="noopener noreferrer" class="">Claude&#x27;s current custom connector instructions</a>
 if the options in your account differ.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="connect-another-assistant">Connect another assistant<a href="#connect-another-assistant" class="hash-link" aria-label="Direct link to Connect another assistant" title="Direct link to Connect another assistant" translate="no">​</a></h2>
-<p>You can connect another AI assistant if it supports remote MCP servers with
-OAuth authentication.</p>
-<p>In the assistant&#x27;s MCP or connector settings:</p>
+<p>Your Moodle administrator must register and configure another assistant before
+you can use it with Level Up XP. You cannot connect it only by entering the MCP
+URL.</p>
 <ol>
-<li class="">Add a remote MCP server.</li>
-<li class="">Enter a name and the Level Up XP MCP URL.</li>
-<li class="">Choose <code>Streamable HTTP</code> as the MCP connection type.</li>
-<li class="">Choose OAuth authentication.</li>
-<li class="">Sign in to Moodle and approve access.</li>
+<li class="">Open Level Up XP and select AI.</li>
+<li class="">In Connect an AI assistant, follow the instructions from your
+administrator.</li>
+<li class="">If there are no instructions for your assistant, contact your
+administrator.</li>
 </ol>
-<p>If the assistant asks for an OAuth client ID, client secret or redirect URL,
-contact your Moodle administrator. The administrator may need to
-<a class="" href="/xp/docs/ai-mcp/admin#oauth-clients">register the assistant manually</a>.</p>
+<p>The instructions can direct you to an assistant that your organisation already
+provides.</p>
 <p>Never enter your Moodle password directly into an AI conversation or store it
 in an MCP configuration file. The connection should send you to your Moodle
 site to sign in.</p>
@@ -87,6 +86,17 @@ show me the sitewide levels. Do not make any changes.</p>
 </blockquote>
 <p>If the assistant cannot find Level Up XP, make sure the connection is enabled
 for the conversation. If it connects but cannot complete the request, see
-<a class="" href="/xp/docs/ai-mcp/troubleshooting">Troubleshooting</a>.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/xp/docs/ai-mcp"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Overview</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/xp/docs/ai-mcp/use-cases"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Ways to use XP with AI</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#connect-chatgpt" class="table-of-contents__link toc-highlight">Connect ChatGPT</a></li><li><a href="#connect-claude" class="table-of-contents__link toc-highlight">Connect Claude</a></li><li><a href="#connect-another-assistant" class="table-of-contents__link toc-highlight">Connect another assistant</a></li><li><a href="#check-the-connection" class="table-of-contents__link toc-highlight">Check the connection</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">XP</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/xp/docs">Documentation</a></li><li class="footer__item"><a class="footer__link-item" href="/xp/release-notes">Release notes</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Quest</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/quest/docs">Documentation</a></li><li class="footer__item"><a class="footer__link-item" href="/quest/release-notes">Release notes</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Other resources</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/branchup/levelup-docs" target="_blank" rel="noopener noreferrer" class="footer__link-item">Contributing<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://levelup.plus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Website<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="bottom_g6qf"><div><div class="licence_jPrB">Content licenced under<!-- --> <a class="footer__link-item" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</div></div><div class="copyright_E5Mg"><div class="footer__copyright">Copyright © 2026 Branch Up Pty Ltd</div></div></div></div></footer></div>
+<a class="" href="/xp/docs/ai-mcp/troubleshooting">Troubleshooting</a>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="revoke-access">Revoke access<a href="#revoke-access" class="hash-link" aria-label="Direct link to Revoke access" title="Direct link to Revoke access" translate="no">​</a></h2>
+<p>Disconnecting an AI assistant does not always revoke its access in Moodle. To
+revoke all AI access for your Moodle account:</p>
+<ol>
+<li class="">Open Level Up XP and select AI.</li>
+<li class="">In Current AI access, select Revoke all AI access.</li>
+<li class="">Confirm the action.</li>
+</ol>
+<p>All AI assistants will lose access to Level Up XP through your Moodle account.
+You must authorise a new connection before you can use Level Up XP with an
+assistant again.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/xp/docs/ai-mcp"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Overview</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/xp/docs/ai-mcp/use-cases"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Ways to use XP with AI</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#connect-chatgpt" class="table-of-contents__link toc-highlight">Connect ChatGPT</a></li><li><a href="#connect-claude" class="table-of-contents__link toc-highlight">Connect Claude</a></li><li><a href="#connect-another-assistant" class="table-of-contents__link toc-highlight">Connect another assistant</a></li><li><a href="#check-the-connection" class="table-of-contents__link toc-highlight">Check the connection</a></li><li><a href="#revoke-access" class="table-of-contents__link toc-highlight">Revoke access</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">XP</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/xp/docs">Documentation</a></li><li class="footer__item"><a class="footer__link-item" href="/xp/release-notes">Release notes</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Quest</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/quest/docs">Documentation</a></li><li class="footer__item"><a class="footer__link-item" href="/quest/release-notes">Release notes</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Other resources</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/branchup/levelup-docs" target="_blank" rel="noopener noreferrer" class="footer__link-item">Contributing<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://levelup.plus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Website<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="bottom_g6qf"><div><div class="licence_jPrB">Content licenced under<!-- --> <a class="footer__link-item" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</div></div><div class="copyright_E5Mg"><div class="footer__copyright">Copyright © 2026 Branch Up Pty Ltd</div></div></div></div></footer></div>
 </body>
 </html>
