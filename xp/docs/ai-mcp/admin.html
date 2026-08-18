@@ -6,7 +6,7 @@
 <title data-rh="true">Administrator guide | Level Up Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://docs.levelup.plus/xp/docs/ai-mcp/admin"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="og:type" content="website"><meta data-rh="true" name="og:image" content="https://docs.levelup.plus/img/og.png"><meta data-rh="true" name="og:image:secure_url" content="https://docs.levelup.plus/img/og.png"><meta data-rh="true" name="twitter:image" content="https://docs.levelup.plus/img/og.png"><meta data-rh="true" name="twitter:site" content="@BranchUpTech"><meta data-rh="true" name="twitter:creator" content="@BranchUpTech"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Administrator guide | Level Up Documentation"><meta data-rh="true" name="description" content="Set up and control the Level Up XP MCP integration."><meta data-rh="true" property="og:description" content="Set up and control the Level Up XP MCP integration."><link data-rh="true" rel="icon" href="/img/favicon.png"><link data-rh="true" rel="canonical" href="https://docs.levelup.plus/xp/docs/ai-mcp/admin"><link data-rh="true" rel="alternate" href="https://docs.levelup.plus/xp/docs/ai-mcp/admin" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.levelup.plus/xp/docs/ai-mcp/admin" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Administrator guide","item":"https://docs.levelup.plus/xp/docs/ai-mcp/admin"}]}</script><link key="docusaurus-plugin-plausible-preconnect" rel="preconnect" href="https://plausible.io">
 <script key="docusaurus-plugin-plausible-script" async defer="defer" data-domain="docs.levelup.plus" src="https://plausible.io/js/plausible.js"></script>
 <script key="docusaurus-plugin-plausible-custom-events">window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script><link rel="stylesheet" href="/assets/css/styles.c4e282af.css">
-<script src="/assets/js/runtime~main.7d7925e5.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.18fd85ce.js" defer="defer"></script>
 <script src="/assets/js/main.81197a5c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -33,36 +33,36 @@ Moodle site is on a private network or behind a firewall, review the provider&#x
 network requirements.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="enable-and-configure-mcp">Enable and configure MCP<a href="#enable-and-configure-mcp" class="hash-link" aria-label="Direct link to Enable and configure MCP" title="Direct link to Enable and configure MCP" translate="no">​</a></h2>
 <ol>
-<li class="">Go to Site administration &gt; Plugins &gt; Blocks &gt; Level Up XP.</li>
-<li class="">Find the AI settings section.</li>
-<li class="">Set Enable MCP access to Yes.</li>
-<li class="">In MCP tool permissions, select each checkbox for the type of operation
+<li class="">Go to <strong>Site administration</strong> &gt; <strong>Plugins</strong> &gt; <strong>Blocks</strong> &gt; <strong>Level Up XP</strong>.</li>
+<li class="">Find the <strong>AI settings</strong> section.</li>
+<li class="">Set <strong>Enable MCP access</strong> to <strong>Yes</strong>.</li>
+<li class="">In <strong>MCP tool permissions</strong>, select each checkbox for the type of operation
 that you want to allow.</li>
-<li class="">Set Allow ChatGPT connections to Yes if users can connect ChatGPT.</li>
-<li class="">Set Allow Claude connections to Yes if users can connect Claude.</li>
-<li class="">Enter Connect instructions if users need information about another
+<li class="">Set <strong>Allow ChatGPT connections</strong> to <strong>Yes</strong> if users can connect ChatGPT.</li>
+<li class="">Set <strong>Allow Claude connections</strong> to <strong>Yes</strong> if users can connect Claude.</li>
+<li class="">Enter <strong>Connect instructions</strong> if users need information about another
 assistant.</li>
-<li class="">Save the changes.</li>
-<li class="">Select the full list of tools link to review the available tools and their
-status.</li>
+<li class="">Select <strong>Save changes</strong>.</li>
+<li class="">Select the <strong>full list of tools</strong> link to review the available tools and
+their status.</li>
 </ol>
-<p>Enable MCP access is the sitewide control for the integration. Set it to No to
-stop OAuth authorisation and MCP requests for the site.</p>
+<p><strong>Enable MCP access</strong> is the sitewide control for the integration. Set it to
+<strong>No</strong> to stop OAuth authorisation and MCP requests for the site.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="provide-connection-instructions">Provide connection instructions<a href="#provide-connection-instructions" class="hash-link" aria-label="Direct link to Provide connection instructions" title="Direct link to Provide connection instructions" translate="no">​</a></h2>
-<p>The Connect instructions setting adds information to the AI page in Level Up
-XP. This information appears before the ChatGPT and Claude instructions. Use
-it to give users a link and the steps to access an assistant.</p>
+<p>The <strong>Connect instructions</strong> setting adds information to the <strong>AI</strong> page in
+Level Up XP. This information appears before the ChatGPT and Claude
+instructions. Use it to give users a link and the steps to access an assistant.</p>
 <p>This setting is useful for assistants other than ChatGPT and Claude. You can
 also use it for an assistant that is available only to your organisation. For
 example, you can create AI clients in Microsoft Foundry (Azure AI Studio) and
 tell users how to access them.</p>
-<p>The Connect instructions setting provides information only. You must configure
-the client in the AI environment. If the client requires OAuth credentials,
-you must also <a href="#manually-registered-clients" class="">register it manually</a>.</p>
+<p>The <strong>Connect instructions</strong> setting provides information only. You must
+configure the client in the AI environment. If the client requires OAuth
+credentials, you must also <a href="#manually-registered-clients" class="">register it manually</a>.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="control-who-can-connect">Control who can connect<a href="#control-who-can-connect" class="hash-link" aria-label="Direct link to Control who can connect" title="Direct link to Control who can connect" translate="no">​</a></h2>
 <p>A user must have <code>local/xp:usemcp</code> at the system level to authorise a
 connection and use it. The user must also have this capability in the context
-where an MCP tool runs. An Allow permission at the system level normally
+where an MCP tool runs. An <strong>Allow</strong> permission at the system level normally
 applies in lower contexts unless you override it.</p>
 <p>The capability does not replace the user&#x27;s other Moodle permissions. Each MCP
 tool also checks permissions in the relevant Moodle context. For example,
@@ -73,17 +73,17 @@ The user can stay connected, but the MCP tools cannot operate in that context.
 For more information, see <a class="" href="/xp/docs/getting-started/permissions#usemcp"><code>local/xp:usemcp</code> in the permissions
 guide</a>.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="control-the-available-tools">Control the available tools<a href="#control-the-available-tools" class="hash-link" aria-label="Direct link to Control the available tools" title="Direct link to Control the available tools" translate="no">​</a></h2>
-<p>The MCP tool permissions setting contains three checkboxes. The checkboxes
+<p>The <strong>MCP tool permissions</strong> setting contains three checkboxes. The checkboxes
 control the types of operations that tools can perform. They do not give users
 new Moodle permissions.</p>
-<table><thead><tr><th>Checkbox</th><th>Effect</th></tr></thead><tbody><tr><td>Read information</td><td>Allows tools that read information, such as levels, rules and configuration.</td></tr><tr><td>Access personal data</td><td>Allows tools that access learner information, reports, logs or individual leaderboard data.</td></tr><tr><td>Make changes or trigger actions</td><td>Allows tools that change data or trigger an action, such as awarding points or sending a notification.</td></tr></tbody></table>
+<table><thead><tr><th>Checkbox</th><th>Effect</th></tr></thead><tbody><tr><td><strong>Read information</strong></td><td>Allows tools that read information, such as levels, rules and configuration.</td></tr><tr><td><strong>Access personal data</strong></td><td>Allows tools that access learner information, reports, logs or individual leaderboard data.</td></tr><tr><td><strong>Make changes or trigger actions</strong></td><td>Allows tools that change data or trigger an action, such as awarding points or sending a notification.</td></tr></tbody></table>
 <p>You must select every checkbox that a tool requires before you can use the
-tool. For example, the tool that awards points requires Access personal data
-and Make changes or trigger actions.</p>
+tool. For example, the tool that awards points requires <strong>Access personal data</strong>
+and <strong>Make changes or trigger actions</strong>.</p>
 <p>The tools list also depends on whether XP operates sitewide or in each course.
 XP+ automatically disables tools that do not apply to the configured mode. You
-can review the full list of tools and their descriptions in the Level Up XP AI
-settings.</p>
+can review the full list of tools and their descriptions in the Level Up XP
+<strong>AI settings</strong>.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="control-oauth-clients">Control OAuth clients<a href="#control-oauth-clients" class="hash-link" aria-label="Direct link to Control OAuth clients" title="Direct link to Control OAuth clients" translate="no">​</a></h2>
 <p>OAuth lets users sign in on your Moodle site and approve a connection. Users
 do not give their Moodle password to the AI client.</p>
@@ -99,27 +99,27 @@ troubleshooting</a>.</p>
 <p>ChatGPT and Claude use Client ID Metadata Documents (CIMDs) to register
 automatically. These documents identify the clients and their OAuth redirect
 URLs.</p>
-<p>Use Allow ChatGPT connections and Allow Claude connections to control automatic
-registration. When you allow an assistant, users can connect it without manual
-OAuth registration. The user must still sign in to Moodle and approve the
-connection.</p>
-<p>Set Allow ChatGPT connections to No to disable automatically registered
-ChatGPT clients. Set Allow Claude connections to No to disable automatically
-registered Claude clients. Use Manage OAuth clients to review, enable, disable
-or delete existing clients.</p>
+<p>Use <strong>Allow ChatGPT connections</strong> and <strong>Allow Claude connections</strong> to control
+automatic registration. When you allow an assistant, users can connect it
+without manual OAuth registration. The user must still sign in to Moodle and
+approve the connection.</p>
+<p>Set <strong>Allow ChatGPT connections</strong> to <strong>No</strong> to disable automatically registered
+ChatGPT clients. Set <strong>Allow Claude connections</strong> to <strong>No</strong> to disable
+automatically registered Claude clients. Use <strong>Manage OAuth clients</strong> to
+review, enable, disable or delete existing clients.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="manually-registered-clients">Manually registered clients<a href="#manually-registered-clients" class="hash-link" aria-label="Direct link to Manually registered clients" title="Direct link to Manually registered clients" translate="no">​</a></h3>
 <p>Some AI clients require manual OAuth registration. The redirect URL that you
 register must exactly match the URL that the AI client uses. The client might
 provide this URL only after you enter the client ID and secret.</p>
 <ol>
-<li class="">In the Level Up XP AI settings, select Manage OAuth clients.</li>
-<li class="">Select Add client.</li>
+<li class="">In the Level Up XP <strong>AI settings</strong>, select <strong>Manage OAuth clients</strong>.</li>
+<li class="">Select <strong>Add client</strong>.</li>
 <li class="">Enter a clear name. If the AI client has provided its redirect URL, enter
 the exact URL.</li>
 <li class="">Save the client.</li>
 <li class="">Open the client details.</li>
-<li class="">Copy the client ID, client secret, Authorisation URL and Token URL to the AI
-client&#x27;s connection settings.</li>
+<li class="">Copy the <strong>client ID</strong>, <strong>client secret</strong>, <strong>Authorisation URL</strong> and
+<strong>Token URL</strong> to the AI client&#x27;s connection settings.</li>
 <li class="">If the AI client now provides its redirect URL, edit the OAuth client and
 save the exact URL.</li>
 </ol>
@@ -142,13 +142,14 @@ fields visible to the connected user.</li>
 <li class="">Points, levels, leaderboard positions and team membership.</li>
 <li class="">XP logs and recent activity.</li>
 </ul>
-<p>Moodle controls visible identity fields through the Show user identity setting
-and the <code>moodle/site:viewuseridentity</code> capability. Level Up XP uses the
-username, ID number and email address fields from this configuration. See
-<a href="https://docs.moodle.org/en/User_policies#Show_user_identity" target="_blank" rel="noopener noreferrer" class="">Show user identity in the Moodle documentation</a>.</p>
+<p>Moodle controls visible identity fields through the <strong>Show user identity</strong>
+(<code>showuseridentity</code>) setting and the <code>moodle/site:viewuseridentity</code> capability.
+Level Up XP uses the username, ID number and email address fields from this
+configuration. See <a href="https://docs.moodle.org/en/User_policies#Show_user_identity" target="_blank" rel="noopener noreferrer" class="">Show user identity in the Moodle
+documentation</a>.</p>
 <p>The information that an AI client can receive depends on:</p>
 <ul>
-<li class="">The MCP tool permissions setting.</li>
+<li class="">The <strong>MCP tool permissions</strong> setting.</li>
 <li class="">The tools that are available for the XP sitewide or per-course mode.</li>
 <li class="">The connected user&#x27;s Moodle and XP permissions.</li>
 <li class="">Moodle and XP settings that control user and leaderboard visibility.</li>
@@ -160,7 +161,7 @@ terms that apply to the user&#x27;s account or workspace.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hardening">Hardening<a href="#hardening" class="hash-link" aria-label="Direct link to Hardening" title="Direct link to Hardening" translate="no">​</a></h2>
 <p>To make MCP available only to selected users:</p>
 <ol>
-<li class="">Remove <code>local/xp:usemcp</code> from the Authenticated user role.</li>
+<li class="">Remove <code>local/xp:usemcp</code> from the <strong>Authenticated user</strong> role.</li>
 <li class="">Create or select a role that you can assign at the system level.</li>
 <li class="">Allow <code>local/xp:usemcp</code> for that role.</li>
 <li class="">Assign the role at the system level to the selected users.</li>
@@ -173,12 +174,12 @@ terms that apply to the user&#x27;s account or workspace.</p>
 <li class="">Remove <code>local/xp:usemcp</code> at the system level to block one Moodle user.</li>
 <li class="">Prohibit <code>local/xp:usemcp</code> in a context to block MCP tools in that context.</li>
 <li class="">Disable an OAuth client to block all connections that use that client.</li>
-<li class="">Set Enable MCP access to No to block all MCP connections to the site.</li>
+<li class="">Set <strong>Enable MCP access</strong> to <strong>No</strong> to block all MCP connections to the site.</li>
 <li class="">Delete an OAuth client to remove its configuration and OAuth tokens.</li>
 </ul>
-<p>Changes to Enable MCP access, MCP tool permissions, and Moodle permissions take
-effect on the server immediately. An AI client might continue to show an old
-tool list. Refresh or reconnect the integration if this occurs.</p>
+<p>Changes to <strong>Enable MCP access</strong>, <strong>MCP tool permissions</strong>, and Moodle
+permissions take effect on the server immediately. An AI client might continue
+to show an old tool list. Refresh or reconnect the integration if this occurs.</p>
 <p>For connection and permission problems, see
 <a class="" href="/xp/docs/ai-mcp/troubleshooting">Troubleshooting AI and MCP</a>.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/xp/docs/ai-mcp/use-cases"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Ways to use XP with AI</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/xp/docs/ai-mcp/troubleshooting"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Troubleshooting AI and MCP</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#requirements" class="table-of-contents__link toc-highlight">Requirements</a></li><li><a href="#enable-and-configure-mcp" class="table-of-contents__link toc-highlight">Enable and configure MCP</a></li><li><a href="#provide-connection-instructions" class="table-of-contents__link toc-highlight">Provide connection instructions</a></li><li><a href="#control-who-can-connect" class="table-of-contents__link toc-highlight">Control who can connect</a></li><li><a href="#control-the-available-tools" class="table-of-contents__link toc-highlight">Control the available tools</a></li><li><a href="#control-oauth-clients" class="table-of-contents__link toc-highlight">Control OAuth clients</a><ul><li><a href="#automatically-registered-clients" class="table-of-contents__link toc-highlight">Automatically registered clients</a></li><li><a href="#manually-registered-clients" class="table-of-contents__link toc-highlight">Manually registered clients</a></li></ul></li><li><a href="#moodle-ai-subsystem" class="table-of-contents__link toc-highlight">Moodle AI subsystem</a></li><li><a href="#review-data-and-privacy" class="table-of-contents__link toc-highlight">Review data and privacy</a></li><li><a href="#hardening" class="table-of-contents__link toc-highlight">Hardening</a></li><li><a href="#disable-or-revoke-access" class="table-of-contents__link toc-highlight">Disable or revoke access</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">XP</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/xp/docs">Documentation</a></li><li class="footer__item"><a class="footer__link-item" href="/xp/release-notes">Release notes</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Quest</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/quest/docs">Documentation</a></li><li class="footer__item"><a class="footer__link-item" href="/quest/release-notes">Release notes</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Other resources</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/branchup/levelup-docs" target="_blank" rel="noopener noreferrer" class="footer__link-item">Contributing<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://levelup.plus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Website<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="bottom_g6qf"><div><div class="licence_jPrB">Content licenced under<!-- --> <a class="footer__link-item" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</div></div><div class="copyright_E5Mg"><div class="footer__copyright">Copyright © 2026 Branch Up Pty Ltd</div></div></div></div></footer></div>
 </body>
