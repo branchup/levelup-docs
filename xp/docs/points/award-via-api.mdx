@@ -1,89 +1,209 @@
 ---
-title: Web Services API
-description: Award points from an external service via the Moodle Web Services API.
+title: Web services API
+description: Award points from an external system with the Moodle web services API.
 sidebar_position: 100
 slug: /webservices-api/award-points
 ---
 
-# Award points via the Web Services API
+import RequiresXpPlus from '@site/src/components/RequiresXpPlus';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-import RequiresXpPlus from '../../../src/components/RequiresXpPlus';
+# Award points with the Moodle web services API
 
-<RequiresXpPlus />
+<RequiresXpPlus plan='Premium' />
 
-The Web Services API of Moodle can be used to award points to students. This can be useful to automate the attribution of points for actions taken in another system.
+You can use `local_xp_award_points` in the Moodle web services API to award
+points from an external system.
 
-## Pre-requisites
+Your XP+ plan must include API support. You also need a Moodle web service and
+a token. To create a service, [create a web service](#create-a-web-service).
 
-- An XP+ plan including API support
-- Moodle Web Services [configured and enabled](https://docs.moodle.org/en/Using_web_services) for the function `local_xp_award_points`
-- A Web Service token to authenticate with the API
+## Award points
 
-## Constructing the request
+The `local_xp_award_points` function requires these arguments:
+
+| Argument | Type | Description |
+| --- | --- | --- |
+| `userid` | Integer | The ID of the Moodle user who receives the points. |
+| `points` | Integer | The number of points to award. The value must be greater than `0`. |
+| `courseid` | Integer | The course ID. If you [use XP sitewide](../getting-started/per-course-or-site.mdx), use `1`. |
+
+If you do not know the `userid`, [find the user ID](#find-a-user-id) before you
+award the points.
 
 :::info
 
-This guide assumes that the default `rest` Web Service plugin is used. If you are using a different Web Service plugin than the standard one, please refer to their documentation.
+This page uses Moodle's standard REST protocol. If you use a different web
+service protocol, see its documentation.
 
 :::
 
-The Web Service function to award points is `local_xp_award_points`, and it requires the following arguments:
+Send a `POST` request to this URL:
 
-- `userid` (int): The user ID of the Moodle user to whom points should be given
-- `points` (int): The number of points to give to the user
-- `courseid` (int): The ID of the course in which the points are given, when XP is used sitewide, use `1`.
+```text
+https://moodle.example.com/webservice/rest/server.php
+```
 
-The default `rest` Web Service plugin requires:
+Replace `https://moodle.example.com` with the address of your Moodle site.
+Encode the request data as `application/x-www-form-urlencoded`. Do not encode
+the request data as JSON.
 
-- All requests to be `POST`.
-- All requests to be sent to `https://moodle.example.com/webservice/rest/server.php`.
-- All requests to be `form` encoded, not the typical JSON.
-- A body (or query) parameter `wstoken` to declare the contain the authentication token.
-- A body (or query) parameter `wsfunction` to reference the Web Service function to call.
-- A body (or query) parameter `moodlewsrestformat` with value `json` to get a JSON response.
+Include these form fields:
 
-### Sample query
+- Set `wstoken` to your web service token.
+- Set `wsfunction` to `local_xp_award_points`.
+- Set `moodlewsrestformat` to `json`.
+- Set `userid`, `points`, and `courseid` to the required values.
 
-Here is a sample query awarding **10** points to the user with ID **20**, in the course **30**. Replace **WSTOKEN** with your Webservice Token.
+### Example request
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+This example awards `10` points to user `20` in course `30`. Replace
+`YOUR_TOKEN` with your web service token.
 
 <Tabs>
   <TabItem value="httpie" label="HTTPie" default>
 
-```sh
-http -f POST https://moodle.example.com/webservice/rest/server.php wstoken=WSTOKEN wsfunction=local_xp_award_points moodlewsrestformat=json points=10 userid=20 courseid=30
-```
+    ```sh
+    http -f POST https://moodle.example.com/webservice/rest/server.php \
+      wstoken=YOUR_TOKEN \
+      wsfunction=local_xp_award_points \
+      moodlewsrestformat=json \
+      points=10 \
+      userid=20 \
+      courseid=30
+    ```
 
-    Get [HTTPie CLI](https://httpie.io/cli)
+    Get [HTTPie CLI](https://httpie.io/cli).
   </TabItem>
   <TabItem value="curl" label="curl">
-```sh
-curl -X POST https://moodle.example.com/webservice/rest/server.php -d "wstoken=WSTOKEN" -d "wsfunction=local_xp_award_points" -d "moodlewsrestformat=json" -d "points=10" -d "userid=20" -d "courseid=30"
-```
+
+    ```sh
+    curl --request POST https://moodle.example.com/webservice/rest/server.php \
+      --data "wstoken=YOUR_TOKEN" \
+      --data "wsfunction=local_xp_award_points" \
+      --data "moodlewsrestformat=json" \
+      --data "points=10" \
+      --data "userid=20" \
+      --data "courseid=30"
+    ```
+
   </TabItem>
   <TabItem value="plain" label="Plain text">
-    ```
-POST /webservice/rest/server.php HTTP/1.1
-...
-Content-Type: application/x-www-form-urlencoded; charset=utf-8
 
-wstoken=WSTOKEN&wsfunction=local_xp_award_points&moodlewsrestformat=json&courseid=30&userid=20&points=10
+    ```text
+    POST /webservice/rest/server.php HTTP/1.1
+    ...
+    Content-Type: application/x-www-form-urlencoded; charset=utf-8
+
+    wstoken=YOUR_TOKEN&wsfunction=local_xp_award_points&moodlewsrestformat=json&courseid=30&userid=20&points=10
     ```
+
   </TabItem>
 </Tabs>
 
-#### Response
+### Response
 
-After a successful request, the response will include an object with the updated total number of points of the user, for instance **1200** below:
+Moodle returns the user's new points total in `xp`. In this example, the new
+total is `1200`:
 
 ```json
-{"xp": 1200}
+{
+  "xp": 1200
+}
 ```
 
-## Notes
+## Find a user ID
 
-- The permissions are checked in the system context when used sitewide, else in the course context.
-- The user calling the API must have the permissions `block/xp:manage`.
-- The user to receive points must have the permission `block/xp:earnxp`.
+The award function requires the numeric Moodle user ID. If you know another
+identifier, use `core_user_get_users_by_field` to find the ID.
+
+Set `field` to `id`, `username`, `idnumber`, or `email`. The `values` argument
+must always be an array. For one value, send one array item.
+
+This example finds the user with the username `admin`:
+
+<Tabs>
+  <TabItem value="httpie" label="HTTPie" default>
+
+    ```sh
+    http -f POST https://moodle.example.com/webservice/rest/server.php \
+      wstoken=YOUR_TOKEN \
+      wsfunction=core_user_get_users_by_field \
+      moodlewsrestformat=json \
+      field=username \
+      values[]=admin
+    ```
+
+  </TabItem>
+  <TabItem value="curl" label="curl">
+
+    ```sh
+    curl --request POST https://moodle.example.com/webservice/rest/server.php \
+      --data "wstoken=YOUR_TOKEN" \
+      --data "wsfunction=core_user_get_users_by_field" \
+      --data "moodlewsrestformat=json" \
+      --data "field=username" \
+      --data "values[]=admin"
+    ```
+
+  </TabItem>
+  <TabItem value="plain" label="Plain text">
+
+    ```text
+    POST /webservice/rest/server.php HTTP/1.1
+    ...
+    Content-Type: application/x-www-form-urlencoded; charset=utf-8
+
+    wstoken=YOUR_TOKEN&wsfunction=core_user_get_users_by_field&moodlewsrestformat=json&field=username&values[]=admin
+    ```
+
+  </TabItem>
+</Tabs>
+
+Moodle returns only the users and fields that the user calling the web service
+can view. Moodle can return an empty array if the specified value does not match
+a user or if that user cannot view the selected field. This shortened response
+shows the values that you need:
+
+```json
+[
+  {
+    "id": 2,
+    "username": "admin"
+  }
+]
+```
+
+Use the `id` value from the matching object as `userid`. In this example, the
+`userid` is `2`.
+
+## Create a web service
+
+These steps create a new service that can award points:
+
+1. Enable Moodle web services and the web service protocol that you want to
+   use, see the
+   [Moodle documentation](https://docs.moodle.org/en/Using_web_services).
+2. Go to **Site administration** > **Server** > **Web services** > **External
+   services**, and then select **Add**.
+3. Enter a name, select **Enabled** and **Authorised users only**, and then
+   select **Add service**.
+4. Select **Add functions**, and add `local_xp_award_points`.
+5. Add `core_user_get_users_by_field` if you want to find user IDs with the
+   API.
+6. Return to **External services**, select **Authorised users** for the new
+   service, and add the user who will call the web service.
+7. Get a web service token for the user who will call the web service.
+
+For complete setup instructions, see
+[Using web services in the Moodle documentation](https://docs.moodle.org/en/Using_web_services).
+
+## Required capabilities
+
+| Capability | Required for | Scope or details |
+| --- | --- | --- |
+| [`block/xp:earnxp`](../getting-started/permissions.mdx#earnxp) | Points recipient | In the course context, or the system context when [XP is used sitewide](../getting-started/per-course-or-site.mdx). |
+| [`block/xp:manage`](../getting-started/permissions.mdx#manage) | User calling the web service | In the course context, or the system context when [XP is used sitewide](../getting-started/per-course-or-site.mdx). |
+| Web service protocol capability | User calling the web service | For REST, use `webservice/rest:use`. Check the documentation for other protocols. |
+| Capabilities for `core_user_get_users_by_field` | User calling the web service | Moodle lists the required capabilities on the service's **Functions** page. |
