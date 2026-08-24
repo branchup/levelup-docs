@@ -6,7 +6,7 @@
 <title data-rh="true">Connect your AI assistant | Level Up Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://docs.levelup.plus/xp/docs/ai-mcp/connect"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="og:type" content="website"><meta data-rh="true" name="og:image" content="https://docs.levelup.plus/img/og.png"><meta data-rh="true" name="og:image:secure_url" content="https://docs.levelup.plus/img/og.png"><meta data-rh="true" name="twitter:image" content="https://docs.levelup.plus/img/og.png"><meta data-rh="true" name="twitter:site" content="@BranchUpTech"><meta data-rh="true" name="twitter:creator" content="@BranchUpTech"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Connect your AI assistant | Level Up Documentation"><meta data-rh="true" name="description" content="Connect ChatGPT, Claude or another compatible AI assistant to Level Up XP."><meta data-rh="true" property="og:description" content="Connect ChatGPT, Claude or another compatible AI assistant to Level Up XP."><link data-rh="true" rel="icon" href="/img/favicon.png"><link data-rh="true" rel="canonical" href="https://docs.levelup.plus/xp/docs/ai-mcp/connect"><link data-rh="true" rel="alternate" href="https://docs.levelup.plus/xp/docs/ai-mcp/connect" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.levelup.plus/xp/docs/ai-mcp/connect" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Connect your AI assistant","item":"https://docs.levelup.plus/xp/docs/ai-mcp/connect"}]}</script><link key="docusaurus-plugin-plausible-preconnect" rel="preconnect" href="https://plausible.io">
 <script key="docusaurus-plugin-plausible-script" async defer="defer" data-domain="docs.levelup.plus" src="https://plausible.io/js/plausible.js"></script>
 <script key="docusaurus-plugin-plausible-custom-events">window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script><link rel="stylesheet" href="/assets/css/styles.c4e282af.css">
-<script src="/assets/js/runtime~main.dd152591.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.f672500a.js" defer="defer"></script>
 <script src="/assets/js/main.442fad71.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -26,28 +26,27 @@ your Moodle site. It normally looks like this:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">https://moodle.example.com/blocks/xp/mcp.php</span><br></span></code></pre></div></div>
 <p>Replace <code>https://moodle.example.com</code> with the address of your Moodle site.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="connect-chatgpt">Connect ChatGPT<a href="#connect-chatgpt" class="hash-link" aria-label="Direct link to Connect ChatGPT" title="Direct link to Connect ChatGPT" translate="no">​</a></h2>
-<p>We are submitting Level Up XP to the ChatGPT plugin directory. After OpenAI
-publishes Level Up XP, you can install it without creating a custom app. ChatGPT
-plugins are available in ChatGPT Work on the web and in the desktop app. Your
-workspace settings can restrict access to plugins.</p>
-<p>After OpenAI publishes Level Up XP, use these steps:</p>
+<p>Add your Moodle site&#x27;s MCP server to ChatGPT as a plugin.</p>
 <ol>
 <li class="">Open <strong>Plugins</strong>.</li>
-<li class="">Search for <strong>Level Up XP</strong> and open its details.</li>
-<li class="">Select <strong>+</strong> to install the plugin.</li>
-<li class="">Follow the prompts to enter your Level Up XP MCP URL and connect the plugin.</li>
-<li class="">Sign in to Moodle and review the authorisation request.</li>
-<li class="">Approve the request only if it shows the correct Moodle site and ChatGPT
-workspace.</li>
-<li class="">Start a new chat and ask ChatGPT to use Level Up XP.</li>
+<li class="">Select the plus (<strong>+</strong>) button. If the button is not visible, open
+<strong>Settings</strong> &gt; <strong>Security and login</strong>, turn on <strong>Developer mode</strong>, then
+return to <strong>Plugins</strong>.</li>
+<li class="">Name the plugin <code>Level Up XP</code> and enter your Level Up XP MCP URL under
+<strong>Connection</strong>.</li>
+<li class="">Leave all other settings unchanged, then select <strong>Create</strong>.</li>
+<li class="">Select <strong>Sign in with Level Up XP</strong>, then sign in to Moodle.</li>
+<li class="">Review and approve the authorisation request.</li>
 </ol>
+<p>When you start a conversation, add Level Up XP from the tools menu.</p>
 <p>For more information, refer to
-<a href="https://learn.chatgpt.com/docs/plugins" target="_blank" rel="noopener noreferrer" class="">OpenAI&#x27;s instructions for ChatGPT plugins</a>.</p>
+<a href="https://developers.openai.com/plugins/deploy/connect-chatgpt#add-the-mcp-server" target="_blank" rel="noopener noreferrer" class="">OpenAI&#x27;s instructions for connecting an MCP
+server</a>.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="connect-claude">Connect Claude<a href="#connect-claude" class="hash-link" aria-label="Direct link to Connect Claude" title="Direct link to Connect Claude" translate="no">​</a></h2>
 <p>If you use an individual Claude account:</p>
 <ol>
 <li class="">Open <strong>Customize</strong> &gt; <strong>Connectors</strong>.</li>
-<li class="">Select <strong>+</strong>, then <strong>Add custom connector</strong>.</li>
+<li class="">Select the plus (<strong>+</strong>) button, then <strong>Add custom connector</strong>.</li>
 <li class="">Name the connector <code>Level Up XP</code> and enter your Level Up XP MCP URL.</li>
 <li class="">Leave all other settings unchanged, then add the connector.</li>
 <li class="">Select <strong>Connect</strong>, then sign in to Moodle.</li>
