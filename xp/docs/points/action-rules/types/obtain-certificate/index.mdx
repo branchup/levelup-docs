@@ -1,5 +1,5 @@
 ---
-description: Award points when learners get a certificate from the Custom certificate plugin.
+description: Award points when learners get a certificate from a supported certificate plugin.
 title: "Obtain a certificate"
 ---
 
@@ -8,23 +8,23 @@ import Screenshot from '@site/src/components/Screenshot';
 
 <RequiresXpPlus plan="Premium" />
 
-Use the Obtain a certificate action to award points when the Custom certificate plugin issues a certificate to a learner.
+Use the **Obtain a certificate** action to award points when a supported certificate plugin issues a certificate to a learner.
 
 ## Requirements
 
-You must use the following software:
+You must use one of the following plugins:
 
-- Moodle 5.0 or later.
 - [Custom certificate](https://camp-registry.org/plugin/mod_customcert.html) version 5 or later.
+- [Moodle Workplace course certificate](https://marketplace.moodle.com/plugins/mod_coursecertificate) version 4.4.4 or later.
 
 ## Configure the action
 
-1. Go to the Action rules page.
-2. Select Add action and then select Obtain a certificate.
-3. Add the Specific activity condition.
-4. Select the certificate activity, such as Program certificate.
+1. Go to the **Action rules** page.
+2. Select **Add action** and then select **Obtain a certificate**.
+3. Add the **Specific activity** condition.
+4. Select the certificate activity, such as **Program certificate**.
 5. Enter the number of points to award.
 
 Level Up XP awards the specified points when the selected activity issues a certificate to a learner.
 
-<Screenshot img={require('./rule-added.png')}>This action awards 100 points when a learner gets a certificate from the Program certificate activity.</Screenshot>
+<Screenshot img={require('./rule-added.png')}>This action awards 100 points when a learner gets a certificate from the **Program certificate** activity.</Screenshot>
