@@ -1,0 +1,72 @@
+---
+title: Upgrading to v21
+sidebar_position: 99
+slug: /upgrade-notes/upgrading-to-v21
+description: Important information when upgrading to Level Up XP/XP+ 21.
+---
+
+Important information regarding the upgrade to Level Up XP and Level Up XP+ 21. For more information about the release itself, please refer to the [release notes](/xp/release-notes/#xp-21-0) instead.
+
+## Default AI and MCP configuration
+
+:::info
+
+This section applies only to XP+ Premium.
+
+:::
+
+Unless you changed the settings during the upgrade, the AI integration uses these defaults:
+
+- Users with `local/xp:usemcp` (all users by default) can initiate connections
+  from AI assistants to XP.
+- Users still need `block/xp:manage` in the relevant context to use the tools.
+- Only read-only tools that do not return user information are allowed.
+- Users can connect ChatGPT and Claude.
+
+We recommend that administrators review these settings after the upgrade.
+For more details, see the [administrator guide](../../../../ai-mcp/admin.mdx).
+
+## Web server routing for AI and MCP
+
+:::info
+
+This section applies only to XP+ Premium.
+
+:::
+
+Your web server must support routing for paths under `blocks/xp/oauth.php/`
+and `blocks/xp/mcp.php/`. These paths should work if you have configured
+[slash arguments](../../slasharguments.mdx) correctly.
+
+OAuth can use `.well-known` paths, such as
+`blocks/xp/oauth.php/.well-known/`. Web server rules that block names that
+start with a period can also block these paths. Make sure that your web
+server allows these paths.
+
+## Permission changes
+
+The following permissions have changed:
+
+- To view the report, users now need `block/xp:view` or `block/xp:manage`
+  in addition to `block/xp:viewreport`.
+- To view the logs, users now need `block/xp:view` or `block/xp:manage`
+  in addition to `block/xp:viewlogs`.
+- To import points from a CSV file, users now need `block/xp:viewreport`
+  in addition to `block/xp:manage`.
+
+## Built-in level badges
+
+Built-in level badges now use static images. Previously, they used background
+images with text displayed over them. If a custom theme or CSS depends on the previous behavior, you can restore it with the following setting in your Moodle `config.php` file:
+
+```php
+$CFG->forced_plugin_settings = [
+  'block_xp' => [
+    'uselegacylevelbadges' => 1,
+  ],
+];
+```
+
+Support for the previous behavior will be removed in a future release.
+Update your custom theme or CSS to use the static images, then remove the
+`uselegacylevelbadges` setting.
