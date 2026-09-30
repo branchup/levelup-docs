@@ -6,12 +6,6 @@ sidebar_position: 4
 
 # Administrator guide
 
-:::info[Under development]
-
-We will release this feature with XP+ v21.
-
-:::
-
 The Level Up XP MCP integration lets an AI assistant get information from
 Moodle. It can also perform permitted actions with the permissions of the
 connected Moodle user.
@@ -32,11 +26,11 @@ A cloud-based AI client connects from the AI provider's systems. If your
 Moodle site is on a private network or behind a firewall, review the provider's
 network requirements.
 
-## Enable and configure MCP
+## Review and configure MCP
 
 1. Go to **Site administration** > **Plugins** > **Blocks** > **Level Up XP**.
 2. Find the **AI settings** section.
-3. Set **Enable MCP access** to **Yes**.
+3. Set **Enable MCP access** to **Yes** to allow connections.
 4. In **MCP tool permissions**, select each checkbox for the type of operation
    that you want to allow.
 5. Set **Allow ChatGPT connections** to **Yes** if users can connect ChatGPT.
@@ -134,6 +128,12 @@ ChatGPT clients. Set **Allow Claude connections** to **No** to disable
 automatically registered Claude clients. Use **Manage OAuth clients** to
 review, enable, disable or delete existing clients.
 
+When a user with `local/xp:usemcp` connects to an allowed assistant,
+Level Up XP creates its OAuth client if needed. The **Authenticated user**
+role has this capability by default. Level Up XP saves invalid clients to
+prevent repeated registration attempts. An administrator must delete an invalid client in
+**Manage OAuth clients** to retry its registration.
+
 ### Manually registered clients
 
 Some AI clients require manual OAuth registration. The redirect URL that you
@@ -210,11 +210,12 @@ To make MCP available only to selected users:
 Use the control that matches the scope of the access change:
 
 - Remove the connection in the AI client to stop its use in that client.
-- Remove `local/xp:usemcp` at the system level to block one Moodle user.
 - Prohibit `local/xp:usemcp` in a context to block MCP tools in that context.
 - Disable an OAuth client to block all connections that use that client.
-- Set **Enable MCP access** to **No** to block all MCP connections to the site.
 - Delete an OAuth client to remove its configuration and OAuth tokens.
+- Remove `local/xp:usemcp` from roles at the system level, or prohibit it
+  for the **Authenticated user** role.
+- Set **Enable MCP access** to **No** to block all MCP connections to the site.
 
 Changes to **Enable MCP access**, **MCP tool permissions**, and Moodle
 permissions take effect on the server immediately. An AI client might continue

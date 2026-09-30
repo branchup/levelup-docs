@@ -39,8 +39,8 @@ addresses, use network configuration that the AI provider supports.
 ## MCP access is disabled
 
 Ask a site administrator to set **Enable MCP access** to **Yes** in the Level
-Up XP **AI settings**. For the full procedure, see [Enable and configure
-MCP](./admin.mdx#enable-and-configure-mcp).
+Up XP **AI settings**. For the full procedure, see [Review and configure
+MCP](./admin.mdx#review-and-configure-mcp).
 
 ## The authorisation request is invalid
 
@@ -54,6 +54,11 @@ checks:
   the AI client requires.
 - Make sure that the client ID and client secret are correct when you use
   manual registration.
+
+Automatic registration needs access to `chatgpt.com` or `claude.ai`. If
+the site's HTTP security settings block access, an administrator must allow
+the domain and delete any invalid client in **Manage OAuth clients** before
+you retry.
 
 ## An OAuth route returns a not found error
 
