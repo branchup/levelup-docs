@@ -1,0 +1,46 @@
+import ReleaseDate from '@site/src/components/release-notes/ReleaseDate';
+
+<ReleaseDate>October 5, 2026</ReleaseDate>
+
+<h3>New features ✨</h3>
+
+- Combine points from selected courses into an overall level and leaderboard ([docs](/xp/docs/global-level)) (XP+)
+- Connect XP to an AI assistant through MCP, such as ChatGPT or Claude ([docs](/xp/docs/ai-mcp)) (XP+)
+- Support dark mode
+- Display the overall level on the Dashboard, site home, user profiles, and navigation bar (XP+)
+- View the overall level and leaderboard in the Mobile app. (XP+)
+- Managers can view each learners' overall points and logs, with a breakdown by course (XP+)
+- Administrators can select which AI assistants can connect and which tools they can use. (XP+)
+- The Obtain a certificate action now supports Moodle Workplace certificates (XP+)
+
+<h3>Quality of life 💪</h3>
+
+- The colours of the default badges for levels 1-100 are yummier
+- The maximum number of levels increases from 99 to 100.
+- Participant searches accept first and last names in either order and allow extra spaces.
+
+<h3>Bug fixes 🐛</h3>
+
+- The block applies stricter privacy checks on user profiles (XP+)
+- The cheat guard no longer accepts ineffective or unsupported values
+- Opening an action rule without changes no longer disconnects the course from admin defaults
+- Prevented incorrect level-up notifications after points were reset or reduced
+- Navigating to the logs from a default action rule showed empty results (XP+)
+- The rule filter in the logs sometimes omitted entries associated with default rules (XP+)
+- Logs from admin default rules no longer show the rule as deleted. (XP+)
+- The site home can no longer be used as an XP instance in per-course mode
+- The block no longer appears in invalid locations after settings change
+- Built-in currency symbols were not applied as admin defaults (XP+)
+
+<h3>Technical changes 🛠</h3>
+
+- Compatibility with Moodle 5.3
+- Raised minimum required version to Moodle 4.5
+- Access to reports and logs now also requires `block/xp:view` or `block/xp:manage`.
+- Managers now need `block/xp:viewreport` to import points or change leaderboard participation (XP+)
+- Default level badges now use SVG images with embedded numbers.
+
+<h3>Additional notes 👀</h3>
+
+- Read the [upgrade notes](/xp/docs/upgrade-notes/upgrading-to-v21).
+- Read our [release blog post](https://www.levelup.plus/blog/xp-release-21/) to learn more.
