@@ -1,5 +1,7 @@
 label: 'Installation'
 position: 0
-link: null
+link:
+  type: doc
+  id: index
 customProps:
   description: 'How to install Level Up XP'

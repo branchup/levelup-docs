@@ -1,3 +1,5 @@
 label: 'Action rules'
 position: 1
-link: null
+link:
+  type: doc
+  id: index

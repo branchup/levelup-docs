@@ -64,6 +64,20 @@ const config: Config = {
         path: 'xp/docs',
         routeBasePath: 'xp/docs',
         sidebarPath: require.resolve('./sidebars.js'),
+        async sidebarItemsGenerator({ defaultSidebarItemsGenerator, ...args }) {
+          const items = await defaultSidebarItemsGenerator(args);
+          const keepOverview = (items) => items.map((item) => {
+            if (item.type !== 'category') {
+              return item;
+            }
+            const children = keepOverview(item.items);
+            if (item.link?.type === 'doc' && children.length > 0) {
+              children.unshift({ type: 'doc', id: item.link.id });
+            }
+            return { ...item, items: children };
+          });
+          return keepOverview(items);
+        },
       },
     ],
     [

@@ -1,2 +1,5 @@
 label: 'Points system'
 position: 2.9
+link:
+  type: doc
+  id: introduction

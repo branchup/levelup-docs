@@ -1,3 +1,5 @@
 label: 'AI and MCP'
 position: 4
-link: null
+link:
+  type: doc
+  id: index
