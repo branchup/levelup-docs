@@ -1,0 +1,50 @@
+---
+title: Course levels and sitewide progress
+description: Choose how to track progress in courses and across your site.
+slug: /context
+sidebar_label: Overview
+sidebar_position: 1
+---
+
+import RequiresXpPlus from '@site/src/components/RequiresXpPlus';
+
+# Course levels and sitewide progress
+
+XP can track progress separately in each course or across the site. You can also keep separate course levels and add an overall level.
+
+## A separate level in each course
+
+Use **In courses** mode when each course has its own goals and rewards. This is the default mode.
+
+Each course has its own points, levels, rules, and leaderboard. Teachers can configure XP for their course. Progress in one course does not change progress in another.
+
+## One level across the site
+
+Use **Sitewide** mode when learners must progress towards one level across courses.
+
+Points earned in different courses contribute to the same total. Learners have one level and share one leaderboard. There are no separate course levels or course leaderboards.
+
+The same XP settings and rules apply across the site. Users need permission at the system level to manage them.
+
+## Course levels with an overall level
+
+<RequiresXpPlus plan="Premium" />
+
+You can use **In courses** mode and add an overall level. Use this option to show progress within courses and across selected courses.
+
+Learners keep their points and level in each course. Points from courses that you select also contribute to an overall total, with an overall level and leaderboard.
+
+Each course keeps its own settings, rules, and leaderboard.
+
+[Learn how the overall level works](./global-level.mdx).
+
+## Choose the mode
+
+An administrator selects the mode for the site.
+
+1. Go to **Site administration > Plugins > Blocks > Level Up XP > General settings**.
+2. Set **How are points tracked?** to **In courses** or **Sitewide**.
+3. Optional: If you selected **In courses** and the **Overall level** setting is available, set it to **Yes** to enable the overall level.
+4. Select **Save changes**.
+
+If you enabled the overall level, follow the [overall level setup instructions](./global-level.mdx#enable-the-overall-level) to add the block and select contributing courses.

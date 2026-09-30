@@ -1,7 +1,7 @@
 ---
 slug: /navbar-display
 title: Level in navigation bar
-description: Displaying the level in the navigation bar.
+description: Show learners their level in the navigation bar.
 sidebar_position: 4.5
 ---
 
@@ -9,18 +9,41 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Level in navigation bar
 
-:::info
-
-This feature was added in XP 3.15.
-
-:::
-
-Displaying the level globally in the navigation is easy, but must be done by the site administrator. Navigate to Administration > Plugins > Blocks > Level Up XP > General settings, and enable the setting `navbardisplay`.
-
-This setting is heavily dependent on the theme you are using, and may not work as expected with 3rd party themes. We recommend to turn it on to see if it works and to confirm that it does not break the theme.
-
-If it does not appear, or the level does not display properly, please contact your theme designer.
+You can show learners their level in the navigation bar.
 
 <Screenshot img={require('./navbar-wide.png')}>
-  In Boost, the level is displayed in the navbar next to the user's profile.
+  The Boost theme shows the level next to the user's profile in the navigation bar.
 </Screenshot>
+
+## Which level appears?
+
+The level in the navigation bar depends on the [XP mode](../context/index.mdx) and the page that the learner opens.
+
+- In **In courses** mode, the navigation bar shows the level for the current course. The displayed level can change when the learner opens another course.
+- In **Sitewide** mode, the navigation bar shows the same sitewide level on all pages.
+- With an [overall level](/xp/docs/global-level), the navigation bar shows the overall level outside courses and the course level inside each course.
+
+## Enable the display
+
+An administrator must enable this feature.
+
+1. Go to **Site administration > Plugins > Blocks > Level Up XP > General settings**.
+2. Set **Show level in navbar** to **Yes**.
+3. Select **Save changes**.
+4. Check that the level appears correctly in the navigation bar and that the rest of the page displays correctly.
+
+## Always show the overall level
+
+Switching between course levels and the overall level can confuse learners. If you use an overall level, you can keep it in the navigation bar as learners move between pages.
+
+1. Go to **Site administration > Plugins > Blocks > Level Up XP > General settings**.
+2. Set **Overall level in navbar** to **Yes**.
+3. Select **Save changes**.
+
+This setting is optional. It makes the navigation bar show the overall level everywhere, including inside courses. The XP block in each course continues to show the course level.
+
+## Theme compatibility
+
+The navigation bar display depends on your theme. Some themes might not support it.
+
+If the level does not appear or displays incorrectly, contact your theme designer.

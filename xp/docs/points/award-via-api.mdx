@@ -27,7 +27,7 @@ The `local_xp_award_points` function requires these arguments:
 | --- | --- | --- |
 | `userid` | Integer | The ID of the Moodle user who receives the points. |
 | `points` | Integer | The number of points to award. The value must be greater than `0`. |
-| `courseid` | Integer | The course ID. If you [use XP sitewide](../getting-started/per-course-or-site.mdx), use `1`. |
+| `courseid` | Integer | The course ID. If you [use XP sitewide](../getting-started/context/index.mdx), use `1`. |
 
 If you do not know the `userid`, [find the user ID](#find-a-user-id) before you
 award the points.
@@ -203,7 +203,7 @@ For complete setup instructions, see
 
 | Capability | Required for | Scope or details |
 | --- | --- | --- |
-| [`block/xp:earnxp`](../getting-started/permissions.mdx#earnxp) | Points recipient | In the course context, or the system context when [XP is used sitewide](../getting-started/per-course-or-site.mdx). |
-| [`block/xp:manage`](../getting-started/permissions.mdx#manage) | User calling the web service | In the course context, or the system context when [XP is used sitewide](../getting-started/per-course-or-site.mdx). |
+| [`block/xp:earnxp`](../getting-started/permissions.mdx#earnxp) | Points recipient | In the course context, or the system context when [XP is used sitewide](../getting-started/context/index.mdx). |
+| [`block/xp:manage`](../getting-started/permissions.mdx#manage) | User calling the web service | In the course context, or the system context when [XP is used sitewide](../getting-started/context/index.mdx). |
 | Web service protocol capability | User calling the web service | For REST, use `webservice/rest:use`. Check the documentation for other protocols. |
 | Capabilities for `core_user_get_users_by_field` | User calling the web service | Moodle lists the required capabilities on the service's **Functions** page. |

@@ -1,0 +1,59 @@
+---
+title: Overall level
+description: Combine points from selected courses to show an overall level, leaderboard, and report.
+slug: /global-level
+sidebar_position: 2
+---
+
+# Overall level
+
+import RequiresXpPlus from '@site/src/components/RequiresXpPlus';
+
+<RequiresXpPlus />
+
+The overall level extends [per-course mode](./index.mdx) to show progress **both per course and across the site**. Learners keep their points and level in each course. Points from selected courses are added together to form a sitewide total, with an overall level and leaderboard.
+
+## How points are combined
+
+You must select the courses that contribute points. Courses do not contribute automatically. The overall points total is the sum of the learner's current points in the selected courses, including points earned before you selected those courses.
+
+Points update in real time. A change to points in a contributing course immediately changes the overall total. The overall level, leaderboard, and report use this total.
+
+Manage points in the contributing courses. You cannot edit overall points directly. If you remove a course from the selection, its points no longer contribute to the overall total. The points in that course do not change.
+
+## Enable the overall level
+
+An administrator must enable this feature before the XP block can be added to the Dashboard in per-course mode.
+
+1. Go to **Site administration > Plugins > Blocks > Level Up XP > General settings**.
+2. Set **How are points tracked?** to **In courses**.
+3. Set **Overall level** to **Yes**.
+4. Select **Save changes**.
+5. [Add the XP block to every user's Dashboard](../installation/adding-the-block.mdx#add-the-block-to-every-users-dashboard).
+
+You can also add the block to the site home. The block on the Dashboard or site home shows overall progress. Blocks in courses continue to show progress in each course.
+
+## Select contributing courses
+
+You need the `block/xp:manage` permission in the system context to select courses. You must also have access to the courses that you add.
+
+1. Open **Settings** from the XP block on the Dashboard or site home.
+2. Select **Points** to open the **Combined points** page.
+3. Select **Add courses**.
+4. Search for a course and select **Add** next to it.
+5. Repeat the previous step for each course that must contribute points.
+6. Close the course selection window.
+
+## Report and leaderboard
+
+The overall report shows each learner's combined points and overall level. The overall leaderboard ranks learners by their combined points from the selected courses.
+
+### Which learners are included?
+
+Learners must have an XP record in at least one contributing course to appear in the overall report or leaderboard.
+
+To remove a learner from both, delete their XP records from all contributing courses. Setting their points to zero or unenrolling them does not remove these records. Points in records that remain continue to count towards the overall total.
+
+### Team leaderboard
+
+The overall level supports the individual leaderboard only. It does not support a team leaderboard.

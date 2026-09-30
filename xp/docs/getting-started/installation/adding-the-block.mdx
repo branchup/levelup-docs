@@ -7,37 +7,46 @@ description: Add the XP block to a course, page, or user Dashboard.
 
 # Add the XP block
 
-The XP block shows learners their points and level. Where you add it depends on the [XP mode](../per-course-or-site.mdx):
+The XP block shows learners their points and level. The [XP mode](../context/index.mdx) controls where you can add the block:
 
 - In per-course mode, add the block to each course where you use XP.
-- In sitewide mode, add the block to the Site home, the default Dashboard, or another page. All block instances show the same sitewide data.
+    - If the [overall level](../context/global-level.mdx) is enabled, you can also add the block to **Site home** or **Dashboard**.
+- In sitewide mode, add the block to **Site home**, the default **Dashboard**, or another page. All XP blocks show the same sitewide data.
 
 ## Add the block to a course or page
 
 1. Open the course or page where you want to add the block.
 2. Turn editing on.
-3. Select Add a block.
-4. Select Level Up XP.
+3. Select **Add a block**.
+4. Select **Level Up XP**.
 
-To show the block on more pages, change its Where this block appears settings. For more information, see [Block settings in the Moodle documentation](https://docs.moodle.org/en/Block_settings).
+To show the block on more pages, change the settings under **Where this block appears**. For more information, see [block settings in the Moodle documentation](https://docs.moodle.org/en/Block_settings).
 
 ## Add the block to every user's Dashboard
 
-Use the Default Dashboard page to add the block for all users. Adding the block to your own Dashboard changes only your Dashboard.
+You must be a site administrator to add the block for all users. Use the **Default Dashboard page** to do this. If you add the block to your own **Dashboard**, only your **Dashboard** changes.
 
-1. Open Site administration > Appearance > Default Dashboard page.
+1. Open **Site administration > Appearance > Default Dashboard page**.
 2. Turn block editing on.
-3. Select Add a block.
-4. Select Level Up XP.
+3. Select **Add a block**.
+4. Select **Level Up XP**.
 5. Move the block to the required location.
-6. To apply the change to existing users, select Reset Dashboard for all users.
+6. To apply the change to existing users, select **Reset Dashboard for all users**.
 
 ## If the block is not available
 
-If Level Up XP is not in the Add a block list, complete these checks:
+If **Level Up XP** is not in the **Add a block** list, do these checks:
 
-- Confirm that the page matches the configured [XP mode](../per-course-or-site.mdx). In per-course mode, you cannot add the block to the Site home or Dashboard.
-- Confirm that your role has the [`block/xp:addinstance` permission](../permissions.mdx#addinstance).
-- Ask an administrator to confirm that the block is enabled and unlocked.
+- Check whether the XP block is already on the page.
+- Make sure that you can add the block to the page in the selected [XP mode](../context/index.mdx).
+- Make sure that your role has the [`block/xp:addinstance` permission](../permissions.mdx#addinstance).
+- Ask an administrator to [check the block status](#check-the-block-status) and make sure that it is enabled and unlocked.
 
-For more help, see [The block cannot be added](../../troubleshooting/block-cannot-be-added-or-found/index.mdx).
+### Check the block status
+
+1. Open **Site administration > Plugins > Blocks > Manage blocks**.
+2. Find **Level Up XP** in the list.
+3. If the block is disabled, enable it.
+4. If the block is locked, unlock it.
+
+If **Level Up XP** is not in the list, make sure that [XP is installed](./index.mdx).
